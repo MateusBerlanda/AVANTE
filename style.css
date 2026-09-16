@@ -1,0 +1,289 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+
+   background-image: url("img/Fundo.jpeg");
+
+}
+/* font-family: "Poppins", sans-serif;
+font-family: "Bangers", system-ui;
+font-family: "Luckiest Guy", cursive; */
+
+
+header {
+    position: relative;
+    background: #F2EDDB;
+    border-bottom: 3px solid #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+
+
+nav {
+    
+    display: flex;
+    gap: 80px;
+
+
+a {
+    
+    font-family: "Luckiest Guy", cursive;
+    text-decoration: none;
+    color: black;
+    transition: width 0.25s ease;
+    font-size: 20px;
+
+
+    &:hover {
+        text-decoration: underline #E3272B 2px;
+        text-underline-offset: 6px;
+        color: #E3272B;
+    }
+    }
+
+    }
+
+
+button {
+    
+    background: #C80004;
+    color: white;
+    border: 3px solid #14141A;
+    box-shadow: 4px 4px 0 #14141A;
+    padding: 15px 30px;
+    font-family: "Bangers", system-ui;
+    font-size: 20px;
+    transition: transform .2s ease, box-shadow .2s ease;
+    cursor: pointer;
+
+
+    &:hover {
+        transform: translate(4px, 4px);
+         box-shadow: 0 0 0 #14141A;
+    }
+    }
+}
+
+
+.menu-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 4px;
+    background: #E3272B;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 0 #000;
+    transition: width 0.25s ease;
+}
+
+
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 8px;
+    background: repeating-linear-gradient(to right,
+            #111 0 2px,
+            /* traço: cor e espessura */
+            transparent 2px 12px
+            /* espaço até o próximo traço */
+        );
+}
+
+.hero {
+    background-color: #D33737;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 500px;
+    background-image: url('img/Fundo-Homem-Aranha.png');
+}
+
+.hero-texts {
+    padding: 100px;
+    h1 {
+        font-family: "Bangers", system-ui;
+        -webkit-text-stroke-width: 0.3px;
+        -webkit-text-stroke-color: #1F3E8C;
+        color: white;
+        font-size: 60px;
+    }
+
+
+    p {
+        font-size: 20px;
+        color: white;
+        font-family: "Poppins", sans-serif;
+        max-width: 600px;
+        margin-top: 40px;
+    }
+}
+
+
+.polaroid{
+    img{
+        width: 65%;
+    }
+}
+
+.aviso {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #C80004;
+    border: 3px solid #14141A;
+    box-shadow: 4px 4px 0 #14141A;  
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: black;
+    color: white;
+    padding: 5px;
+    margin: 0px auto;
+    width: fit-content;
+    text-align: center;
+    font-family: "Bangers", system-ui;
+    font-size: 18px;
+    margin-top: -25px;
+
+}
+
+.herois{
+
+   display: flex;
+   margin-top: 45px;
+   justify-content: center;
+   align-items: center;
+
+  h1{
+
+    font-family: "Bangers", system-ui;
+    font-size: 45px;
+    color: #C80004;
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: black;
+   
+  }
+
+}
+
+.cards{
+   
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+
+    .titulo{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .img{
+        
+    width: 80px;
+    height: 65px;
+
+    }
+
+    .img2{
+
+    width: 100px;
+    height: 78px;
+    }
+
+    }
+}
+.card{
+    
+     width: 320px;
+     height: 220px;
+     background-color: #2B58C4;
+     border: 3px solid black;
+     box-shadow: 7px 7px 0 black;
+     padding: 10px;
+
+h2{
+
+   font-family: "Bangers", system-ui; 
+   font-size: 28px;
+   font-weight: 800;
+   color: white;
+   -webkit-text-stroke-width: 0.2px;
+   -webkit-text-stroke-color: black;
+
+}
+
+p{
+
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  max-width: 100%;
+  text-align: center;
+  color: white;
+
+}
+}
+
+.vermelhos{
+ 
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 40px;
+    margin-top: 100px;
+
+.vermelho{
+    
+    position: relative;
+    background-color: #C80004;
+    width: 320px;
+    height: 220px;
+    border: 3px solid black;
+    box-shadow: 7px 7px 0 black;
+    padding: 10px;
+
+img{
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 95px; 
+        
+}
+
+h2{
+
+   font-family: "Bangers", system-ui; 
+   font-size: 28px;
+   font-weight: 800;
+   color: white;
+   -webkit-text-stroke-width: 0.2px;
+   -webkit-text-stroke-color: black;
+   margin-top: 30px;
+
+}
+
+p{
+
+   font-family: "Poppins", sans-serif;
+   font-size: 18px;
+   max-width: 100%;
+   margin-top: 10px;
+   color: white;
+}
+
+}
+
+}
