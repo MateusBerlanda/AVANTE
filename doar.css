@@ -10,7 +10,7 @@ font-family: "Bangers", system-ui;
 font-family: "Luckiest Guy", cursive; 
 */
 
-body{
+body {
     background-image: url('img/Fundo.jpeg');
 }
 
@@ -69,12 +69,14 @@ header::after {
     bottom: 0;
     height: 8px;
     background: repeating-linear-gradient(to right, #111 0 2px,
-            transparent 2px 12px
-        );
+            transparent 2px 12px);
 }
 
-.alert{
-    border: 1px solid black;
+.alert {
+    border-top: none;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    border-left: 2px solid #000;
     background-color: white;
     color: #2B58C4;
     font-family: "Poppins", sans-serif;
@@ -120,13 +122,11 @@ header::after {
 }
 
 .todo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 0 auto;
     background: #C80004;
     border: 3px solid #14141A;
-    box-shadow: 4px 4px 0 #14141A;  
-    -webkit-text-stroke-width: 0.2px;
+    box-shadow: 4px 4px 0 #14141A;
+    -webkit-text-stroke-width: 0.3px;
     -webkit-text-stroke-color: black;
     color: white;
     padding: 10px;
@@ -134,4 +134,113 @@ header::after {
     text-align: center;
     font-family: "Bangers", system-ui;
     font-size: 25px;
+    margin-top: -30px;
+}
+
+.title-funciona {
+    font-family: "Bangers", system-ui;
+    font-size: 25px;
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: black;
+    color: #2B58C4;
+    margin: 50px;
+
+    .h2span {
+        color: white;
+    }
+}
+
+.Funciona{
+    display: flex;
+    justify-content: space-around;
+    overflow: auto;
+    align-items: center;
+}
+
+.cardf {
+    width: 330px;
+    height: 330px;
+    background-color: white;
+    border: 3px solid #14141A;
+    box-shadow: 4px 4px 0 #14141A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.numero {
+    display: flex;
+    align-items: center;
+
+    span {
+        width: 50px;
+        height: 50px;
+        background-color: #C80004;
+        border: 3px solid black;
+        margin: 10px;
+        font-family: "Poppins", sans-serif;
+        font-size: 30px;
+        font-weight: 600;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h3 {
+        font-family: "Luckiest Guy", cursive;
+        color: #FFBB00;
+        -webkit-text-stroke: 0.2px black;
+        font-size: 25px;
+    }
+}
+
+p,
+.cardf {
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 450;
+    margin: 10px;
+}
+
+/* 
+font-family: "Poppins", sans-serif;
+font-family: "Bangers", system-ui;
+font-family: "Luckiest Guy", cursive; 
+*/
+
+.btn-funciona {
+    margin-top: 20px;
+    position: relative;
+    display: inline-block;
+
+    button {
+        background: #FFBB00;
+        border: 3px solid #14141A;
+        box-shadow: 4px 4px 0 #14141A;
+        -webkit-text-stroke: 0.5px black;
+        color: white;
+        padding: 10px;
+        width: 150px;
+        text-align: center;
+        font-family: "Bangers", system-ui;
+        font-size: 15px;
+    }
+
+    img {
+        position: absolute;
+        top: 10%;
+        left: 90%;
+    }
+}
+
+.cards-funciona{
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo-funciona{
+    margin-top: 10px;
 }
