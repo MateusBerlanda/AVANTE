@@ -95,6 +95,10 @@ header::after {
     background-image: url('img/Fundo-Capitão-América.png');
 }
 
+.sub{
+    background-color: #000000d4;
+}
+
 .hero-texts {
     padding: 100px;
 
@@ -140,7 +144,7 @@ header::after {
 .title-funciona {
     font-family: "Bangers", system-ui;
     font-size: 25px;
-    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-width: 0.1px;
     -webkit-text-stroke-color: black;
     color: #2B58C4;
     margin: 50px;
@@ -150,10 +154,9 @@ header::after {
     }
 }
 
-.Funciona{
+.Funciona {
     display: flex;
     justify-content: space-around;
-    overflow: auto;
     align-items: center;
 }
 
@@ -166,7 +169,7 @@ header::after {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .numero {
@@ -198,18 +201,13 @@ header::after {
 
 p,
 .cardf {
-    font-size: 20px;
+    font-size: px;
     font-family: "Poppins", sans-serif;
     letter-spacing: 0.5px;
     font-weight: 450;
     margin: 10px;
 }
 
-/* 
-font-family: "Poppins", sans-serif;
-font-family: "Bangers", system-ui;
-font-family: "Luckiest Guy", cursive; 
-*/
 
 .btn-funciona {
     margin-top: 20px;
@@ -228,7 +226,7 @@ font-family: "Luckiest Guy", cursive;
         font-family: "Bangers", system-ui;
         font-size: 15px;
     }
-
+    
     img {
         position: absolute;
         top: 10%;
@@ -236,11 +234,69 @@ font-family: "Luckiest Guy", cursive;
     }
 }
 
-.cards-funciona{
+.cards-funciona {
     display: flex;
     justify-content: space-around;
 }
 
-.logo-funciona{
+.logo-funciona {
     margin-top: 10px;
 }
+
+.title-funciona2 {
+    font-family: "Bangers", system-ui;
+    font-size: 25px;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: black;
+    color: #E3272B;
+    margin: 50px;
+    
+    .h2span {
+        color: white;
+    }
+}
+
+.brinquedos {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+}
+
+.brinquedo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    border: 3px solid #14141A;
+    box-shadow: 6px 6px 0 #14141A;
+    
+    h2{
+        font-family: "Poppins", sans-serif;
+        font-weight: 550;
+    }
+
+    h3{
+        font-family: "Bangers", system-ui;
+        -webkit-text-stroke: 0.1px black;
+        color: #FFBB00;
+        font-size: 30px;
+    }
+}
+
+.azul{
+    background: linear-gradient(to bottom, #1F3E8C 50%, white 50%);
+}
+
+.vermelho{
+    background: linear-gradient(to bottom, #C80004 50%, white 50%);
+}
+
+/* 
+    font-family: "Poppins", sans-serif;
+    font-family: "Bangers", system-ui;
+    font-family: "Luckiest Guy", cursive; 
+    */
