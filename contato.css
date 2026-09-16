@@ -1,0 +1,270 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background-image: url("img/Fundo.jpeg");
+}
+
+
+/* font-family: "Poppins", sans-serif;
+font-family: "Bangers", system-ui;
+font-family: "Luckiest Guy", cursive; */
+
+
+header {
+    position: relative;
+    background: #F2EDDB;
+    border-bottom: 3px solid #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+
+
+    nav {
+        display: flex;
+        gap: 80px;
+
+
+        a {
+            font-family: "Luckiest Guy", cursive;
+            text-decoration: none;
+            color: black;
+            transition: width 0.25s ease;
+            font-size: 20px;
+
+
+            &:hover {
+                text-decoration: underline #E3272B 2px;
+                text-underline-offset: 6px;
+                color: #E3272B;
+            }
+        }
+    }
+
+
+    button {
+        background: #C80004;
+        color: white;
+        border: 3px solid #14141A;
+        box-shadow: 4px 4px 0 #14141A;
+        padding: 15px 30px;
+        font-family: "Bangers", system-ui;
+        font-size: 20px;
+        transition: transform .2s ease, box-shadow .2s ease;
+        cursor: pointer;
+
+
+        &:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 0 0 0 #14141A;
+        }
+    }
+}
+
+
+.menu-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 4px;
+    background: #E3272B;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 0 #000;
+    transition: width 0.25s ease;
+}
+
+
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 8px;
+    background: repeating-linear-gradient(to right,
+            #111 0 2px,
+            /* traço: cor e espessura */
+            transparent 2px 12px
+            /* espaço até o próximo traço */
+        );
+}
+
+
+.btn-sobre {
+    display: flex;
+
+    button {
+        margin-top: 30px;
+        background-color: #FFC72C;
+        color: white;
+        border: 2px solid #14141A;
+        box-shadow: 1px 1px 0 #14141A;
+        padding: 5px 10px;
+        cursor: pointer;
+        display: flex;
+        box-shadow: 5px 5px 0 #14141A;
+        margin-bottom: 20px;
+        align-items: center;
+        font-size: 10px;
+        color: black;
+
+        p{
+            color: black;
+            font-weight: 500;
+        }
+    }
+
+    img {
+        width: 35px;
+    }
+}
+
+
+.hero {
+    background-color: #E3272B;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 550px;
+    background-image: url('img/Fundo-Homem-Ferro.png');
+}
+
+
+.hero-texts {
+    padding: 100px;
+    h1 {
+        font-family: "Bangers", system-ui;
+        -webkit-text-stroke-width: 0.2px;
+        -webkit-text-stroke-color: rgb(24, 2, 2);
+        color: #FFBB00;
+        font-size: 60px;
+
+    }
+
+    p {
+        padding: 10px;
+        font-size: 15px;
+        color: white;
+        font-family: "Poppins", sans-serif;
+        max-width: 600px;
+        
+    }
+}
+
+
+.polaroid {
+    img {
+        width: 90%;
+    }
+}
+
+span {
+    color: white;
+}
+
+.caixas{
+    color: #000000;
+    font-size: 30px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    padding: 20px;
+    gap: 10px;
+    align-items: center;
+    color: white;
+    display: flex;
+    gap: 20px;
+    font-size: 10px;
+    color: black;
+        p{
+            color: black;
+        }
+}
+
+.caixa{
+    display: flex;
+    font-size: 23px;
+    border: 1px solid #000;
+    background-color: #FFBB00;
+     box-shadow: 5px 5px 0 #14141A;
+     border: 3px solid #000;
+     height: 200px;
+     text-align: left;
+     padding: 20px;
+     height: 400px;
+     width: 350px;
+     
+   
+}
+
+.somos{
+    justify-content: center;
+    display: flex;
+    font-size: 60px;
+    color: #C80004;
+    font-family: "Bangers", system-ui;
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: rgb(24, 2, 2);
+    color: #C80004;
+    font-size: 60px;
+    padding: 70px;
+   
+}
+
+.containers{
+     color: #000000;
+    font-size: 30px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    padding: 20px;
+    gap: 10px;
+    align-items: center;
+    color: white;
+    display: flex;
+    gap: 20px;
+    font-size: 10px;
+    color: black;
+}
+
+.container{
+    display: flex;
+    border: 1px solid #000;
+    background-color: #E3272B;
+     box-shadow: 5px 5px 0 #14141A;
+     border: 3px solid #000;
+     padding: 10px;
+     height: 200px;
+     width: 200px;
+     font-family:"Luckiest Guy", cursive;
+     flex-direction: column; 
+     justify-content: center;
+
+     h5{
+        font-size: 21px;
+        text-align: center;
+        color: white;
+         -webkit-text-stroke-width: 1.4px;
+       -webkit-text-stroke-color: rgb(24, 2, 2);
+
+
+        
+
+     }
+     p{
+        font-size: 18px;
+        font-family:"Luckiest Guy", cursive;
+        text-align: center; 
+        
+     }
+    
+
+}
