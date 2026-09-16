@@ -1,0 +1,137 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* 
+font-family: "Poppins", sans-serif;
+font-family: "Bangers", system-ui;
+font-family: "Luckiest Guy", cursive; 
+*/
+
+body{
+    background-image: url('img/Fundo.jpeg');
+}
+
+header {
+    position: relative;
+    background: #F2EDDB;
+    border-bottom: 3px solid #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+
+    nav {
+        display: flex;
+        gap: 80px;
+
+        a {
+            font-family: "Luckiest Guy", cursive;
+            text-decoration: none;
+            color: black;
+            transition: width 0.25s ease;
+            font-size: 20px;
+
+            &:hover {
+                text-decoration: underline #E3272B 2px;
+                text-underline-offset: 6px;
+                color: #E3272B;
+            }
+        }
+    }
+
+    button {
+        background: #C80004;
+        color: white;
+        border: 3px solid #14141A;
+        box-shadow: 4px 4px 0 #14141A;
+        padding: 15px 30px;
+        font-family: "Bangers", system-ui;
+        font-size: 20px;
+        transition: transform .2s ease, box-shadow .2s ease;
+        cursor: pointer;
+
+        &:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 0 0 0 #14141A;
+        }
+    }
+}
+
+
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 8px;
+    background: repeating-linear-gradient(to right, #111 0 2px,
+            transparent 2px 12px
+        );
+}
+
+.alert{
+    border: 1px solid black;
+    background-color: white;
+    color: #2B58C4;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+
+.hero {
+    background-color: #1F3E8C;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 500px;
+    background-image: url('img/Fundo-Capitão-América.png');
+}
+
+.hero-texts {
+    padding: 100px;
+
+    h1 {
+        font-family: "Bangers", system-ui;
+        -webkit-text-stroke-width: 0.2px;
+        -webkit-text-stroke-color: white;
+        color: #2B58C4;
+        font-size: 60px;
+    }
+
+    p {
+        font-size: 20px;
+        color: white;
+        font-family: "Poppins", sans-serif;
+        max-width: 600px;
+        margin-top: 40px;
+    }
+}
+
+.polaroid {
+    img {
+        width: 70%;
+    }
+}
+
+.todo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #C80004;
+    border: 3px solid #14141A;
+    box-shadow: 4px 4px 0 #14141A;  
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: black;
+    color: white;
+    padding: 10px;
+    width: 600px;
+    text-align: center;
+    font-family: "Bangers", system-ui;
+    font-size: 25px;
+}
