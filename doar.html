@@ -16,6 +16,7 @@
   </head>
 
   <body>
+    <!-- HEADER -->
     <header>
       <img src="img/logo.png" alt="logo" />
       <nav>
@@ -26,6 +27,8 @@
       </nav>
       <button>DOAR AGORA</button>
     </header>
+
+    <!-- ALERT -->
 
     <div class="alert">
       <div class="alert-itens">
@@ -49,6 +52,8 @@
       </div>
     </div>
 
+    <!-- HERO -->
+
     <div class="hero">
       <div class="hero-texts">
         <h1>HERÓIS NÃO PRECISAM DE <br />SUPERPODERES.</h1>
@@ -66,6 +71,8 @@
     <div class="todo">
       <h3>TODO BRINQUEDO PODE SER O COMEÇO DE UMA AVENTURA!</h3>
     </div>
+
+    <!-- COMO FUNCIONA? -->
 
     <div class="title-funciona">
       <h2>COMO FUNCIONA?</h2>
@@ -141,7 +148,9 @@
       </div>
     </div>
 
-    <div class="title-funciona2">
+    <!-- BRINQUEDOS -->
+
+    <div class="title-catalogo">
       <h2>CATÁLOGO</h2>
       <h2 class="h2span">ESCOLHA SUA AVENTURA!</h2>
     </div>
@@ -162,7 +171,7 @@
       <div class="brinquedo azul">
         <img src="img/carrinho.png" alt="ursinho" />
         <h2>CARRINHO</h2>
-        <h3>R$ 30,00</h3>
+        <h3>R$ 25,00</h3>
       </div>
 
       <div class="brinquedo vermelho">
@@ -196,11 +205,37 @@
       </div>
 
       <div class="brinquedo azul">
+        <img src="img/banco-imobiliário.png" alt="banco-imobiliário" />
+        <h2>BANCO IMOBILIÁRIO</h2>
+        <h3>R$ 100,00</h3>
+      </div>
+
+      <div class="brinquedo vermelho">
         <img src="img/laptop.png" alt="laptop" />
         <h2>LAPTOP</h2>
         <h3>R$ 150,00</h3>
       </div>
+
+      <div class="brinquedo azul">
+        <img
+          src="img/carrinho-controle-remoto.png"
+          alt="carrinho-controle-remoto"
+        />
+        <h2>
+          CARRINHO <br />
+          CONTROLE REMOTO
+        </h2>
+        <h3>R$ 180,00</h3>
+      </div>
+
+      <div class="brinquedo vermelho">
+        <img src="img/bike.png" alt="bike" />
+        <h2>BICICLETA</h2>
+        <h3>R$ 300,00</h3>
+      </div>
     </div>
+
+    <!-- QUERO DOAR -->
 
     <div class="qrdoar">
       <div class="qr-texts">
@@ -212,13 +247,95 @@
       </div>
 
       <div class="qr-btn">
-        <button>QUERO DOAR AGORA!</button>
+        <button id="abrirModal">QUERO DOAR AGORA!</button>
       </div>
     </div>
 
+    <!-- MODAL DOAÇÃO -->
+    <div class="modal-overlay" id="modal">
+      <div class="modal-doacao">
+        <button class="fechar-modal" id="fecharModal" type="button">
+          <span>×</span>
+        </button>
+
+        <!-- ETAPA 1: ESCOLHA -->
+
+        <div class="etapa ativa" id="etapaEscolha">
+          <h2>ESCOLHA SUA MISSÃO!</h2>
+
+          <p class="descricao-modal">
+            Existem duas formas de ajudar uma criança a sorrir. Escolha como
+            você quer ser um herói!
+          </p>
+
+          <div class="opcoes-doacao">
+            <!-- DOAR -->
+
+            <div class="card-doacao">
+              <div class="titulo-modal">
+                <h3>DOAR UM PRODUTO!</h3>
+                <img src="img/gift.png" alt="gift" />
+              </div>
+
+              <p>
+                Você já tem um brinquedo em bom estado? Leve ele até um dos
+                nossos pontos de coleta.
+              </p>
+
+              <button
+                class="btn-missao btn-azul"
+                id="btnDoarProduto"
+                type="button"
+              >
+                QUERO DOAR
+              </button>
+            </div>
+
+            <!-- COMPRAR -->
+
+            <div class="card-doacao">
+              <div class="titulo-modal">
+                <h3>COMPRAR PARA DOAR!</h3>
+                <img src="img/money.png" alt="money" />
+              </div>
+
+              <p>
+                Escolha um brinquedo do nosso catálogo e nós cuidaremos para que
+                ele chegue até uma criança.
+              </p>
+
+              <button
+                class="btn-missao btn-amarelo"
+                id="btnComprarProduto"
+                type="button"
+              >
+                ESCOLHER PRESENTE
+              </button>
+            </div>
+          </div>
+
+          <p class="frase-final">
+            UMA MISSÃO. UM GESTO. UM SORRISO.
+            <img src="img/logo.png" alt="" />
+          </p>
+        </div>
+
+        <div class="etapa ativa" id="etapaDoar">
+          <h1>FORMULÁRIO DE DOAÇÃO!</h1>
+          <p>Preencha as informações abaixo para registrar sua doação:</p>
+
+          <div class="deseja"></div>
+        </div>
+        
+      </div>
+    </div>
+    
+
+    <!-- FOOTER -->
+
     <footer>
       <div class="logo">
-        <img src="img/logo.png" alt="logo">
+        <img src="img/logo.png" alt="logo" />
         <p>Aqui, cada brinquedo doado começa uma nova história.</p>
       </div>
       <nav class="nav-footer">
@@ -231,11 +348,11 @@
       <div class="cont">
         <h3>CONTATO</h3>
         <div class="link E-mail">
-          <img src="img/E-mail.png" alt="E-mail" class="E-mail">
+          <img src="img/E-mail.png" alt="E-mail" class="E-mail" />
           <p>avante@gmail.com</p>
         </div>
         <div class="link Telefone">
-          <img src="img/Telefone.png" alt="Telefone" class="Telefone">
+          <img src="img/Telefone.png" alt="Telefone" class="Telefone" />
           <p>(16) 99999-9999</p>
         </div>
       </div>
@@ -253,3 +370,4 @@
     <script src="doar.js"></script>
   </body>
 </html>
+

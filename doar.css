@@ -14,6 +14,8 @@ body {
   background-image: url("img/Fundo.jpeg");
 }
 
+/* HEADER */
+
 header {
   position: relative;
   background: #f2eddb;
@@ -76,6 +78,8 @@ header::after {
   );
 }
 
+/* ALERT */
+
 .alert {
   width: 100%;
   border-right: 2px solid #000;
@@ -113,14 +117,11 @@ header::after {
   }
 }
 
+/* HERO */
+
 .hero {
   background-image:
-    linear-gradient(
-      to right,
-      rgba(10, 25, 70, 0.75) 0%,
-      rgba(20, 45, 110, 0.45) 40%,
-      rgba(31, 62, 140, 0) 75%
-    ),
+    linear-gradient(to right, #0a1946bf 0%, #142d6e73 90%),
     url("img/Fundo-Capitão-América.png");
 
   background-color: #1f3e8c;
@@ -175,6 +176,8 @@ header::after {
   margin-top: -30px;
 }
 
+/* COMO FUNCIONA? */
+
 .title-funciona {
   font-family: "Bangers", system-ui;
   font-size: 25px;
@@ -204,6 +207,11 @@ header::after {
   flex-direction: column;
   align-items: center;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .numero {
@@ -245,7 +253,6 @@ p,
 .btn-funciona {
   margin-top: 20px;
   position: relative;
-  display: inline-block;
 
   button {
     background: #ffbb00;
@@ -276,7 +283,9 @@ p,
   margin-top: 10px;
 }
 
-.title-funciona2 {
+/* CATÁLOGO */
+
+.title-catalogo {
   font-family: "Bangers", system-ui;
   font-size: 25px;
   -webkit-text-stroke-width: 0.1px;
@@ -307,7 +316,7 @@ p,
   width: 300px;
   height: 300px;
   border: 3px solid #14141a;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: 4px 4px 0 #14141a;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -331,12 +340,16 @@ p,
 }
 
 .azul {
+  text-align: center;
   background: linear-gradient(to bottom, #1f3e8c 50%, white 50%);
 }
 
 .vermelho {
+  text-align: center;
   background: linear-gradient(to bottom, #c80004 50%, white 50%);
 }
+
+/* QUERO DOAR */
 
 .qrdoar {
   background: #1f3e8c;
@@ -371,7 +384,7 @@ p,
 
 .qr-btn {
   padding: 20px;
-  
+
   button {
     background: #ffbb00;
     color: white;
@@ -391,8 +404,220 @@ p,
       transform: translate(4px, 4px);
       box-shadow: 0 0 0 #14141a;
     }
+
+    &:active {
+      background-color: #bc8a00;
+    }
   }
 }
+
+/* MODAL DOAÇÃO */
+
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.modal-overlay.ativo {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-doacao {
+  width: 80%;
+  height: 90%;
+  background: #fbf9f0;
+  border: 6px solid #000;
+  box-shadow: 10px 10px 0 #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(100vh);
+}
+
+.modal-overlay.ativo .modal-doacao {
+  animation: entrada 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes entrada {
+  from {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-overlay.fechando .modal-doacao {
+  animation: saidaModal 0.7s ease-in forwards;
+}
+
+@keyframes saidaModal {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+}
+
+.fechar-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #b71c20;
+  color: #fff;
+  border: 4px solid #000;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #000;
+  z-index: 10;
+
+  span {
+    transition: 0.3s;
+    padding: 10px;
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+/* ETAPAS */
+
+.etapa {
+  display: none;
+}
+
+.etapa.ativa {
+  display: block;
+}
+
+.modal-doacao h2 {
+  color: #2b58c4;
+  font-family: "Bangers", system-ui;
+  font-size: 45px;
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: black;
+}
+
+.descricao-modal {
+  margin: 20px 0px 30px 0px;
+  font-size: 17px;
+  color: #333;
+}
+
+/* PRIMEIRA ETAPA */
+
+.opcoes-doacao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.card-doacao {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  width: 600px;
+  height: 350px;
+  background: white;
+  border: 5px solid #000;
+  box-shadow: 8px 8px 0 #000;
+
+  h3 {
+    font-family: "Bangers", system-ui;
+    font-size: 40px;
+    color: white;
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: black;
+  }
+
+  p {
+    margin: 0 0 20px;
+    font-size: 16px;
+    color: black;
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+.titulo-modal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.btn-missao {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid black;
+  font-family: "Poppins" sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #fff;
+}
+
+.btn-azul {
+  background-color: #1f3e8c;
+
+  &:hover {
+    background-color: #151c2f;
+  }
+}
+
+.btn-amarelo {
+  background-color: #ffbb00;
+
+  &:hover {
+    background-color: #b68500;
+  }
+}
+
+.frase-final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 60px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+
+  img {
+    width: 80px;
+  }
+}
+
+
+/* FOOTER */
 
 footer {
   background-color: black;
@@ -512,7 +737,6 @@ footer {
   }
 }
 
-
 .infos {
   display: flex;
   flex-direction: column;
@@ -539,7 +763,6 @@ footer {
     }
   }
 }
-
 
 .grandes {
   background-color: black;
