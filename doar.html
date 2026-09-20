@@ -259,7 +259,6 @@
         </button>
 
         <!-- ETAPA 1: ESCOLHA -->
-
         <div class="etapa ativa" id="etapaEscolha">
           <h2>ESCOLHA SUA MISSÃO!</h2>
 
@@ -270,7 +269,6 @@
 
           <div class="opcoes-doacao">
             <!-- DOAR -->
-
             <div class="card-doacao">
               <div class="titulo-modal">
                 <h3>DOAR UM PRODUTO!</h3>
@@ -292,7 +290,6 @@
             </div>
 
             <!-- COMPRAR -->
-
             <div class="card-doacao">
               <div class="titulo-modal">
                 <h3>COMPRAR PARA DOAR!</h3>
@@ -320,16 +317,323 @@
           </p>
         </div>
 
-        <div class="etapa ativa" id="etapaDoar">
-          <h1>FORMULÁRIO DE DOAÇÃO!</h1>
-          <p>Preencha as informações abaixo para registrar sua doação:</p>
+        <!-- ETAPA 2: FORMULÁRIO DE DOAÇÃO -->
+        <div class="etapa" id="etapaFormDoacao">
+          <div class="text-etapa">
+            <span class="btn-voltar" id="btnVoltarEscolha">← Voltar</span>
+          </div>
 
-          <div class="deseja"></div>
+          <h2 class="form-doacao">FORMULÁRIO DE DOAÇÃO!</h2>
+          <p class="descricao-modal">
+            Preencha as informações abaixo para registrar sua doação.
+          </p>
+
+          <form id="formDoacao">
+            <div class="campo">
+              <label for="nomeDoacao">Nome completo*</label>
+              <input
+                type="text"
+                id="nomeDoacao"
+                placeholder="Digite seu nome"
+                required
+              />
+            </div>
+
+            <div class="campo">
+              <label for="emailDoacao">E-mail*</label>
+              <input
+                type="email"
+                id="emailDoacao"
+                placeholder="Digite seu e-mail"
+                required
+              />
+            </div>
+
+            <div class="campo">
+              <label for="telefoneDoacao">Telefone*</label>
+              <input
+                type="tel"
+                id="telefoneDoacao"
+                placeholder="(00) 00000-0000"
+                required
+              />
+            </div>
+            <div class="campo">
+              <label for="tipoDoacao"
+                >O que você deseja doar para a AVANTE?*</label
+              >
+              <select id="tipoDoacao" required>
+                <option value="brinquedo">BRINQUEDO</option>
+                <option value="">CUBO MÁGICO</option>
+                <option value="">URSINHO</option>
+                <option value="">CARRINHO</option>
+                <option value="">BOLA FUTEBOL</option>
+                <option value="">BOLA VÔLEI</option>
+                <option value="">BOLA BASQUETE</option>
+                <option value="">QUEBRA-CABEÇA</option>
+                <option value="">BONECA</option>
+                <option value="">BANCO IMOBILIÁRIO</option>
+                <option value="">LAPTOP</option>
+                <option value="">CARRINHO CONTROLE REMOTO</option>
+                <option value="">BICICLETA</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label>Quantidade*</label>
+              <div class="stepper">
+                <button type="button" class="stepper-btn" id="qtdMenos">
+                  −
+                </button>
+                <input type="text" id="qtdValor" value="1" readonly />
+                <button type="button" class="stepper-btn" id="qtdMais">
+                  +
+                </button>
+              </div>
+            </div>
+
+            <div class="campo">
+              <label>Qual o estado do produto?*</label>
+              <div class="estado-opcoes">
+                <label class="estado-opcao">
+                  <input
+                    type="radio"
+                    name="estadoProduto"
+                    value="novo"
+                    required
+                  />
+                  Novo
+                </label>
+                <label class="estado-opcao">
+                  <input
+                    type="radio"
+                    name="estadoProduto"
+                    value="pouco-usado"
+                  />
+                  Pouco usado
+                </label>
+                <label class="estado-opcao">
+                  <input type="radio" name="estadoProduto" value="bom-estado" />
+                  Usado em bom estado
+                </label>
+              </div>
+            </div>
+
+            <div class="campo">
+              <label
+                >Possui alguma foto do produto? Se sim anexe-a aqui
+                (opcional):</label
+              >
+              <label class="dropzone" for="fotoProduto" id="dropzoneFoto">
+                <span id="dropzoneTexto">+ Adicionar foto</span>
+              </label>
+              <input type="file" id="fotoProduto" accept="image/*" hidden />
+            </div>
+
+            <button type="submit" class="btn-etapa" id="btnContinuarDoacao">
+              CONTINUAR
+            </button>
+          </form>
         </div>
-        
+
+        <!-- ETAPA 2: FORMULÁRIO DE CONFIRMAÇÃO -->
+        <div class="etapa" id="etapaConfirmacao">
+          <div class="confirmacao-form" id="confirmacaoForm">
+            <div class="text-etapa">
+              <span class="btn-voltar" id="btnVoltarForm">← Voltar</span>
+            </div>
+
+            <h2 class="form-doacao">FORMULÁRIO DE DOAÇÃO!</h2>
+            <p class="descricao-modal">Confirme suas informações</p>
+
+            <div class="confirmacao-conteudo">
+              <div class="localizacao-info">
+                <h3>Nossa localização:</h3>
+                <p>
+                  R. Sebastião Morgato, 151 - Cachoeira dos Mendes, Jaboticabal
+                  - SP
+                </p>
+                <p>Telefone: (16) 3204-3060</p>
+                <p>Seg a Sex: 07:00 – 18:00</p>
+              </div>
+
+              <div class="mapa-embed">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.3476411031425!2d-48.3040667239795!3d-21.25770238102457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b96b83d82448fd%3A0x46e60858373c9de9!2sSesi!5e0!3m2!1spt-BR!2sbr!4v1789928713079!5m2!1spt-BR!2sbr"
+                  width="600"
+                  height="450"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                ></iframe>
+              </div>
+            </div>
+
+            <button type="button" class="btn-etapa" id="btnConfirmarDoacao">
+              CONFIRMAR
+            </button>
+          </div>
+
+          <!-- MENSAGEM FINAL: exibida no lugar do formulário acima, dentro desta mesma última etapa -->
+          <div class="confirmacao-obrigado" id="confirmacaoObrigadoDoacao">
+            <h2 class="form-doacao texto-centralizado">
+              OBRIGADO PELA DOAÇÃO!
+            </h2>
+
+            <div class="icone-sucesso">
+              <svg viewBox="0 0 24 24" width="70" height="70">
+                <polyline
+                  points="4,13 10,19 20,6"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- ETAPA 3: FORMULÁRIO DE COMPRA -->
+        <div class="etapa" id="etapaFormCompra">
+          <div class="text-etapa">
+            <span class="btn-voltar" id="btnVoltarCompra">← Voltar</span>
+          </div>
+
+          <h2 class="form-compra">FORMULÁRIO DE DOAÇÃO!</h2>
+          <p class="descricao-modal">
+            Preencha as informações abaixo para registrar sua doação.
+          </p>
+
+          <form id="formCompra">
+            <div class="campo">
+              <label for="nomeCompra">Nome completo*</label>
+              <input
+                type="text"
+                id="nomeDoacao"
+                placeholder="Digite seu nome"
+                required
+              />
+            </div>
+
+            <div class="campo">
+              <label for="emailCompra">E-mail*</label>
+              <input
+                type="email"
+                id="emailDoacao"
+                placeholder="Digite seu e-mail"
+                required
+              />
+            </div>
+
+            <div class="campo">
+              <label for="telefoneCompra">Telefone*</label>
+              <input
+                type="tel"
+                id="telefoneDoacao"
+                placeholder="(00) 00000-0000"
+                required
+              />
+            </div>
+            <div class="campo">
+              <label for="tipoDoacao"
+                >O que você deseja doar para a AVANTE?*</label
+              >
+              <select id="presenteCompra" required>
+                <option value="brinquedo">BRINQUEDO</option>
+                <option value="">CUBO MÁGICO R$ 15,00</option>
+                <option value="">URSINHO R$ 20,00</option>
+                <option value="">CARRINHO R$ 25,00</option>
+                <option value="">BOLA FUTEBOL R$ 30,00</option>
+                <option value="">BOLA VÔLEI R$ 30,00</option>
+                <option value="">BOLA BASQUETE R$ 30,00</option>
+                <option value="">QUEBRA-CABEÇA R$ 40,00</option>
+                <option value="">BONECA R$ 50,00</option>
+                <option value="">BANCO IMOBILIÁRIO R$ 100,00</option>
+                <option value="">LAPTOP R$ 150,00</option>
+                <option value="">CARRINHO CONTROLE REMOTO R$ 180,00</option>
+                <option value="">BICICLETA R$ 300,00</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label>Quantidade*</label>
+              <div class="stepper">
+                <button type="button" class="stepper-btn" id="qtdMenosCompra">
+                  −
+                </button>
+                <input type="text" id="qtdValorCompra" value="1" readonly />
+                <button type="button" class="stepper-btn" id="qtdMaisCompra">
+                  +
+                </button>
+              </div>
+            </div>
+
+            <div class="campo">
+              <label>Pagamento somente via Pix*</label>
+              <div class="estado-opcoes">
+                <label class="estado-opcao">
+                  <input
+                    type="radio"
+                    name="estadoProduto"
+                    value="novo"
+                    required
+                  />
+                  <img src="img/pix.png" alt="">
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-etapa" id="btnContinuarDoacao">
+              CONTINUAR
+            </button>
+          </form>
+        </div>
+
+        <!-- ETAPA 3: FORMULÁRIO DE CONFIRMAÇÃO -->
+        <div class="etapa" id="etapaConfirmacaoCompra">
+          <div class="confirmacao-form" id="confirmacaoFormCompra">
+            <div class="text-etapa">
+              <span class="btn-voltar" id="btnVoltarFormCompra">← Voltar</span>
+            </div>
+
+            <h2 class="form-doacao">FORMULÁRIO DE DOAÇÃO!</h2>
+            <p class="descricao-modal">Realize o pagamento:</p>
+
+            <div class="qrcode">
+              <img src="img/qrcode.jpeg" alt="qrcode">
+              <p>Qr Code para pagamento PIX</p>
+            </div>
+
+            <button type="button" class="btn-etapa" id="btnConfirmarCompra">
+              CONFIRMAR PAGAMENTO
+            </button>
+          </div>
+
+          <!-- MENSAGEM FINAL: exibida no lugar do formulário acima, dentro desta mesma última etapa -->
+          <div class="confirmacao-obrigado" id="confirmacaoObrigadoCompra">
+            <h2 class="form-doacao texto-centralizado">
+              OBRIGADO PELA DOAÇÃO!
+            </h2>
+
+            <div class="icone-sucesso">
+              <svg viewBox="0 0 24 24" width="70" height="70">
+                <polyline
+                  points="4,13 10,19 20,6"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    
 
     <!-- FOOTER -->
 
@@ -370,4 +674,3 @@
     <script src="doar.js"></script>
   </body>
 </html>
-
