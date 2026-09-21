@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Doar</title>
@@ -8,669 +9,353 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet" />
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <link rel="icon" type="image/png" href="img/AVANTE-Icon.png" />
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- HEADER -->
     <header>
-      <img src="img/logo.png" alt="logo" />
-      <nav>
-        <a href="#INICIO">INÍCIO</a>
-        <a href="#DOAR">DOAR</a>
-        <a href="#CONTATO">CONTATO</a>
-        <a href="#CAMPANHA">CAMPANHA</a>
-      </nav>
-      <button>DOAR AGORA</button>
+        <img src="img/logo.png" alt="logo" />
+
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <nav id="menuNav">
+            <button class="fechar-menu" id="btnFecharMenu" type="button" aria-label="Fechar menu">×</button>
+
+            <a href="index.html">INÍCIO</a>
+            <a href="#">DOAR</a>
+            <a href="contato.html">CONTATO</a>
+            <a href="campanha.html">CAMPANHA</a>
+
+            <button class="btn-menu-doar" id="btnMenuDoar" type="button">DOAR AGORA</button>
+        </nav>
+        <button>DOAR AGORA</button>
+        <button class="hamburger" id="btnHamburger" type="button" aria-label="Abrir menu" aria-expanded="false"
+            aria-controls="menuNav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
     <!-- ALERT -->
 
     <div class="alert">
-      <div class="alert-itens">
-        <div class="alert-content">
-          <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
-          <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
-          <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
-          <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
-          <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
-          <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
-        </div>
+        <div class="alert-itens">
+            <div class="alert-content">
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+            </div>
 
-        <div class="alert-content">
-          <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
-          <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
-          <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
-          <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
-          <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
-          <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+            <div class="alert-content">
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+            </div>
         </div>
-      </div>
     </div>
 
     <!-- HERO -->
 
     <div class="hero">
-      <div class="hero-texts">
-        <h1>HERÓIS NÃO PRECISAM DE <br />SUPERPODERES.</h1>
-        <p>
-          Faça a diferença. <br />Escolha um brinquedo e ajude uma criança a
-          começar uma nova aventura.
-        </p>
-      </div>
+        <div class="hero-texts">
+            <h1>HERÓIS NÃO PRECISAM DE <br />SUPERPODERES.</h1>
+            <p>
+                Faça a diferença. <br />Escolha um brinquedo e ajude uma criança a
+                começar uma nova aventura.
+            </p>
+        </div>
 
-      <div class="polaroid">
-        <img src="img/Polaroid-Capião-América.jpeg" alt="" />
-      </div>
+        <div class="polaroid">
+            <img src="img/Polaroid-Capião-América.jpeg" alt="" />
+        </div>
     </div>
 
     <div class="todo">
-      <h3>TODO BRINQUEDO PODE SER O COMEÇO DE UMA AVENTURA!</h3>
+        <h3>TODO BRINQUEDO PODE SER O COMEÇO DE UMA AVENTURA!</h3>
     </div>
 
     <!-- COMO FUNCIONA? -->
 
     <div class="title-funciona">
-      <h2>COMO FUNCIONA?</h2>
-      <h2 class="h2span">Sua missão começa com um clique.</h2>
+        <h2>COMO FUNCIONA?</h2>
+        <h2 class="h2span">Sua missão começa com um clique.</h2>
     </div>
 
     <div class="Funciona">
-      <div class="cardf">
-        <div class="numero">
-          <span>1</span>
-          <h3>COMECE A MISSÃO</h3>
+        <div class="cardf">
+            <div class="numero">
+                <span>1</span>
+                <h3>COMECE A MISSÃO</h3>
+            </div>
+            <p>
+                Clique em "Quero doar agora!" e dê o primeiro passo para transformar
+                um gesto simples em uma grande ação.
+            </p>
+            <div class="btn-funciona">
+                <button>QUERO DOAR AGORA!</button>
+                <img src="img/Mouse.png" alt="Mouse" />
+            </div>
         </div>
-        <p>
-          Clique em "Quero doar agora!" e dê o primeiro passo para transformar
-          um gesto simples em uma grande ação.
-        </p>
-        <div class="btn-funciona">
-          <button>QUERO DOAR AGORA!</button>
-          <img src="img/Mouse.png" alt="Mouse" />
+
+        <img src="img/Seta.png" alt="Seta" class="seta" />
+
+        <div class="cardf">
+            <div class="numero">
+                <span>2</span>
+                <h3>ESCOLHA A MISSÃO</h3>
+            </div>
+            <p>
+                Você decide como quer contribuir: doando ou comprando produtos para
+                apoiar a nossa campanha.
+            </p>
+
+            <div class="cards-funciona">
+                <img src="img/DOAR.png" alt="DOAR" />
+                <img src="img/COMPRAR.png" alt="COMPRAR" />
+            </div>
         </div>
-      </div>
 
-      <img src="img/Seta.png" alt="Seta" />
+        <img src="img/Seta.png" alt="Seta" class="seta" />
 
-      <div class="cardf">
-        <div class="numero">
-          <span>2</span>
-          <h3>ESCOLHA A MISSÃO</h3>
+        <div class="cardf">
+            <div class="numero">
+                <span>3</span>
+                <h3>PREPARE A CONTRIBUIÇÃO</h3>
+            </div>
+            <p>
+                Escolheu o que doar? Preencha o formulário com as informações
+                necessárias da para sua doação.
+            </p>
+
+            <div class="cards-funciona">
+                <img src="img/_!.png" alt="DOAR" />
+            </div>
         </div>
-        <p>
-          Você decide como quer contribuir: doando ou comprando produtos para
-          apoiar a nossa campanha.
-        </p>
 
-        <div class="cards-funciona">
-          <img src="img/DOAR.png" alt="DOAR" />
-          <img src="img/COMPRAR.png" alt="COMPRAR" />
+        <img src="img/Seta.png" alt="Seta" class="seta" />
+
+        <div class="cardf">
+            <div class="numero">
+                <span>4</span>
+                <h3>MISSÃO CUMPRIDA!</h3>
+            </div>
+            <p>
+                Confira o resumo da sua doação, confirme sua ação e pronto! Você acaba
+                de fazer parte da missão AVANTE.
+            </p>
+
+            <div class="logo-funciona">
+                <img src="img/logo.png" alt="" />
+            </div>
         </div>
-      </div>
-
-      <img src="img/Seta.png" alt="Seta" />
-
-      <div class="cardf">
-        <div class="numero">
-          <span>3</span>
-          <h3>PREPARE A CONTRIBUIÇÃO</h3>
-        </div>
-        <p>
-          Escolheu o que doar? Preencha o formulário com as informações
-          necessárias da para sua doação.
-        </p>
-
-        <div class="cards-funciona">
-          <img src="img/_!.png" alt="DOAR" />
-        </div>
-      </div>
-
-      <img src="img/Seta.png" alt="Seta" />
-
-      <div class="cardf">
-        <div class="numero">
-          <span>4</span>
-          <h3>MISSÃO CUMPRIDA!</h3>
-        </div>
-        <p>
-          Confira o resumo da sua doação, confirme sua ação e pronto! Você acaba
-          de fazer parte da missão AVANTE.
-        </p>
-
-        <div class="logo-funciona">
-          <img src="img/logo.png" alt="" />
-        </div>
-      </div>
     </div>
 
     <!-- BRINQUEDOS -->
 
     <div class="title-catalogo">
-      <h2>CATÁLOGO</h2>
-      <h2 class="h2span">ESCOLHA SUA AVENTURA!</h2>
+        <h2>CATÁLOGO</h2>
+        <h2 class="h2span">ESCOLHA SUA AVENTURA!</h2>
     </div>
 
     <div class="brinquedos">
-      <div class="brinquedo azul">
-        <img src="img/cubo.png" alt="cubo" />
-        <h2>CUBO MÁGICO</h2>
-        <h3>R$ 15,00</h3>
-      </div>
+        <div class="brinquedo azul">
+            <img src="img/cubo.png" alt="cubo" />
+            <h2>CUBO MÁGICO</h2>
+            <h3>R$ 15,00</h3>
+        </div>
 
-      <div class="brinquedo vermelho">
-        <img src="img/ursinho.png" alt="ursinho" />
-        <h2>URSINHO</h2>
-        <h3>R$ 20,00</h3>
-      </div>
+        <div class="brinquedo vermelho">
+            <img src="img/ursinho.png" alt="ursinho" />
+            <h2>URSINHO</h2>
+            <h3>R$ 20,00</h3>
+        </div>
 
-      <div class="brinquedo azul">
-        <img src="img/carrinho.png" alt="ursinho" />
-        <h2>CARRINHO</h2>
-        <h3>R$ 25,00</h3>
-      </div>
+        <div class="brinquedo azul">
+            <img src="img/carrinho.png" alt="ursinho" />
+            <h2>CARRINHO</h2>
+            <h3>R$ 25,00</h3>
+        </div>
 
-      <div class="brinquedo vermelho">
-        <img src="img/futebol.png" alt="futebol" />
-        <h2>BOLA FUTEBOL</h2>
-        <h3>R$ 30,00</h3>
-      </div>
+        <div class="brinquedo vermelho">
+            <img src="img/futebol.png" alt="futebol" />
+            <h2>BOLA FUTEBOL</h2>
+            <h3>R$ 30,00</h3>
+        </div>
 
-      <div class="brinquedo azul">
-        <img src="img/volei.png" alt="volei" />
-        <h2>BOLA VÔLEI</h2>
-        <h3>R$ 30,00</h3>
-      </div>
+        <div class="brinquedo azul">
+            <img src="img/volei.png" alt="volei" />
+            <h2>BOLA VÔLEI</h2>
+            <h3>R$ 30,00</h3>
+        </div>
 
-      <div class="brinquedo vermelho">
-        <img src="img/basquete.png" alt="basquete" />
-        <h2>BOLA BASQUETE</h2>
-        <h3>R$ 30,00</h3>
-      </div>
+        <div class="brinquedo vermelho">
+            <img src="img/basquete.png" alt="basquete" />
+            <h2>BOLA BASQUETE</h2>
+            <h3>R$ 30,00</h3>
+        </div>
 
-      <div class="brinquedo azul">
-        <img src="img/quebra-cabeça.png" alt="quebra-cabeça" />
-        <h2>QUEBRA-CABEÇA</h2>
-        <h3>R$ 50,00</h3>
-      </div>
+        <div class="brinquedo azul">
+            <img src="img/quebra-cabeça.png" alt="quebra-cabeça" />
+            <h2>QUEBRA-CABEÇA</h2>
+            <h3>R$ 50,00</h3>
+        </div>
 
-      <div class="brinquedo vermelho">
-        <img src="img/boneca.png" alt="boneca" />
-        <h2>BONECA</h2>
-        <h3>R$ 50,00</h3>
-      </div>
+        <div class="brinquedo vermelho">
+            <img src="img/boneca.png" alt="boneca" />
+            <h2>BONECA</h2>
+            <h3>R$ 50,00</h3>
+        </div>
 
-      <div class="brinquedo azul">
-        <img src="img/banco-imobiliário.png" alt="banco-imobiliário" />
-        <h2>BANCO IMOBILIÁRIO</h2>
-        <h3>R$ 100,00</h3>
-      </div>
+        <div class="brinquedo azul">
+            <img src="img/banco-imobiliário.png" alt="banco-imobiliário" />
+            <h2>BANCO IMOBILIÁRIO</h2>
+            <h3>R$ 100,00</h3>
+        </div>
 
-      <div class="brinquedo vermelho">
-        <img src="img/laptop.png" alt="laptop" />
-        <h2>LAPTOP</h2>
-        <h3>R$ 150,00</h3>
-      </div>
+        <div class="brinquedo vermelho">
+            <img src="img/laptop.png" alt="laptop" />
+            <h2>LAPTOP</h2>
+            <h3>R$ 150,00</h3>
+        </div>
 
-      <div class="brinquedo azul">
-        <img
-          src="img/carrinho-controle-remoto.png"
-          alt="carrinho-controle-remoto"
-        />
-        <h2>
-          CARRINHO <br />
-          CONTROLE REMOTO
-        </h2>
-        <h3>R$ 180,00</h3>
-      </div>
+        <div class="brinquedo azul">
+            <img src="img/carrinho-controle-remoto.png" alt="carrinho-controle-remoto" />
+            <h2>
+                CARRINHO <br />
+                CONTROLE REMOTO
+            </h2>
+            <h3>R$ 180,00</h3>
+        </div>
 
-      <div class="brinquedo vermelho">
-        <img src="img/bike.png" alt="bike" />
-        <h2>BICICLETA</h2>
-        <h3>R$ 300,00</h3>
-      </div>
+        <div class="brinquedo vermelho">
+            <img src="img/bike.png" alt="bike" />
+            <h2>BICICLETA</h2>
+            <h3>R$ 300,00</h3>
+        </div>
     </div>
 
     <!-- QUERO DOAR -->
 
     <div class="qrdoar">
-      <div class="qr-texts">
-        <img src="img/Destaque.png" alt="destque" />
-        <h2>
-          Cada brinquedo doado é <br /><span>uma aventura que começa</span> na
-          vida de uma criança!
-        </h2>
-      </div>
+        <div class="qr-texts">
+            <img src="img/Destaque.png" alt="destque" />
+            <h2>
+                Cada brinquedo doado é <br /><span>uma aventura que começa</span> na
+                vida de uma criança!
+            </h2>
+        </div>
 
-      <div class="qr-btn">
-        <button id="abrirModal">QUERO DOAR AGORA!</button>
-      </div>
+        <div class="qr-btn">
+            <button id="abrirModal">QUERO DOAR AGORA!</button>
+        </div>
     </div>
 
     <!-- MODAL DOAÇÃO -->
     <div class="modal-overlay" id="modal">
-      <div class="modal-doacao">
-        <button class="fechar-modal" id="fecharModal" type="button">
-          <span>×</span>
-        </button>
-
-        <!-- ETAPA 1: ESCOLHA -->
-        <div class="etapa ativa" id="etapaEscolha">
-          <h2>ESCOLHA SUA MISSÃO!</h2>
-
-          <p class="descricao-modal">
-            Existem duas formas de ajudar uma criança a sorrir. Escolha como
-            você quer ser um herói!
-          </p>
-
-          <div class="opcoes-doacao">
-            <!-- DOAR -->
-            <div class="card-doacao">
-              <div class="titulo-modal">
-                <h3>DOAR UM PRODUTO!</h3>
-                <img src="img/gift.png" alt="gift" />
-              </div>
-
-              <p>
-                Você já tem um brinquedo em bom estado? Leve ele até um dos
-                nossos pontos de coleta.
-              </p>
-
-              <button
-                class="btn-missao btn-azul"
-                id="btnDoarProduto"
-                type="button"
-              >
-                QUERO DOAR
-              </button>
-            </div>
-
-            <!-- COMPRAR -->
-            <div class="card-doacao">
-              <div class="titulo-modal">
-                <h3>COMPRAR PARA DOAR!</h3>
-                <img src="img/money.png" alt="money" />
-              </div>
-
-              <p>
-                Escolha um brinquedo do nosso catálogo e nós cuidaremos para que
-                ele chegue até uma criança.
-              </p>
-
-              <button
-                class="btn-missao btn-amarelo"
-                id="btnComprarProduto"
-                type="button"
-              >
-                ESCOLHER PRESENTE
-              </button>
-            </div>
-          </div>
-
-          <p class="frase-final">
-            UMA MISSÃO. UM GESTO. UM SORRISO.
-            <img src="img/logo.png" alt="" />
-          </p>
-        </div>
-
-        <!-- ETAPA 2: FORMULÁRIO DE DOAÇÃO -->
-        <div class="etapa" id="etapaFormDoacao">
-          <div class="text-etapa">
-            <span class="btn-voltar" id="btnVoltarEscolha">← Voltar</span>
-          </div>
-
-          <h2 class="form-doacao">FORMULÁRIO DE DOAÇÃO!</h2>
-          <p class="descricao-modal">
-            Preencha as informações abaixo para registrar sua doação.
-          </p>
-
-          <form id="formDoacao">
-            <div class="campo">
-              <label for="nomeDoacao">Nome completo*</label>
-              <input
-                type="text"
-                id="nomeDoacao"
-                placeholder="Digite seu nome"
-                required
-              />
-            </div>
-
-            <div class="campo">
-              <label for="emailDoacao">E-mail*</label>
-              <input
-                type="email"
-                id="emailDoacao"
-                placeholder="Digite seu e-mail"
-                required
-              />
-            </div>
-
-            <div class="campo">
-              <label for="telefoneDoacao">Telefone*</label>
-              <input
-                type="tel"
-                id="telefoneDoacao"
-                placeholder="(00) 00000-0000"
-                required
-              />
-            </div>
-            <div class="campo">
-              <label for="tipoDoacao"
-                >O que você deseja doar para a AVANTE?*</label
-              >
-              <select id="tipoDoacao" required>
-                <option value="brinquedo">BRINQUEDO</option>
-                <option value="">CUBO MÁGICO</option>
-                <option value="">URSINHO</option>
-                <option value="">CARRINHO</option>
-                <option value="">BOLA FUTEBOL</option>
-                <option value="">BOLA VÔLEI</option>
-                <option value="">BOLA BASQUETE</option>
-                <option value="">QUEBRA-CABEÇA</option>
-                <option value="">BONECA</option>
-                <option value="">BANCO IMOBILIÁRIO</option>
-                <option value="">LAPTOP</option>
-                <option value="">CARRINHO CONTROLE REMOTO</option>
-                <option value="">BICICLETA</option>
-              </select>
-            </div>
-
-            <div class="campo">
-              <label>Quantidade*</label>
-              <div class="stepper">
-                <button type="button" class="stepper-btn" id="qtdMenos">
-                  −
-                </button>
-                <input type="text" id="qtdValor" value="1" readonly />
-                <button type="button" class="stepper-btn" id="qtdMais">
-                  +
-                </button>
-              </div>
-            </div>
-
-            <div class="campo">
-              <label>Qual o estado do produto?*</label>
-              <div class="estado-opcoes">
-                <label class="estado-opcao">
-                  <input
-                    type="radio"
-                    name="estadoProduto"
-                    value="novo"
-                    required
-                  />
-                  Novo
-                </label>
-                <label class="estado-opcao">
-                  <input
-                    type="radio"
-                    name="estadoProduto"
-                    value="pouco-usado"
-                  />
-                  Pouco usado
-                </label>
-                <label class="estado-opcao">
-                  <input type="radio" name="estadoProduto" value="bom-estado" />
-                  Usado em bom estado
-                </label>
-              </div>
-            </div>
-
-            <div class="campo">
-              <label
-                >Possui alguma foto do produto? Se sim anexe-a aqui
-                (opcional):</label
-              >
-              <label class="dropzone" for="fotoProduto" id="dropzoneFoto">
-                <span id="dropzoneTexto">+ Adicionar foto</span>
-              </label>
-              <input type="file" id="fotoProduto" accept="image/*" hidden />
-            </div>
-
-            <button type="submit" class="btn-etapa" id="btnContinuarDoacao">
-              CONTINUAR
+        <div class="modal-doacao">
+            <button class="fechar-modal" id="fecharModal" type="button">
+                <span>×</span>
             </button>
-          </form>
-        </div>
 
-        <!-- ETAPA 2: FORMULÁRIO DE CONFIRMAÇÃO -->
-        <div class="etapa" id="etapaConfirmacao">
-          <div class="confirmacao-form" id="confirmacaoForm">
-            <div class="text-etapa">
-              <span class="btn-voltar" id="btnVoltarForm">← Voltar</span>
-            </div>
+            <!-- ETAPA 1: ESCOLHA -->
+            <div class="etapa ativa" id="etapaEscolha">
+                <h2>ESCOLHA SUA MISSÃO!</h2>
 
-            <h2 class="form-doacao">FORMULÁRIO DE DOAÇÃO!</h2>
-            <p class="descricao-modal">Confirme suas informações</p>
-
-            <div class="confirmacao-conteudo">
-              <div class="localizacao-info">
-                <h3>Nossa localização:</h3>
-                <p>
-                  R. Sebastião Morgato, 151 - Cachoeira dos Mendes, Jaboticabal
-                  - SP
+                <p class="descricao-modal">
+                    Existem duas formas de ajudar uma criança a sorrir. Escolha como
+                    você quer ser um herói!
                 </p>
-                <p>Telefone: (16) 3204-3060</p>
-                <p>Seg a Sex: 07:00 – 18:00</p>
-              </div>
 
-              <div class="mapa-embed">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.3476411031425!2d-48.3040667239795!3d-21.25770238102457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b96b83d82448fd%3A0x46e60858373c9de9!2sSesi!5e0!3m2!1spt-BR!2sbr!4v1789928713079!5m2!1spt-BR!2sbr"
-                  width="600"
-                  height="450"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                ></iframe>
-              </div>
+                <div class="opcoes-doacao">
+                    <!-- DOAR -->
+                    <div class="card-doacao">
+                        <div class="titulo-modal">
+                            <h3>DOAR UM PRODUTO!</h3>
+                            <img src="img/gift.png" alt="gift" />
+                        </div>
+
+                        <p>
+                            Você já tem um brinquedo em bom estado? Leve ele até um dos
+                            nossos pontos de coleta.
+                        </p>
+
+
+                        <a href="qrdoar.html"><button class="btn-missao btn-azul">QUERO DOAR</button></a>
+
+                    </div>
+
+                    <!-- COMPRAR -->
+                    <div class="card-doacao">
+                        <div class="titulo-modal">
+                            <h3>COMPRAR PARA DOAR!</h3>
+                            <img src="img/money.png" alt="money" />
+                        </div>
+
+                        <p>
+                            Escolha um brinquedo do nosso catálogo e nós cuidaremos para que
+                            ele chegue até uma criança.
+                        </p>
+
+
+                        <a href="presente.html"><button class="btn-missao btn-amarelo">ESCOLHER PRESENTE</button></a>
+                    </div>
+                </div>
+
+                <p class="frase-final">
+                    UMA MISSÃO. UM GESTO. UM SORRISO.
+                    <img src="img/logo.png" alt="" />
+                </p>
             </div>
-
-            <button type="button" class="btn-etapa" id="btnConfirmarDoacao">
-              CONFIRMAR
-            </button>
-          </div>
-
-          <!-- MENSAGEM FINAL: exibida no lugar do formulário acima, dentro desta mesma última etapa -->
-          <div class="confirmacao-obrigado" id="confirmacaoObrigadoDoacao">
-            <h2 class="form-doacao texto-centralizado">
-              OBRIGADO PELA DOAÇÃO!
-            </h2>
-
-            <div class="icone-sucesso">
-              <svg viewBox="0 0 24 24" width="70" height="70">
-                <polyline
-                  points="4,13 10,19 20,6"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-          </div>
         </div>
-
-        <!-- ETAPA 3: FORMULÁRIO DE COMPRA -->
-        <div class="etapa" id="etapaFormCompra">
-          <div class="text-etapa">
-            <span class="btn-voltar" id="btnVoltarCompra">← Voltar</span>
-          </div>
-
-          <h2 class="form-compra">FORMULÁRIO DE DOAÇÃO!</h2>
-          <p class="descricao-modal">
-            Preencha as informações abaixo para registrar sua doação.
-          </p>
-
-          <form id="formCompra">
-            <div class="campo">
-              <label for="nomeCompra">Nome completo*</label>
-              <input
-                type="text"
-                id="nomeDoacao"
-                placeholder="Digite seu nome"
-                required
-              />
-            </div>
-
-            <div class="campo">
-              <label for="emailCompra">E-mail*</label>
-              <input
-                type="email"
-                id="emailDoacao"
-                placeholder="Digite seu e-mail"
-                required
-              />
-            </div>
-
-            <div class="campo">
-              <label for="telefoneCompra">Telefone*</label>
-              <input
-                type="tel"
-                id="telefoneDoacao"
-                placeholder="(00) 00000-0000"
-                required
-              />
-            </div>
-            <div class="campo">
-              <label for="tipoDoacao"
-                >O que você deseja doar para a AVANTE?*</label
-              >
-              <select id="presenteCompra" required>
-                <option value="brinquedo">BRINQUEDO</option>
-                <option value="">CUBO MÁGICO R$ 15,00</option>
-                <option value="">URSINHO R$ 20,00</option>
-                <option value="">CARRINHO R$ 25,00</option>
-                <option value="">BOLA FUTEBOL R$ 30,00</option>
-                <option value="">BOLA VÔLEI R$ 30,00</option>
-                <option value="">BOLA BASQUETE R$ 30,00</option>
-                <option value="">QUEBRA-CABEÇA R$ 40,00</option>
-                <option value="">BONECA R$ 50,00</option>
-                <option value="">BANCO IMOBILIÁRIO R$ 100,00</option>
-                <option value="">LAPTOP R$ 150,00</option>
-                <option value="">CARRINHO CONTROLE REMOTO R$ 180,00</option>
-                <option value="">BICICLETA R$ 300,00</option>
-              </select>
-            </div>
-
-            <div class="campo">
-              <label>Quantidade*</label>
-              <div class="stepper">
-                <button type="button" class="stepper-btn" id="qtdMenosCompra">
-                  −
-                </button>
-                <input type="text" id="qtdValorCompra" value="1" readonly />
-                <button type="button" class="stepper-btn" id="qtdMaisCompra">
-                  +
-                </button>
-              </div>
-            </div>
-
-            <div class="campo">
-              <label>Pagamento somente via Pix*</label>
-              <div class="estado-opcoes">
-                <label class="estado-opcao">
-                  <input
-                    type="radio"
-                    name="estadoProduto"
-                    value="novo"
-                    required
-                  />
-                  <img src="img/pix.png" alt="">
-                </label>
-              </div>
-            </div>
-
-            <button type="submit" class="btn-etapa" id="btnContinuarDoacao">
-              CONTINUAR
-            </button>
-          </form>
-        </div>
-
-        <!-- ETAPA 3: FORMULÁRIO DE CONFIRMAÇÃO -->
-        <div class="etapa" id="etapaConfirmacaoCompra">
-          <div class="confirmacao-form" id="confirmacaoFormCompra">
-            <div class="text-etapa">
-              <span class="btn-voltar" id="btnVoltarFormCompra">← Voltar</span>
-            </div>
-
-            <h2 class="form-doacao">FORMULÁRIO DE DOAÇÃO!</h2>
-            <p class="descricao-modal">Realize o pagamento:</p>
-
-            <div class="qrcode">
-              <img src="img/qrcode.jpeg" alt="qrcode">
-              <p>Qr Code para pagamento PIX</p>
-            </div>
-
-            <button type="button" class="btn-etapa" id="btnConfirmarCompra">
-              CONFIRMAR PAGAMENTO
-            </button>
-          </div>
-
-          <!-- MENSAGEM FINAL: exibida no lugar do formulário acima, dentro desta mesma última etapa -->
-          <div class="confirmacao-obrigado" id="confirmacaoObrigadoCompra">
-            <h2 class="form-doacao texto-centralizado">
-              OBRIGADO PELA DOAÇÃO!
-            </h2>
-
-            <div class="icone-sucesso">
-              <svg viewBox="0 0 24 24" width="70" height="70">
-                <polyline
-                  points="4,13 10,19 20,6"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- FOOTER -->
 
     <footer>
-      <div class="logo">
-        <img src="img/logo.png" alt="logo" />
-        <p>Aqui, cada brinquedo doado começa uma nova história.</p>
-      </div>
-      <nav class="nav-footer">
-        <h3>LINKS RÁPIDOS</h3>
-        <a href="#">Início</a>
-        <a href="#">Doar</a>
-        <a href="#">Contato</a>
-        <a href="#">Campanha</a>
-      </nav>
-      <div class="cont">
-        <h3>CONTATO</h3>
-        <div class="link E-mail">
-          <img src="img/E-mail.png" alt="E-mail" class="E-mail" />
-          <p>avante@gmail.com</p>
+        <div class="logo">
+            <img src="img/logo.png" alt="logo" />
+            <p>Aqui, cada brinquedo doado começa uma nova história.</p>
         </div>
-        <div class="link Telefone">
-          <img src="img/Telefone.png" alt="Telefone" class="Telefone" />
-          <p>(16) 99999-9999</p>
+        <nav class="nav-footer">
+            <h3>LINKS RÁPIDOS</h3>
+            <a href="#">Início</a>
+            <a href="#">Doar</a>
+            <a href="#">Contato</a>
+            <a href="#">Campanha</a>
+        </nav>
+        <div class="cont">
+            <h3>CONTATO</h3>
+            <div class="link E-mail">
+                <img src="img/E-mail.png" alt="E-mail" class="E-mail" />
+                <a href="">avante@gmail.com</a>
+            </div>
+            <div class="link Telefone">
+                <img src="img/Telefone.png" alt="Telefone" class="Telefone" />
+                <p>(16) 99999-9999</p>
+            </div>
         </div>
-      </div>
-      <div class="infos">
-        <h3>INFOS</h3>
-        <a href="#">Política de privacidade</a>
-        <a href="#">Termos de uso</a>
-      </div>
+        <div class="infos">
+            <h3>INFOS</h3>
+            <a href="#">Política de privacidade</a>
+            <a href="#">Termos de uso</a>
+        </div>
     </footer>
     <div class="grandes">
-      <h2>“Grandes histórias começam com Pequenos gestos”</h2>
-      <p>© 2026 AVANTE</p>
+        <h2>“Grandes histórias começam com Pequenos gestos”</h2>
+        <p>© 2026 AVANTE</p>
     </div>
 
     <script src="doar.js"></script>
-  </body>
+</body>
+
 </html>

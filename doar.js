@@ -1,26 +1,54 @@
+// MENU HAMBÚRGUER
+
+const btnHamburger = document.getElementById("btnHamburger");
+const btnFecharMenu = document.getElementById("btnFecharMenu");
+const menuNav = document.getElementById("menuNav");
+const menuOverlay = document.getElementById("menuOverlay");
+const linksMenu = menuNav.querySelectorAll("a");
+
+// Abrir menu
+function abrirMenu() {
+  menuNav.classList.add("aberto");
+  menuOverlay.classList.add("aberto");
+  document.body.classList.add("menu-aberto");
+  btnHamburger.setAttribute("aria-expanded", "true");
+}
+
+// Fechar menu
+function fecharMenu() {
+  menuNav.classList.remove("aberto");
+  menuOverlay.classList.remove("aberto");
+  document.body.classList.remove("menu-aberto");
+  btnHamburger.setAttribute("aria-expanded", "false");
+}
+
+// Clique no hambúrguer
+btnHamburger.addEventListener("click", abrirMenu);
+
+// Clique no X
+btnFecharMenu.addEventListener("click", fecharMenu);
+
+// Clique no fundo escuro
+menuOverlay.addEventListener("click", fecharMenu);
+
+// Fecha o menu ao clicar em algum link
+linksMenu.forEach((link) => {
+  link.addEventListener("click", fecharMenu);
+});
+
+// Fecha o menu ao apertar ESC
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    fecharMenu();
+  }
+});
+
+// MODAL
+
 const abrirModal = document.getElementById("abrirModal");
 const fecharModal = document.getElementById("fecharModal");
 const modal = document.getElementById("modal");
 
-// =====================================
-// ETAPAS
-// =====================================
-
-const etapas = document.querySelectorAll(".etapa");
-
-// Função para trocar de etapa
-
-function mostrarEtapa(id) {
-  etapas.forEach((etapa) => {
-    etapa.classList.remove("ativa");
-  });
-
-  const etapaSelecionada = document.getElementById(id);
-
-  if (etapaSelecionada) {
-    etapaSelecionada.classList.add("ativa");
-  }
-}
 
 // =====================================
 // ABRIR MODAL
@@ -53,59 +81,7 @@ function fecharModalCompleto() {
 
 fecharModal.addEventListener("click", fecharModalCompleto);
 
-// =====================================
-// FLUXO "QUERO DOAR" (Formulário de Doação -> Confirmação -> Obrigado)
-// =====================================
-
-const btnDoarProduto = document.getElementById("btnDoarProduto");
-const btnVoltarEscolha = document.getElementById("btnVoltarEscolha");
-const btnVoltarForm = document.getElementById("btnVoltarForm");
-const formDoacao = document.getElementById("formDoacao");
-const btnConfirmarDoacao = document.getElementById("btnConfirmarDoacao");
-const confirmacaoForm = document.getElementById("confirmacaoForm");
-const confirmacaoObrigadoDoacao = document.getElementById("confirmacaoObrigadoDoacao");
-
-// Volta a última etapa para o estado de formulário (usado ao fechar/reabrir o modal)
-function resetarEtapaConfirmacao() {
-  confirmacaoForm.style.display = "";
-  confirmacaoObrigadoDoacao.classList.remove("ativa");
-}
-
-// Abre a etapa do formulário de doação
-btnDoarProduto.addEventListener("click", () => {
-  mostrarEtapa("etapaFormDoacao");
-});
-
-// Voltar da etapa de formulário para a escolha
-btnVoltarEscolha.addEventListener("click", () => {
-  mostrarEtapa("etapaEscolha");
-});
-
-// Voltar da etapa de confirmação para o formulário
-btnVoltarForm.addEventListener("click", () => {
-  mostrarEtapa("etapaFormDoacao");
-});
-
-// Envio do formulário (CONTINUAR) -> vai para a etapa de confirmação
-formDoacao.addEventListener("submit", (evento) => {
-  evento.preventDefault();
-  mostrarEtapa("etapaConfirmacao");
-});
-
-// Confirmar doação -> exibe "Obrigado pela Doação" na própria última etapa
-// e fecha o modal sozinho após 5 segundos, sem precisar clicar no X
-btnConfirmarDoacao.addEventListener("click", () => {
-  confirmacaoForm.style.display = "none";
-  confirmacaoObrigadoDoacao.classList.add("ativa");
-
-  temporizadorObrigado = setTimeout(() => {
-    fecharModalCompleto();
-  }, 5000);
-});
-
-// =====================================
-// STEPPER DE QUANTIDADE
-// =====================================
+// MAIS E MENOS
 
 const qtdMenos = document.getElementById("qtdMenos");
 const qtdMais = document.getElementById("qtdMais");
@@ -136,68 +112,4 @@ fotoProduto.addEventListener("change", () => {
   } else {
     dropzoneTexto.textContent = "+ Adicionar foto";
   }
-});
-
-// =====================================
-// FLUXO "ESCOLHER PRESENTE"
-// Formulário de Compra -> Confirmação -> Obrigado
-// =====================================
-
-const btnComprarProduto = document.getElementById("btnComprarProduto");
-const btnVoltarCompra = document.getElementById("btnVoltarCompra");
-const btnVoltarFormCompra = document.getElementById("btnVoltarFormCompra");
-const formCompra = document.getElementById("formCompra");
-const btnConfirmarCompra = document.getElementById("btnConfirmarCompra");
-const confirmacaoFormCompra = document.getElementById("confirmacaoFormCompra");
-const confirmacaoObrigadoCompra = document.getElementById("confirmacaoObrigadoCompra");
-
-// -------------------------------------
-// ESCOLHER PRESENTE
-// -------------------------------------
-
-btnComprarProduto.addEventListener("click", () => {
-  mostrarEtapa("etapaFormCompra");
-});
-
-// -------------------------------------
-// VOLTAR PARA ESCOLHA
-// -------------------------------------
-
-btnVoltarCompra.addEventListener("click", () => {
-  mostrarEtapa("etapaEscolha");
-});
-
-// -------------------------------------
-// FORMULÁRIO DE COMPRA
-// CONTINUAR -> CONFIRMAÇÃO
-// -------------------------------------
-
-formCompra.addEventListener("submit", (evento) => {
-  evento.preventDefault();
-
-  mostrarEtapa("etapaConfirmacaoCompra");
-});
-
-// -------------------------------------
-// VOLTAR PARA FORMULÁRIO
-// -------------------------------------
-
-btnVoltarFormCompra.addEventListener("click", () => {
-  mostrarEtapa("etapaFormCompra");
-});
-
-
-function resetarEtapaConfirmacao() {
-  confirmacaoForm.style.display = "";
-  confirmacaoObrigadoCompra.classList.remove("ativa");
-}
-
-
-btnConfirmarCompra.addEventListener("click", () => {
-  confirmacaoFormCompra.style.display = "none";
-  confirmacaoObrigadoCompra.classList.add("ativa");
-
-  temporizadorObrigado = setTimeout(() => {
-    fecharModalCompleto();
-  }, 5000);
 });
