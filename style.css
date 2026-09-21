@@ -2,14 +2,16 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 
-body{
+body {
 
-   background-image: url("img/Fundo.jpeg");
+    background-image: url("img/Fundo.jpeg");
 
 }
+
 /* font-family: "Poppins", sans-serif;
 font-family: "Bangers", system-ui;
 font-family: "Luckiest Guy", cursive; */
@@ -25,48 +27,91 @@ header {
     padding: 30px;
 
 
-nav {
-    
+    nav {
+
+        display: flex;
+        gap: 80px;
+
+
+        a {
+
+            font-family: "Luckiest Guy", cursive;
+            text-decoration: none;
+            color: black;
+            transition: width 0.25s ease;
+            font-size: 20px;
+
+
+            &:hover {
+                text-decoration: underline #E3272B 2px;
+                text-underline-offset: 6px;
+                color: #E3272B;
+            }
+        }
+
+    }
+
+
+    button {
+
+        background: #C80004;
+        color: white;
+        border: 3px solid #14141A;
+        box-shadow: 4px 4px 0 #14141A;
+        padding: 15px 30px;
+        font-family: "Bangers", system-ui;
+        font-size: 20px;
+        transition: transform .2s ease, box-shadow .2s ease;
+        cursor: pointer;
+
+
+        &:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 0 0 0 #14141A;
+        }
+    }
+}
+
+
+.alert {
+    width: 100%;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    border-left: 2px solid #000;
+    background-color: white;
+    color: #D33737;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+.alert-itens {
     display: flex;
-    gap: 80px;
+    width: max-content;
+    animation: passar 20s linear infinite;
+}
 
 
-a {
-    
-    font-family: "Luckiest Guy", cursive;
-    text-decoration: none;
-    color: black;
-    transition: width 0.25s ease;
-    font-size: 20px;
+.alert-content {
+    display: flex;
 
 
-    &:hover {
-        text-decoration: underline #E3272B 2px;
-        text-underline-offset: 6px;
-        color: #E3272B;
+    span {
+        padding-right: 40px;
     }
+}
+
+
+@keyframes passar {
+    from {
+        transform: translateX(0);
     }
 
-    }
 
-
-button {
-    
-    background: #C80004;
-    color: white;
-    border: 3px solid #14141A;
-    box-shadow: 4px 4px 0 #14141A;
-    padding: 15px 30px;
-    font-family: "Bangers", system-ui;
-    font-size: 20px;
-    transition: transform .2s ease, box-shadow .2s ease;
-    cursor: pointer;
-
-
-    &:hover {
-        transform: translate(4px, 4px);
-         box-shadow: 0 0 0 #14141A;
-    }
+    to {
+        transform: translateX(-50%);
     }
 }
 
@@ -101,17 +146,24 @@ header::after {
 }
 
 .hero {
+
+    background-image:
+     linear-gradient(to right, #D33737bf 0%, #D3373773 90%),
+        url("img/Fundo-Homem-Aranha.png");
+
+    background-size: cover;
+    background-position: center;
     background-color: #D33737;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     height: 500px;
-    background-image: url('img/Fundo-Homem-Aranha.png');
 }
 
 .hero-texts {
     padding: 100px;
+
     h1 {
         font-family: "Bangers", system-ui;
         -webkit-text-stroke-width: 0.3px;
@@ -131,9 +183,10 @@ header::after {
 }
 
 
-.polaroid{
-    img{
+.polaroid {
+    img {
         width: 65%;
+        
     }
 }
 
@@ -144,7 +197,7 @@ header::after {
     justify-content: center;
     background: #C80004;
     border: 3px solid #14141A;
-    box-shadow: 4px 4px 0 #14141A;  
+    box-shadow: 4px 4px 0 #14141A;
     -webkit-text-stroke-width: 0.3px;
     -webkit-text-stroke-color: black;
     color: white;
@@ -158,132 +211,654 @@ header::after {
 
 }
 
-.herois{
+.herois {
 
-   display: flex;
-   margin-top: 45px;
-   justify-content: center;
-   align-items: center;
+    display: flex;
+    margin-top: 45px;
+    justify-content: center;
+    align-items: center;
 
-  h1{
+    h1 {
 
-    font-family: "Bangers", system-ui;
-    font-size: 45px;
-    color: #C80004;
-    -webkit-text-stroke-width: 0.3px;
-    -webkit-text-stroke-color: black;
-   
-  }
+        font-family: "Bangers", system-ui;
+        font-size: 45px;
+        color: #C80004;
+        -webkit-text-stroke-width: 0.3px;
+        -webkit-text-stroke-color: black;
+
+    }
 
 }
 
-.cards{
-   
+
+.cards {
     display: flex;
     justify-content: center;
     gap: 40px;
     margin-top: 40px;
+}
 
-    .titulo{
-    
+
+/* CARD */
+.card {
+    width: 320px;
+    height: 220px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+
+/* PARTE QUE GIRA */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+
+/* QUANDO PASSAR O MOUSE */
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* FRENTE E VERSO */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    backface-visibility: hidden;
+}
+
+
+/* FRENTE */
+.card-front {
+    background-color: #2B58C4;
+    border: 3px solid black;
+    box-shadow: 7px 7px 0 black;
+    padding: 10px;
+}
+
+
+/* TÍTULO */
+.titulo {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
 
-    .img{
-        
+
+.titulo .img {
     width: 80px;
     height: 65px;
+}
 
-    }
 
-    .img2{
-
+.titulo .img2 {
     width: 100px;
     height: 78px;
+}
+
+
+/* TEXTO DO TÍTULO */
+.card-front h2 {
+    font-family: "Bangers", system-ui;
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: black;
+}
+
+
+/* PARÁGRAFO */
+.card-front p {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    max-width: 100%;
+    text-align: center;
+    color: white;
+}
+
+
+/* VERSO */
+.card-back {
+    background-color: white;
+    border: 3px solid black;
+    box-shadow: 7px 7px 0 black;
+
+    transform: rotateY(180deg);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* IMAGEM DO VERSO */
+    .card-back {
+
+    background-image: url(img/teia-homem-aranha.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-color: #C80004; 
+
     }
 
-    }
-}
-.card{
-    
-     width: 320px;
-     height: 220px;
-     background-color: #2B58C4;
-     border: 3px solid black;
-     box-shadow: 7px 7px 0 black;
-     padding: 10px;
 
-h2{
-
-   font-family: "Bangers", system-ui; 
-   font-size: 28px;
-   font-weight: 800;
-   color: white;
-   -webkit-text-stroke-width: 0.2px;
-   -webkit-text-stroke-color: black;
-
-}
-
-p{
-
-  font-family: "Poppins", sans-serif;
-  font-size: 15px;
-  max-width: 100%;
-  text-align: center;
-  color: white;
-
-}
-}
-
-.vermelhos{
- 
+.vermelhos {
     display: flex;
     justify-content: center;
     text-align: center;
     gap: 40px;
     margin-top: 100px;
+}
 
-.vermelho{
-    
+
+/* CARD */
+.vermelho {
     position: relative;
-    background-color: #C80004;
     width: 320px;
     height: 220px;
+    perspective: 1000px;
+}
+
+
+/* PARTE QUE GIRA */
+.vermelho-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+
+/* EFEITO DE VIRAR */
+.vermelho:hover .vermelho-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* FRENTE E VERSO */
+.vermelho-front,
+.vermelho-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    backface-visibility: hidden;
+}
+
+
+/* FRENTE */
+.vermelho-front {
+    position: absolute;
+    background-color: #C80004;
+    border: 3px solid black;
+    box-shadow: 7px 7px 0 black;
+    padding: 10px;
+}
+
+
+/* TÍTULO */
+.vermelho-front h2 {
+    font-family: "Bangers", system-ui;
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: black;
+
+    margin-top: 30px;
+}
+
+
+/* TEXTO */
+.vermelho-front p {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    max-width: 100%;
+    margin-top: 10px;
+    color: white;
+}
+
+
+/* TEIA */
+.vermelho-front > img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 95px;
+}
+
+
+/* VERSO */
+.vermelho-back {
+    background-color: white;
+    border: 3px solid black;
+    box-shadow: 7px 7px 0 black;
+
+    transform: rotateY(180deg);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* IMAGEM DO VERSO */
+    .vermelho-back{
+
+    background-image: url(img/teia-homem-aranha.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-color: #2B58C4;
+
+    } 
+
+.nossa {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #FFBB00;
+    margin-top: 90px;
     border: 3px solid black;
     box-shadow: 7px 7px 0 black;
     padding: 10px;
 
-img{
+    h2 {
 
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 95px; 
-        
-}
+        font-family: "Luckiest Guy", cursive;
+        font-size: 40px;
+        font-weight: 800;
+        margin-top: 45px;
 
-h2{
+    }
 
-   font-family: "Bangers", system-ui; 
-   font-size: 28px;
-   font-weight: 800;
-   color: white;
-   -webkit-text-stroke-width: 0.2px;
-   -webkit-text-stroke-color: black;
-   margin-top: 30px;
 
-}
+    h3 {
 
-p{
+        font-family: "Bangers", system-ui;
+        font-size: 35px;
+        color: white;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        -webkit-text-stroke-width: 0.2px;
+        -webkit-text-stroke-color: black;
 
-   font-family: "Poppins", sans-serif;
-   font-size: 18px;
-   max-width: 100%;
-   margin-top: 10px;
-   color: white;
-}
+    }
 
 }
 
+.impactos {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
+    margin-top: 90px;
+    background-color: #2B58C4;
+    border: 3px solid black;
+    box-shadow: 7px 7px 0 black;
+    padding: 10px;
+
+    h2{
+
+    margin-top: 40px;
+    color: white;
+    font-family: "Bangers", system-ui;
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: black;
+    font-size: 40px;  
+    font-weight: 900px;
+
+
+    }
+
+    .impacto {
+
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .card1 {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-image: url(img/Fundo-amarelo.jpeg);
+            background-size: cover;
+            /* Ajusta o tamanho para cobrir toda a área */
+            background-position: center;
+            /* Centraliza a imagem */
+            background-repeat: no-repeat;
+            width: 320px;
+            height: 220px;
+            border: 3px solid black;
+            box-shadow: 7px 7px 0 black;
+            padding: 10px;
+
+
+            h1 {
+
+                margin-top: 30px;
+                margin-bottom: 10px;
+                font-family: "Bangers", system-ui;
+                color: #C80004;
+                font-size: 42px;
+
+            }
+
+            p {
+
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
+                
+
+            }
+        }
+
+    }
+
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    height: 325px;
+    padding: 50px 40px 30px;
+    margin-top: 120px;
+
+    h3 {
+        margin: 0 0 15px 0;
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 250px;
+
+    img {
+        width: 180px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+    }
+}
+
+.nav-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+
+    h3 {
+        font-family: "Bangers", system-ui;
+        color: #ffbb00;
+        font-size: 30px;
+        font-weight: 200;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+
+        &:hover {
+            color: #ffbb00;
+            text-decoration: underline;
+        }
+    }
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+
+    h3 {
+        font-family: "Bangers", system-ui;
+        color: #ffbb00;
+        font-size: 30px;
+        font-weight: 200;
+    }
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    p {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+    }
+}
+
+.Telefone {
+    cursor: default;
+
+    img {
+        width: 25px;
+        height: 25px;
+        object-fit: contain;
+    }
+
+    &:hover {
+        color: #ffbb00;
+    }
+}
+
+.E-mail {
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+    }
+
+    img {
+        width: 30px;
+        height: 20px;
+        object-fit: contain;
+    }
+
+    &:hover {
+        a {
+            color: #ffbb00;
+        }
+    }
+}
+
+.infos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+
+    h3 {
+        font-family: "Bangers", system-ui;
+        color: #ffbb00;
+        font-size: 30px;
+        font-weight: 200;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        cursor: default;
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+
+        &:hover {
+            color: #ffbb00;
+            text-decoration: underline;
+        }
+    }
+}
+
+.grandes {
+    background-color: black;
+    text-align: center;
+    border-top: 1px solid white;
+    padding: 25px 20px;
+    width: 100%;
+
+    h2 {
+        font-family: "Bangers", system-ui;
+        color: #ffbb00;
+        font-size: 30px;
+        font-weight: 200;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-family: "Poppins", sans-serif;
+        color: #b9b9b9;
+        margin: 0;
+        font-size: 18px;
+    }
+}
+
+/* FOOTER RESPONSIVO */
+
+@media (max-width: 900px) {
+    footer {
+        height: auto;
+        min-height: 325px;
+        padding: 50px 30px 40px;
+        gap: 40px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .logo {
+        width: 45%;
+    }
+
+    .nav-footer,
+    .cont,
+    .infos {
+        width: 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    footer {
+        flex-direction: column;
+        padding: 45px 25px 35px;
+        gap: 40px;
+        margin-top: 80px;
+    }
+
+    .logo img {
+        width: 160px;
+    }
+
+
+    .nav-footer,
+    .cont,
+    .infos {
+        gap: 8px;
+    }
+
+    .nav-footer h3,
+    .cont h3,
+    .infos h3 {
+        font-size: 27px;
+        margin-bottom: 8px;
+    }
+
+    .link p {
+        font-size: 14px;
+    }
+
+    .grandes {
+        padding: 20px 15px;
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    footer {
+        padding: 40px 20px 30px;
+        gap: 35px;
+    }
+
+    .logo img {
+        width: 140px;
+    }
+
+    .nav-footer h3,
+    .cont h3,
+    .infos h3 {
+        font-size: 24px;
+    }
+
+    .nav-footer a,
+    .infos a,
+    .link p {
+        font-size: 14px;
+    }
+
+    .grandes h2 {
+        font-size: 23px;
+    }
+
+    .grandes p {
+        font-size: 13px;
+    }
 }
