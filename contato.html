@@ -12,21 +12,57 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap"
         rel="stylesheet">
-
 </head>
 
-
 <body>
+    <!-- HEADER -->
     <header>
-        <img src="img/logo.png" alt="logo">
-        <nav>
+        <img src="img/logo.png" alt="logo" />
+
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <nav id="menuNav">
+            <button class="fechar-menu" id="btnFecharMenu" type="button" aria-label="Fechar menu">×</button>
+
             <a href="#INICIO">INÍCIO</a>
             <a href="#DOAR">DOAR</a>
             <a href="#CONTATO">CONTATO</a>
             <a href="#CAMPANHA">CAMPANHA</a>
+
+            <button class="btn-menu-doar" id="btnMenuDoar" type="button">DOAR AGORA</button>
         </nav>
         <button>DOAR AGORA</button>
+        <button class="hamburger" id="btnHamburger" type="button" aria-label="Abrir menu" aria-expanded="false"
+            aria-controls="menuNav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
+    <!-- ALERT -->
+
+
+    <div class="alert">
+        <div class="alert-itens">
+            <div class="alert-content">
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+            </div>
+
+
+            <div class="alert-content">
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+            </div>
+        </div>
+    </div>
 
     <div class="hero">
         <div class="hero-texts">
@@ -39,21 +75,21 @@
             <h1>Somos feitos de empatia, dedicação e <span>propósito.</span></h1>
             <p>A Avante nasceu do sonho de transformar a realidade de muitas crianças por meio de algo simples, mas
                 poderoso: um brinquedo.</p>
-                <div class="containers">
-                    <div class="container">
-                        <h5>Nossa Missão</h5>
-                        <p>Levar alegria e esperança para crianças em situação de vulnerabilidade.</p>
-                    </div>
-                    <div class="container">
-                        <h5>Nossas Visões</h5>
-                        <p>Ser referência em doação de brinquedos, inspirando mais pessoas a doar.</p>
-                    </div>
-                    <div class="container">
-                        <h5>Nossos Valores</h5>
-                        <p>Proporcionar momentos especiais e tornar a infância bonita.</p>
-                    </div>
-                    
+            <div class="containers">
+                <div class="container">
+                    <h5>Nossa Missão</h5>
+                    <p>Levar alegria e esperança para crianças em situação de vulnerabilidade.</p>
                 </div>
+                <div class="container">
+                    <h5>Nossas Visões</h5>
+                    <p>Ser referência em doação de brinquedos, inspirando mais pessoas a doar.</p>
+                </div>
+                <div class="container">
+                    <h5>Nossos Valores</h5>
+                    <p>Proporcionar momentos especiais e tornar a infância bonita.</p>
+                </div>
+
+            </div>
         </div>
         <div class="polaroid">
             <img src="img/Polaroid-Homem-Ferro.jpeg" alt="">
@@ -63,15 +99,105 @@
     <h1 class="somos">Quem somos nós?</h1>
     <div class="caixas">
         <div class="caixa">
-            <p>Nosso site foi desenvolvido com o propósito de promover e incentivar a doação de brinquedos, contribuindo para a construção de uma sociedade mais solidária e consciente. Acreditamos que atitudes simples podem gerar impactos significativos e que a doação de um brinquedo pode proporcionar momentos de alegria e diversão para muitas crianças, criando novas histórias e levando carinho para quem mais precisa.</p>
+            <p>Nosso site foi desenvolvido com o propósito de promover e incentivar a doação de brinquedos, contribuindo
+                para a construção de uma sociedade mais solidária e consciente. Acreditamos que atitudes simples podem
+                gerar impactos significativos e que a doação de um brinquedo pode proporcionar momentos de alegria e
+                diversão para muitas crianças, criando novas histórias e levando carinho para quem mais precisa.</p>
+            <img class="destaque" src="img/!.png" alt="">
         </div>
         <div class="caixa">
-        <p>Por meio desta iniciativa, buscamos conscientizar as pessoas sobre a importância de compartilhar e contribuir com aqueles que mais precisam. Nosso objetivo é facilitar o acesso à informação geral sobre a campanha, tornando a doação uma prática cada vez mais presente em nosso cotidiano. Acreditamos que pequenos gestos podem gerar mudanças, fortalecendo os laços entre as pessoas.</p>
-            </div>
+            <p>Por meio desta iniciativa, buscamos conscientizar as pessoas sobre a importância de compartilhar e
+                contribuir com aqueles que mais precisam. Nosso objetivo é facilitar o acesso à informação geral sobre a
+                campanha, tornando a doação uma prática cada vez mais presente em nosso cotidiano. Acreditamos que
+                pequenos gestos podem gerar mudanças, fortalecendo os laços entre as pessoas.</p>
+            <img class="destaque2" src="img/Destaque.png" alt="">
+        </div>
         <div class="caixa">
-            <p>Mais do que arrecadar brinquedos, queremos fortalecer valores como solidariedade, empatia e responsabilidade social. Cada contribuição representa uma oportunidade de transformar o dia de uma criança e levar um pouco mais de esperança e felicidade para sua vida. Juntos, podemos dar novos significados aos brinquedos, compartilhar carinho e construir momentos ficarão guardados na memória de muitas crianças.</p>
+            <p>Mais do que arrecadar brinquedos, queremos fortalecer valores como solidariedade, empatia e
+                responsabilidade social. Cada contribuição representa uma oportunidade de transformar o dia de uma
+                criança e levar um pouco mais de esperança e felicidade para sua vida. Juntos, podemos dar novos
+                significados aos brinquedos, compartilhar carinho e construir momentos ficarão guardados na memória de
+                muitas crianças.</p>
+            <img class="destaque3" src="img/overlay.png" alt="">
         </div>
     </div>
+    <div class="contatos">
+        <div class="contato">
+            <h2>Fale com a gente! <br>Estamos aqui para <span class="ajuda">ajudar.</span></h2>
+            <p>Tem dúvidas, sugestões ou quer saber mais sobre doações?<br> Entre em contato conosco. Será um
+                prazer conversar com você!</p>
+            <div class="links">
+                <div class="link">
+                    <div class="icones-contato">
+                    <img class="icones" src="img/Telefone.png" alt="">
+                    <h2>Telefone/WhatsApp</h2>
+                    </div>
+                    <p>(16) 99999-9999</p>
+                </div>
+                <div class="link">
+                    </div class="icones-contato">
+                    <img class="icones" src="img/Localização.png" alt="">
+                    <h2>Endereço</h2>
+                    </div>
+                    <p>R. Sebastião Morgato, 151 - Cachoeira dos Mendes, Jaboticabal - SP</p>
+                </div>
+                <div class="link">
+                    </div class="icones-contato">
+                    <img class="icones" src="img/E-mail.png" alt="">
+                    <h2>Email</h2>
+                    </div>
+                    <p>(16) 99999-9999</p>
+                </div>
+                <div class="link">
+                    </div  class="icones-contato">
+                    <img class="icones" src="img/Horário.png" alt="">
+                    <h2>Horário de Atendimento</h2>
+                    </div>
+                    <p>Segunda a Sexta: 8h ás 18hSábado: 8h ás 13h</p>
+                </div>
+            </div>
+        </div>
+        <img src="img/menino.png" alt="">
+    </div>
+    <div class="destques">
+        <h2>Juntos, podemos fazer a diferença. Doe, participe e ajude a transformar solidariedade em sorrisos.</h2>
+        <img class="destque" src="img/Destaque.png" alt="">
+        <img class="destque-direito" src="img/Destaque.png" alt="">
+    </div>
+    <footer>
+        <div class="logo">
+            <img src="img/logo.png" alt="logo" />
+            <p>Aqui, cada brinquedo doado começa uma nova história.</p>
+        </div>
+        <nav class="nav-footer">
+            <h3>LINKS RÁPIDOS</h3>
+            <a href="#">Início</a>
+            <a href="#">Doar</a>
+            <a href="#">Contato</a>
+            <a href="#">Campanha</a>
+        </nav>
+        <div class="cont">
+            <h3>CONTATO</h3>
+            <div class="link E-mail">
+                <img src="img/E-mail.png" alt="E-mail" class="E-mail" />
+                <a href="">avante@gmail.com</a>
+            </div>
+            <div class="link-Telefone">
+                <img src="img/Telefone.png" alt="Telefone" class="Telefone" />
+                <p>(16) 99999-9999</p>
+            </div>
+        </div>
+        <div class="infos">
+            <h3>INFOS</h3>
+            <a href="#">Política de privacidade</a>
+            <a href="#">Termos de uso</a>
+        </div>
+    </footer>
+    <div class="grandes">
+        <h2>“Grandes histórias começam com Pequenos gestos”</h2>
+        <p>© 2026 AVANTE</p>
+    </div>
+    <script src="contato.js"></script>
 </body>
 
 
