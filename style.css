@@ -20,7 +20,7 @@ font-family: "Luckiest Guy", cursive; */
 /* HEADER */
 
 header {
-    position: relative;
+    position: fixed;
     background: #f2eddb;
     border-bottom: 3px solid #111;
     display: flex;
