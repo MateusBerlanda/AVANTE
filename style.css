@@ -17,61 +17,189 @@ font-family: "Bangers", system-ui;
 font-family: "Luckiest Guy", cursive; */
 
 
+/* HEADER */
+
 header {
     position: relative;
-    background: #F2EDDB;
+    background: #f2eddb;
     border-bottom: 3px solid #111;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px;
-
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0 auto;
 
     nav {
-
         display: flex;
         gap: 80px;
 
-
         a {
-
             font-family: "Luckiest Guy", cursive;
             text-decoration: none;
             color: black;
             transition: width 0.25s ease;
             font-size: 20px;
 
-
             &:hover {
-                text-decoration: underline #E3272B 2px;
+                text-decoration: underline #e3272b 2px;
                 text-underline-offset: 6px;
-                color: #E3272B;
+                color: #e3272b;
             }
         }
-
     }
 
-
     button {
-
-        background: #C80004;
+        background: #c80004;
         color: white;
-        border: 3px solid #14141A;
-        box-shadow: 4px 4px 0 #14141A;
+        border: 3px solid #14141a;
+        box-shadow: 4px 4px 0 #14141a;
         padding: 15px 30px;
         font-family: "Bangers", system-ui;
         font-size: 20px;
-        transition: transform .2s ease, box-shadow .2s ease;
         cursor: pointer;
-
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
 
         &:hover {
             transform: translate(4px, 4px);
-            box-shadow: 0 0 0 #14141A;
+            box-shadow: 0 0 0 #14141a;
         }
     }
 }
 
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 8px;
+    background: repeating-linear-gradient(to right, #111 0 2px, transparent 2px 12px);
+}
+
+/* MENU HAMBÚRGUER + PAINEL LATERAL */
+
+header .hamburger,
+header .menu-overlay,
+header nav .fechar-menu,
+header nav .btn-menu-doar {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    header>button {
+        display: none;
+    }
+
+    /* hambúrguer à direita */
+    header .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        border: 3px solid #14141a;
+        box-shadow: 4px 4px 0 #14141a;
+        cursor: pointer;
+
+
+
+        span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: #14141a;
+        }
+    }
+
+    header .menu-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        visibility: hidden;
+        z-index: 1;
+    }
+
+    header .menu-overlay.aberto {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* painel lateral na direita */
+    header nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 40%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        padding: 80px 20px 40px;
+        background: #f2eddb;
+        border-left: 3px solid #111;
+        transform: translateX(100%);
+        visibility: hidden;
+        transition:
+            transform 0.35s ease,
+            visibility 0.35s ease;
+        z-index: 2;
+
+        a {
+            font-size: 22px;
+            text-align: center;
+        }
+    }
+
+    header nav.aberto {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    /* X no topo do painel */
+    header nav .fechar-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        background: transparent;
+        color: #111;
+        border: none;
+        box-shadow: none;
+        font-family: "Poppins", sans-serif;
+        font-size: 40px;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    header nav .fechar-menu:hover {
+        transform: none;
+        box-shadow: none;
+        color: #e3272b;
+    }
+
+    /* DOAR AGORA dentro do painel */
+    header nav .btn-menu-doar {
+        display: block;
+        width: 100%;
+        margin-top: 15px;
+    }
+}
 
 .alert {
     width: 100%;
@@ -116,39 +244,10 @@ header {
 }
 
 
-.menu-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -7px;
-    width: 0;
-    height: 4px;
-    background: #E3272B;
-    border: 1px solid #000;
-    box-shadow: 2px 2px 0 #000;
-    transition: width 0.25s ease;
-}
-
-
-header::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 8px;
-    background: repeating-linear-gradient(to right,
-            #111 0 2px,
-            /* traço: cor e espessura */
-            transparent 2px 12px
-            /* espaço até o próximo traço */
-        );
-}
-
 .hero {
 
     background-image:
-     linear-gradient(to right, #D33737bf 0%, #D3373773 90%),
+        linear-gradient(to right, #D33737bf 0%, #D3373773 90%),
         url("img/Fundo-Homem-Aranha.png");
 
     background-size: cover;
@@ -159,6 +258,16 @@ header::after {
     justify-content: space-between;
     width: 100%;
     height: 500px;
+
+    @media (max-width: 900px) {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        img {
+            display: none;
+        }
+    }
 }
 
 .hero-texts {
@@ -180,13 +289,25 @@ header::after {
         max-width: 600px;
         margin-top: 40px;
     }
+
+    @media (max-width: 900px) {
+        width: 100%;
+
+        h1 {
+            font-size: 50px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
 }
 
 
 .polaroid {
     img {
         width: 65%;
-        
+
     }
 }
 
@@ -209,6 +330,12 @@ header::after {
     font-size: 18px;
     margin-top: -25px;
 
+    @media (max-width: 900px) {
+
+        width: 250px;
+        font-size: 10px;
+
+    }
 }
 
 .herois {
@@ -236,6 +363,7 @@ header::after {
     justify-content: center;
     gap: 40px;
     margin-top: 40px;
+
 }
 
 
@@ -321,7 +449,6 @@ header::after {
 .card-front p {
     font-family: "Poppins", sans-serif;
     font-size: 15px;
-    max-width: 100%;
     text-align: center;
     color: white;
 }
@@ -344,16 +471,16 @@ header::after {
 
 
 /* IMAGEM DO VERSO */
-    .card-back {
+.card-back {
 
     background-image: url(img/teia-homem-aranha.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-    background-color: #C80004; 
+    background-color: #1F3E8C;
 
-    }
+}
 
 
 .vermelhos {
@@ -437,7 +564,7 @@ header::after {
 
 
 /* TEIA */
-.vermelho-front > img {
+.vermelho-front>img {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -462,16 +589,15 @@ header::after {
 
 
 /* IMAGEM DO VERSO */
-    .vermelho-back{
+.vermelho-back {
 
     background-image: url(img/teia-homem-aranha.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-    background-color: #2B58C4;
-
-    } 
+    background-color: #D33737;
+}
 
 .nossa {
 
@@ -522,15 +648,22 @@ header::after {
     box-shadow: 7px 7px 0 black;
     padding: 10px;
 
-    h2{
+    @media (max-width: 900px) {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        max-width: 250px;
+    }
 
-    margin-top: 40px;
-    color: white;
-    font-family: "Bangers", system-ui;
-    -webkit-text-stroke-width: 0.2px;
-    -webkit-text-stroke-color: black;
-    font-size: 40px;  
-    font-weight: 900px;
+    h2 {
+
+        margin-top: 40px;
+        color: white;
+        font-family: "Bangers", system-ui;
+        -webkit-text-stroke-width: 0.2px;
+        -webkit-text-stroke-color: black;
+        font-size: 40px;
+        font-weight: 900px;
 
 
     }
@@ -560,6 +693,7 @@ header::after {
             border: 3px solid black;
             box-shadow: 7px 7px 0 black;
             padding: 10px;
+            margin-bottom: 50px;
 
 
             h1 {
@@ -576,7 +710,7 @@ header::after {
 
                 font-family: "Poppins", sans-serif;
                 font-weight: 600;
-                
+
 
             }
         }
@@ -764,7 +898,7 @@ footer {
     }
 }
 
-/* FOOTER RESPONSIVO */
+/* Footer responsivo */
 
 @media (max-width: 900px) {
     footer {
@@ -862,3 +996,399 @@ footer {
         font-size: 13px;
     }
 }
+
+
+/* PARTE DAS RESPONSIVIDADES! */
+
+/* Resposividade de 900px*/
+
+@media (max-width: 900px) {
+
+    /* HERO */
+    .hero {
+        height: 450px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero .polaroid img {
+        display: none;
+    }
+
+    .hero-texts {
+        width: 100%;
+        padding: 50px 30px;
+    }
+
+    .hero-texts h1 {
+        font-size: 50px;
+    }
+
+    .hero-texts p {
+        font-size: 16px;
+        margin-top: 25px;
+    }
+
+    /* AVISO */
+    .aviso {
+        width: fit-content;
+        max-width: 80%;
+        font-size: 14px;
+    }
+
+    /* HERÓIS */
+    .herois {
+        padding: 0 30px;
+        text-align: center;
+    }
+
+    .herois h1 {
+        font-size: 38px;
+    }
+
+    /* CARDS AZUIS */
+    .cards {
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 0 30px;
+    }
+
+    .card {
+        width: 300px;
+    }
+
+    /* CARDS VERMELHOS */
+    .vermelhos {
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 0 30px;
+        margin-top: 80px;
+    }
+
+    .vermelho {
+        width: 300px;
+    }
+
+    /* NOSSA MISSÃO */
+    .nossa {
+        text-align: center;
+        padding: 20px 30px;
+    }
+
+    .nossa h2 {
+        font-size: 36px;
+    }
+
+    .nossa h3 {
+        font-size: 28px;
+    }
+
+    /* IMPACTOS */
+    .impactos {
+        width: calc(100% - 60px);
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .impactos h2 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .impactos .impacto {
+        flex-wrap: wrap;
+        gap: 30px;
+        width: 100%;
+    }
+
+    .impactos .impacto .card1 {
+        width: 280px;
+    }
+
+    /* FOOTER */
+    footer {
+        height: auto;
+        min-height: 325px;
+        padding: 50px 30px 40px;
+        gap: 40px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .logo {
+        width: 45%;
+    }
+
+    .nav-footer,
+    .cont,
+    .infos {
+        width: 45%;
+    }
+}
+
+
+/* Resposividade de 600px*/
+
+@media (max-width: 600px) {
+    .hero {
+        height: 400px;
+    }
+
+    .hero-texts {
+        padding: 30px 20px;
+    }
+
+    .hero-texts h1 {
+        font-size: 42px;
+    }
+
+    .hero-texts p {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    .hero-texts p br {
+        display: none;
+    }
+
+    .aviso {
+        max-width: 90%;
+        font-size: 11px;
+    }
+
+    .herois {
+        margin-top: 35px;
+        padding: 0 20px;
+    }
+
+    .herois h1 {
+        font-size: 30px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .card {
+        width: min(320px, 90vw);
+    }
+
+    .vermelhos {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 0 20px;
+        margin-top: 70px;
+    }
+
+    .vermelho {
+        width: min(320px, 90vw);
+    }
+
+    .nossa {
+        margin-top: 70px;
+        padding: 20px;
+    }
+
+    .nossa h2 {
+        font-size: 32px;
+        margin-top: 30px;
+    }
+
+    .nossa h3 {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    .impactos {
+        width: calc(100% - 40px);
+        margin-top: 70px;
+        padding: 10px;
+    }
+
+    .impactos h2 {
+        font-size: 30px;
+    }
+
+    .impactos .impacto {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .impactos .impacto .card1 {
+        width: min(300px, 85vw);
+    }
+
+    footer {
+        flex-direction: column;
+        padding: 45px 25px 35px;
+        gap: 40px;
+        margin-top: 80px;
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+    .logo img {
+        width: 160px;
+    }
+
+    .nav-footer,
+    .cont,
+    .infos {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .nav-footer h3,
+    .cont h3,
+    .infos h3 {
+        font-size: 27px;
+        margin-bottom: 8px;
+    }
+
+    .grandes {
+        padding: 20px 15px;
+    }
+
+    .grandes h2 {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+
+    .grandes p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+
+
+/* Resposividade de 400px*/
+
+
+@media (max-width: 400px) {
+
+    .hero {
+        height: 360px;
+    }
+
+    .hero-texts {
+        padding: 25px 15px;
+    }
+
+    .hero-texts h1 {
+        font-size: 36px;
+    }
+
+    .hero-texts p {
+        font-size: 13px;
+    }
+
+    .aviso {
+        max-width: 92%;
+        font-size: 9px;
+    }
+
+    .herois {
+        padding: 0 15px;
+    }
+
+    .herois h1 {
+        font-size: 26px;
+    }
+
+    .cards,
+    .vermelhos {
+        padding: 0 15px;
+    }
+
+    .card,
+    .vermelho {
+        width: min(300px, 85vw);
+    }
+
+    .nossa {
+        padding: 15px;
+    }
+
+    .nossa h2 {
+        font-size: 28px;
+    }
+
+    .nossa h3 {
+        font-size: 21px;
+    }
+
+    .impactos {
+        width: calc(100% - 30px);
+    }
+
+    .impactos h2 {
+        font-size: 26px;
+    }
+
+    .impactos .impacto .card1 {
+        width: min(280px, 85vw);
+    }
+
+    footer {
+        padding: 40px 20px 30px;
+        gap: 35px;
+    }
+
+    .logo img {
+        width: 140px;
+    }
+
+    .nav-footer h3,
+    .cont h3,
+    .infos h3 {
+        font-size: 24px;
+    }
+
+    .nav-footer a,
+    .infos a,
+    .link p {
+        font-size: 14px;
+    }
+
+    .grandes h2 {
+        font-size: 23px;
+    }
+
+    .grandes p {
+        font-size: 13px;
+    }
+}
+
+/*Responsivo sem hover*/
+
+@media (max-width: 900px) {
+
+    /* Links do menu e rodapé */
+    header nav a:hover,
+    .nav-footer a:hover,
+    .infos a:hover,
+    .Telefone:hover,
+    .E-mail:hover {
+        color: inherit;
+        text-decoration: none;
+        transform: none;
+    }
+
+
+    /* Cards que viram ao passar o mouse */
+    .card:hover .card-inner,
+    .vermelho:hover .vermelho-inner {
+        transform: none;
+    }
+}
+

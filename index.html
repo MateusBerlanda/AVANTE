@@ -20,15 +20,28 @@
 
 <body>
 
+    <!-- HEADER -->
     <header>
-        <img src="img/logo.png" alt="logo">
-        <nav>
-            <a href="#INICIO">INÍCIO</a>
-            <a href="#DOAR">DOAR</a>
-            <a href="#CONTATO">CONTATO</a>
-            <a href="#CAMPANHA">CAMPANHA</a>
+        <img src="img/logo.png" alt="logo" />
+
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <nav id="menuNav">
+            <button class="fechar-menu" id="btnFecharMenu" type="button" aria-label="Fechar menu">×</button>
+
+            <a href="#">INÍCIO</a>
+            <a href="doar.html">DOAR</a>
+            <a href="contato.html">CONTATO</a>
+            <a href="campanha.html">CAMPANHA</a>
+
+            <button class="btn-menu-doar" id="btnMenuDoar" type="button">DOAR AGORA</button>
         </nav>
         <button>DOAR AGORA</button>
+        <button class="hamburger" id="btnHamburger" type="button" aria-label="Abrir menu" aria-expanded="false"
+            aria-controls="menuNav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
     <!-- Alert-->
@@ -317,6 +330,7 @@
         <h2>“Grandes histórias começam com Pequenos gestos”</h2>
         <p>© 2026 AVANTE</p>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
