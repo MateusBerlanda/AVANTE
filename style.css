@@ -400,7 +400,7 @@ height: 78px;
 }
 
 .card-front h2 {
-    
+
 font-family: "Bangers", system-ui;
 font-size: 28px;
 font-weight: 800;
@@ -828,6 +828,7 @@ footer {
         p {
             font-size: 16px;
             margin-top: 25px;
+            color: white;
         }
     }
 
@@ -927,7 +928,7 @@ footer {
 }
 
 
-/* Responsividade de 60px */
+/* Responsividade de 600px */
 
 @media (max-width: 600px) {
 
@@ -952,6 +953,7 @@ footer {
         p {
             font-size: 14px;
             margin-top: 20px;
+            color: white;
         }
 
         p br {
