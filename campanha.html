@@ -2,32 +2,71 @@
 <html lang="pt-br">
 
 
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="campanha.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campanha</title>
+    <link rel="stylesheet" href="campanha.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-        rel="stylesheet">
-
+        rel="stylesheet" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="icon" type="image/png" href="img/AVANTE-Icon.jpeg" />
 </head>
 
 
 <body>
+    <!-- HEADER -->
     <header>
-        <img src="img/logo.png" alt="logo">
-        <nav>
-            <a href="#INICIO">INÍCIO</a>
-            <a href="#DOAR">DOAR</a>
-            <a href="#CONTATO">CONTATO</a>
-            <a href="#CAMPANHA">CAMPANHA</a>
+        <img src="img/logo.png" alt="logo" />
+
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <nav id="menuNav">
+            <button class="fechar-menu" id="btnFecharMenu" type="button" aria-label="Fechar menu">×</button>
+
+            <a href="index.html">INÍCIO</a>
+            <a href="doar.html">DOAR</a>
+            <a href="contato.html">CONTATO</a>
+            <a href="#">CAMPANHA</a>
+
+            <button class="btn-menu-doar" id="btnMenuDoar" type="button">DOAR AGORA</button>
         </nav>
         <button>DOAR AGORA</button>
+        <button class="hamburger" id="btnHamburger" type="button" aria-label="Abrir menu" aria-expanded="false"
+            aria-controls="menuNav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
+    <!-- ALERT -->
+
+
+    <div class="alert">
+        <div class="alert-itens">
+            <div class="alert-content">
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+            </div>
+
+
+            <div class="alert-content">
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+                <span>• SEJA O HERÓI NA INFÂNCIA DE ALGUÉM!</span>
+            </div>
+        </div>
+    </div>
+
 
     <section class="inicio">
         <div class="texto">
@@ -105,6 +144,107 @@
         </div>
 
     </section>
+    <hr class="linha"> >
+    <div class="class"></div>
+
+    <div class="placar">
+        <img src="img/Placar dos herois.png" alt="">
+        <h3>Os maiores doadores da nossa campanha.</h3>
+        <p>Juntos, eles fazem a diferença!</p>
+    </div>
+    <section class="ranking">
+
+        <div class="ranking-card segundo">
+
+            <div class="perfil">
+                <img src="img/User2.png" alt="Gui Santos">
+            </div>
+
+            <h2>GUI SANTOS!</h2>
+            <h3>R$ 980,00</h3>
+
+            <p>
+                <img src="img/Coração.png" alt="Coração">
+                22 DOAÇÕES
+            </p>
+
+        </div>
+
+
+        <div class="ranking-card primeiro">
+
+            <div class="coroa">
+                <img src="img/Coroa.png" alt="Coroa">
+            </div>
+
+            <div class="perfil">
+                <img src="img/User1.png" alt="Luka Modric">
+            </div>
+            <h2>LUKA MODRIC!</h2>
+            <h3>R$ 1.250,00</h3>
+            <p>
+                <img src="img/Coração.png" alt="Coração">
+                32 DOAÇÕES
+            </p>
+
+        </div>
+
+
+        <div class="ranking-card terceiro">
+
+            <div class="perfil">
+                <img src="img/User3.png" alt="Racionais MC's">
+            </div>
+
+            <h2>RACIONAIS MC'S!</h2>
+            <h3>R$ 750,00</h3>
+
+            <p>
+                <img src="img/Coração.png" alt="Coração">
+                18 DOAÇÕES
+            </p>
+
+        </div>
+
+    </section>
+
+    </section>
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="logo">
+            <img src="img/logo.png" alt="logo" />
+            <p>Aqui, cada brinquedo doado começa uma nova história.</p>
+        </div>
+        <nav class="nav-footer">
+            <h3>LINKS RÁPIDOS</h3>
+            <a href="index.html">Início</a>
+            <a href="doar.html">Doar</a>
+            <a href="contato.html">Contato</a>
+            <a href="#">Campanha</a>
+        </nav>
+        <div class="cont">
+            <h3>CONTATO</h3>
+            <div class="link E-mail">
+                <img src="img/E-mail.png" alt="E-mail" class="E-mail" />
+                <a href="">avante@gmail.com</a>
+            </div>
+            <div class="link Telefone">
+                <img src="img/Telefone.png" alt="Telefone" class="Telefone" />
+                <p>(16) 99999-9999</p>
+            </div>
+        </div>
+        <div class="infos">
+            <h3>INFOS</h3>
+            <a href="#">Política de privacidade</a>
+            <a href="#">Termos de uso</a>
+        </div>
+    </footer>
+    <div class="grandes">
+        <h2>“Grandes histórias começam com Pequenos gestos”</h2>
+        <p>© 2026 AVANTE</p>
+    </div>
+    <script src="campanha.js"></script>
 </body>
 
 
