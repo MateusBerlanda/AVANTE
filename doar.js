@@ -49,7 +49,6 @@ const abrirModal = document.getElementById("abrirModal");
 const fecharModal = document.getElementById("fecharModal");
 const modal = document.getElementById("modal");
 
-
 // =====================================
 // ABRIR MODAL
 // =====================================
@@ -66,7 +65,6 @@ abrirModal.addEventListener("click", () => {
 
 let temporizadorObrigado = null;
 
-// Fecha o modal e devolve tudo ao estado inicial (usado pelo X e pelo temporizador)
 function fecharModalCompleto() {
   clearTimeout(temporizadorObrigado);
   modal.classList.add("fechando");
@@ -81,35 +79,15 @@ function fecharModalCompleto() {
 
 fecharModal.addEventListener("click", fecharModalCompleto);
 
-// MAIS E MENOS
+const listaBrinquedos = document.getElementById("listaBrinquedos");
+const btnVerMaisBrinquedos = document.getElementById("btnVerMaisBrinquedos");
 
-const qtdMenos = document.getElementById("qtdMenos");
-const qtdMais = document.getElementById("qtdMais");
-const qtdValor = document.getElementById("qtdValor");
-
-qtdMenos.addEventListener("click", () => {
-  const valorAtual = parseInt(qtdValor.value, 10);
-  if (valorAtual > 1) {
-    qtdValor.value = valorAtual - 1;
-  }
-});
-
-qtdMais.addEventListener("click", () => {
-  const valorAtual = parseInt(qtdValor.value, 10);
-  qtdValor.value = valorAtual + 1;
-});
-
-// =====================================
-// UPLOAD DE FOTO (DROPZONE)
-// =====================================
-
-const fotoProduto = document.getElementById("fotoProduto");
-const dropzoneTexto = document.getElementById("dropzoneTexto");
-
-fotoProduto.addEventListener("change", () => {
-  if (fotoProduto.files.length > 0) {
-    dropzoneTexto.textContent = fotoProduto.files[0].name;
-  } else {
-    dropzoneTexto.textContent = "+ Adicionar foto";
-  }
-});
+if (btnVerMaisBrinquedos) {
+  btnVerMaisBrinquedos.addEventListener("click", () => {
+    listaBrinquedos.classList.toggle("mostrar-todos");
+    btnVerMaisBrinquedos.firstChild.textContent =
+      listaBrinquedos.classList.contains("mostrar-todos")
+        ? "VER MENOS "
+        : "VER MAIS ";
+  });
+}

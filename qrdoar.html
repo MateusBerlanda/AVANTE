@@ -1,7 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Doar</title>
@@ -9,176 +8,279 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <link rel="icon" type="image/png" href="img/AVANTE-Icon.png" />
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- ETAPA 2: FORMULÁRIO DE DOAÇÃO -->
     <div class="formulario">
-        <div class="text-etapa">
-            <span class="btn-voltar"><a href="doar.html">← Voltar</a></span>
+      <div class="text-etapa">
+        <button type="button" class="btn-voltar" id="btnVoltarInicio">
+          ← VOLTAR
+        </button>
+      </div>
+      <h2 class="form-doacao">FORMULÁRIO DE DOAÇÃO!</h2>
+      <p class="descricao-modal">
+        Preencha as informações abaixo para registrar sua doação.
+      </p>
+
+      <form id="formDoacao">
+        <div class="campo">
+          <label for="nomeDoacao">Nome completo*</label>
+          <input
+            type="text"
+            id="nomeDoacao"
+            placeholder="Digite seu nome"
+            required
+          />
         </div>
 
-        <h2 class="form-doacao">FORMULÁRIO DE DOAÇÃO!</h2>
-        <p class="descricao-modal">
-            Preencha as informações abaixo para registrar sua doação.
-        </p>
+        <div class="campo">
+          <label for="emailDoacao">E-mail*</label>
+          <input
+            type="email"
+            id="emailDoacao"
+            placeholder="Digite seu e-mail"
+            required
+          />
+        </div>
 
-        <form id="formDoacao">
-            <div class="campo">
-                <label for="nomeDoacao">Nome completo*</label>
-                <input type="text" id="nomeDoacao" placeholder="Digite seu nome" required />
-            </div>
+        <div class="campo">
+          <label for="telefone">Telefone</label>
+          <input
+            type="tel"
+            id="telefoneDoacao"
+            placeholder="(00) 00000-0000"
+            maxlength="15"
+            oninput="mascaraTelefone(this)"
+          />
+        </div>
+        <div class="campo">
+          <label for="tipoDoacao">O que você deseja doar para a AVANTE?*</label>
+          <select id="tipoDoacao" required>
+            <option value="brinquedo">BRINQUEDO</option>
+            <option value="">🎲 CUBO MÁGICO</option>
+            <option value="">🧸 URSINHO</option>
+            <option value="">🚗 CARRINHO</option>
+            <option value="">⚽ BOLA FUTEBOL</option>
+            <option value="">🏐 BOLA VÔLEI</option>
+            <option value="">🏀 BOLA BASQUETE</option>
+            <option value="">🧩 QUEBRA-CABEÇA</option>
+            <option value="">🪆 BONECA</option>
+            <option value="">🎩 BANCO IMOBILIÁRIO</option>
+            <option value="">💻 LAPTOP</option>
+            <option value="">🚙 CARRINHO CONTROLE REMOTO</option>
+            <option value="">🚲 BICICLETA</option>
+            <option value="">OUTRO</option>
+          </select>
+        </div>
 
-            <div class="campo">
-                <label for="emailDoacao">E-mail*</label>
-                <input type="email" id="emailDoacao" placeholder="Digite seu e-mail" required />
-            </div>
+        <div class="campo">
+            <label>Possui outro brinquedo que não está na lista? Se sim, digite aqui:</label>
+            <input type="text" id="brinqDoacao" placeholder="Digite seu outro brinquedo"/>
+        </div>
 
-            <div class="campo">
-                <label for="telefone">Telefone</label>
-                <input type="tel" id="telefone" placeholder="(00) 00000-0000" maxlength="15"
-                    oninput="mascaraTelefone(this)">
-            </div>
-            <div class="campo">
-                <label for="tipoDoacao">O que você deseja doar para a AVANTE?*</label>
-                <select id="tipoDoacao" required>
-                    <option value="brinquedo">BRINQUEDO</option>
-                    <option value="">CUBO MÁGICO</option>
-                    <option value="">URSINHO</option>
-                    <option value="">CARRINHO</option>
-                    <option value="">BOLA FUTEBOL</option>
-                    <option value="">BOLA VÔLEI</option>
-                    <option value="">BOLA BASQUETE</option>
-                    <option value="">QUEBRA-CABEÇA</option>
-                    <option value="">BONECA</option>
-                    <option value="">BANCO IMOBILIÁRIO</option>
-                    <option value="">LAPTOP</option>
-                    <option value="">CARRINHO CONTROLE REMOTO</option>
-                    <option value="">BICICLETA</option>
-                </select>
-            </div>
+        <div class="campo">
+          <label>Quantidade*</label>
+          <div class="stepper">
+            <button type="button" class="stepper-btn" id="qtdMenos">−</button>
+            <input type="text" id="qtdValor" value="1" readonly />
+            <button type="button" class="stepper-btn" id="qtdMais">+</button>
+          </div>
+        </div>
 
-            <div class="campo">
-                <label>Quantidade*</label>
-                <div class="stepper">
-                    <button type="button" class="stepper-btn" id="qtdMenos">
-                        −
-                    </button>
-                    <input type="text" id="qtdValor" value="1" readonly />
-                    <button type="button" class="stepper-btn" id="qtdMais">
-                        +
-                    </button>
-                </div>
-            </div>
+        <div class="campo">
+          <label>Qual o estado do produto?*</label>
+          <div class="estado-opcoes">
+            <label class="estado-opcao">
+              <input type="radio" name="estadoProduto" value="novo" required />
+              Novo
+            </label>
+            <label class="estado-opcao">
+              <input type="radio" name="estadoProduto" value="pouco-usado" />
+              Pouco usado
+            </label>
+            <label class="estado-opcao">
+              <input type="radio" name="estadoProduto" value="bom-estado" />
+              Usado em bom estado
+            </label>
+          </div>
+        </div>
 
-            <div class="campo">
-                <label>Qual o estado do produto?*</label>
-                <div class="estado-opcoes">
-                    <label class="estado-opcao">
-                        <input type="radio" name="estadoProduto" value="novo" required />
-                        Novo
-                    </label>
-                    <label class="estado-opcao">
-                        <input type="radio" name="estadoProduto" value="pouco-usado" />
-                        Pouco usado
-                    </label>
-                    <label class="estado-opcao">
-                        <input type="radio" name="estadoProduto" value="bom-estado" />
-                        Usado em bom estado
-                    </label>
-                </div>
-            </div>
+        <div class="campo">
+          <label
+            >Possui alguma foto do produto? Se sim anexe-a aqui
+            (opcional):</label
+          >
+          <label class="dropzone" for="fotoProduto" id="dropzoneFoto">
+            <span id="dropzoneTexto">+ Adicionar foto</span>
+          </label>
+          <input type="file" id="fotoProduto" accept="image/*" hidden />
+        </div>
 
-            <div class="campo">
-                <label>Possui alguma foto do produto? Se sim anexe-a aqui
-                    (opcional):</label>
-                <label class="dropzone" for="fotoProduto" id="dropzoneFoto">
-                    <span id="dropzoneTexto">+ Adicionar foto</span>
-                </label>
-                <input type="file" id="fotoProduto" accept="image/*" hidden />
-            </div>
-
-            <button type="submit" class="btn-etapa" id="btnContinuarDoacao">
-                CONTINUAR
-            </button>
-        </form>
+        <button type="submit" class="btn-etapa" id="btnContinuarDoacao">
+          CONTINUAR
+        </button>
+      </form>
     </div>
 
     <!-- ETAPA 2: FORMULÁRIO DE CONFIRMAÇÃO -->
     <div class="etapa" id="etapaConfirmacao">
-        <div class="confirmacao-form" id="confirmacaoForm">
-            <div class="text-etapa">
-                <span class="btn-voltar" id="btnVoltarForm">← Voltar</span>
-            </div>
+      <div class="confirmacao-form" id="confirmacaoForm">
+        <div class="text-etapa">
+          <button type="button" class="btn-voltar" id="btnVoltarForm">
+            ← VOLTAR
+          </button>
+        </div>
+        <h2 class="form-doacao">FORMULÁRIO DE DOAÇÃO!</h2>
+        <p class="descricao-modal">Confirme suas informações</p>
 
-            <h2 class="form-doacao">FORMULÁRIO DE DOAÇÃO!</h2>
-            <p class="descricao-modal">Confirme suas informações</p>
+        <div class="confirmacao-conteudo">
+          <div class="localizacao-info">
+            <h3>Nossa localização:</h3>
+            <p>
+              R. Sebastião Morgato, 151 - Cachoeira dos Mendes, Jaboticabal - SP
+            </p>
+            <p>Telefone: (16) 3204-3060</p>
+            <p>Seg a Sex: 07:00 – 18:00</p>
+          </div>
 
-            <div class="confirmacao-conteudo">
-                <div class="localizacao-info">
-                    <h3>Nossa localização:</h3>
-                    <p>
-                        R. Sebastião Morgato, 151 - Cachoeira dos Mendes, Jaboticabal
-                        - SP
-                    </p>
-                    <p>Telefone: (16) 3204-3060</p>
-                    <p>Seg a Sex: 07:00 – 18:00</p>
-                </div>
-
-                <div class="mapa-embed">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.3476411031425!2d-48.3040667239795!3d-21.25770238102457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b96b83d82448fd%3A0x46e60858373c9de9!2sSesi!5e0!3m2!1spt-BR!2sbr!4v1789928713079!5m2!1spt-BR!2sbr"
-                        width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
-                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                </div>
-            </div>
-
-            <button type="button" class="btn-etapa" id="btnConfirmarDoacao">
-                CONFIRMAR
-            </button>
+          <div class="mapa-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.3476411031425!2d-48.3040667239795!3d-21.25770238102457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b96b83d82448fd%3A0x46e60858373c9de9!2sSesi!5e0!3m2!1spt-BR!2sbr!4v1789928713079!5m2!1spt-BR!2sbr"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
         </div>
 
-        <!-- MENSAGEM FINAL: exibida no lugar do formulário acima, dentro desta mesma última etapa -->
-        <div class="confirmacao-obrigado" id="confirmacaoObrigadoDoacao">
-            <h2 class="form-doacao texto-centralizado">
-                OBRIGADO PELA DOAÇÃO!
-            </h2>
+        <button type="button" class="btn-etapa" id="btnConfirmarDoacao">
+          CONFIRMAR
+        </button>
+      </div>
 
-            <div class="icone-sucesso">
-                <svg viewBox="0 0 24 24" width="70" height="70">
-                    <polyline points="4,13 10,19 20,6" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </div>
+      <!-- MENSAGEM FINAL: exibida no lugar do formulário acima, dentro desta mesma última etapa -->
+      <div class="confirmacao-obrigado" id="confirmacaoObrigadoDoacao">
+        <h2 class="form-doacao texto-centralizado">OBRIGADO PELA DOAÇÃO!</h2>
+
+        <div class="icone-sucesso">
+          <svg viewBox="0 0 24 24" width="70" height="70">
+            <polyline
+              points="4,13 10,19 20,6"
+              fill="none"
+              stroke="#fff"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </div>
+      </div>
     </div>
     <script>
-        function mascaraTelefone(campo) {
-            let valor = campo.value.replace(/\D/g, "");
+      // MAIS E MENOS
+      const btnQtdMenos = document.getElementById("qtdMenos");
+      const btnQtdMais = document.getElementById("qtdMais");
+      const inputQtd = document.getElementById("qtdValor");
 
-            if (valor.length > 11) {
-                valor = valor.substring(0, 11);
-            }
+      const QTD_MINIMA = 1;
+      const QTD_MAXIMA = 100;
 
-            if (valor.length <= 2) {
-                campo.value = "(" + valor;
-            }
-            else if (valor.length <= 7) {
-                campo.value = "(" + valor.substring(0, 2) + ") " + valor.substring(2);
-            }
-            else {
-                campo.value = "(" + valor.substring(0, 2) + ") " +
-                    valor.substring(2, 7) + "-" +
-                    valor.substring(7, 11);
-            }
+      btnQtdMenos.addEventListener("click", () => {
+        let valor = parseInt(inputQtd.value, 10) || QTD_MINIMA;
+        valor = Math.max(valor - 1, QTD_MINIMA);
+        inputQtd.value = valor;
+      });
+
+      btnQtdMais.addEventListener("click", () => {
+        let valor = parseInt(inputQtd.value, 10) || QTD_MINIMA;
+        valor = Math.min(valor + 1, QTD_MAXIMA);
+        inputQtd.value = valor;
+      });
+
+      // TELEFONE
+
+      function mascaraTelefone(campo) {
+        let valor = campo.value.replace(/\D/g, "");
+
+        if (valor.length > 11) {
+          valor = valor.substring(0, 11);
         }
+
+        if (valor.length <= 2) {
+          campo.value = "(" + valor;
+        } else if (valor.length <= 7) {
+          campo.value = "(" + valor.substring(0, 2) + ") " + valor.substring(2);
+        } else {
+          campo.value =
+            "(" +
+            valor.substring(0, 2) +
+            ") " +
+            valor.substring(2, 7) +
+            "-" +
+            valor.substring(7, 11);
+        }
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        // ETAPAS
+        const formulario = document.querySelector(".formulario");
+        const etapaConfirmacao = document.getElementById("etapaConfirmacao");
+
+        // SUB-TELAS DENTRO DA ETAPA DE CONFIRMAÇÃO
+        const confirmacaoForm = document.getElementById("confirmacaoForm");
+        const confirmacaoObrigado = document.getElementById(
+          "confirmacaoObrigadoDoacao",
+        );
+
+        // FORM E BOTÕES
+        const formDoacao = document.getElementById("formDoacao");
+        const btnVoltarForm = document.getElementById("btnVoltarForm");
+        const btnConfirmarDoacao =
+          document.getElementById("btnConfirmarDoacao");
+
+        // estado inicial: só a etapa 1 visível
+        etapaConfirmacao.style.display = "none";
+
+        // ETAPA 1 -> ETAPA 2
+        formDoacao.addEventListener("submit", (event) => {
+          event.preventDefault();
+
+          formulario.style.display = "none";
+          etapaConfirmacao.style.display = "block";
+
+          confirmacaoForm.style.display = "block";
+          confirmacaoObrigado.classList.remove("ativa");
+
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        btnVoltarForm.addEventListener("click", () => {
+          etapaConfirmacao.style.display = "none";
+          formulario.style.display = "flex";
+
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+
+        // ETAPA 2 -> MENSAGEM DE OBRIGADO
+        btnConfirmarDoacao.addEventListener("click", () => {
+          confirmacaoForm.style.display = "none";
+          confirmacaoObrigado.classList.add("ativa");
+        });
+      });
+      btnVoltarInicio.addEventListener("click", () => {
+        window.location.href = "doar.html";
+      });
     </script>
-
-    <script src="doar.js"></script>
-</body>
-
+  </body>
 </html>
