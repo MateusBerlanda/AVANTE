@@ -874,3 +874,31 @@ footer {
         font-size: 13px;
     }
 }
+
+.forca {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 90px;
+    
+    background-image: url("img/Destaque-Amarelo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 770px;
+}
+
+.explosao h2 {
+    font-family: "Bangers", system-ui;
+    font-size: 55px;
+    color: #071d68;
+    margin: 0;
+}
+
+.explosao h1 {
+    font-family: "Bangers", system-ui;
+    font-size: 85px;
+    color: #ed252d;
+    -webkit-text-stroke: 0.2px black;
+    margin: 0;
+}
