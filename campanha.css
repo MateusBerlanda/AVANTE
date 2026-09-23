@@ -99,15 +99,17 @@ header {
         }
     }
 
-    >button {
+    button {
         background: #c80004;
         color: white;
         border: 3px solid #14141a;
         box-shadow: 4px 4px 0 #14141a;
         padding: 15px 30px;
         font-family: "Bangers", system-ui;
-        font-size: 20px;
+        font-size: 23px;
         cursor: pointer;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
         transition:
             transform 0.2s ease,
             box-shadow 0.2s ease;
@@ -268,7 +270,9 @@ header nav .btn-menu-doar {
         box-shadow: 4px 4px 0 #14141a;
         padding: 15px 30px;
         font-family: "Bangers", system-ui;
-        font-size: 20px;
+        font-size: 23px;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
         cursor: pointer;
         transition:
             transform 0.2s ease,
@@ -881,24 +885,80 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 90px;
-    
+
     background-image: url("img/Destaque-Amarelo.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 770px;
+    background-size: 550px;
 }
 
 .explosao h2 {
     font-family: "Bangers", system-ui;
-    font-size: 55px;
+    font-size: 45px;
     color: #071d68;
-    margin: 0;
+    margin-left: 60px;
+    
 }
 
 .explosao h1 {
     font-family: "Bangers", system-ui;
-    font-size: 85px;
+    font-size: 75px;
     color: #ed252d;
     -webkit-text-stroke: 0.2px black;
-    margin: 0;
+    margin-left: 60px;
+}
+
+.doar-numero {
+    height: 370px;
+
+    background-image: url("img/Bagulho azul.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 600px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    flex-direction: column;
+    align-items: center;
+
+    >h1 {
+        color: white;
+        margin-top: 12px;
+        font-size: 85px;
+        left: 20px;
+        font-family: "Bangers", system-ui;
+    }
+}
+
+.doacoes {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    margin-top: 14px;
+    left: 60px;
+
+    h1 {
+        font-weight: 400;
+        font-size: 15px;
+        position: absolute;
+        z-index: 3;
+        font-family: "Poppins", sans-serif;
+        right: 30%;
+    }
+}
+
+.doar-img {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    left: 30%;
+}
+
+.quebrar{
+    display: flex;
+    justify-content: space-around;
 }

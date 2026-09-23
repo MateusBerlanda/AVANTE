@@ -42,3 +42,37 @@ document.addEventListener("keydown", (event) => {
         fecharMenu();
     }
 });
+
+const numero = document.querySelector(".numero");
+const secao = document.querySelector(".doar-numero");
+
+const valorFinal = 5525;
+let iniciou = false;
+
+function contador() {
+    let valor = 0;
+
+    const intervalo = setInterval(() => {
+        valor += 25;
+
+        if (valor >= valorFinal) {
+            valor = valorFinal;
+            clearInterval(intervalo);
+        }
+
+        numero.textContent = valor;
+    }, 10);
+}
+
+const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach((entrada) => {
+        if (entrada.isIntersecting && !iniciou) {
+            iniciou = true;
+            contador();
+        }
+    });
+}, {
+    threshold: 0.3
+});
+
+observador.observe(secao);
