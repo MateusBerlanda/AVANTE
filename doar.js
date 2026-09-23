@@ -46,6 +46,8 @@ document.addEventListener("keydown", (event) => {
 // MODAL
 
 const abrirModal = document.getElementById("abrirModal");
+const abrirModal2 = document.getElementById("btnMenuDoar");
+const abrirModal3 = document.getElementById("btnMenuDoarHamburger");
 const fecharModal = document.getElementById("fecharModal");
 const modal = document.getElementById("modal");
 
@@ -55,7 +57,16 @@ const modal = document.getElementById("modal");
 
 abrirModal.addEventListener("click", () => {
   modal.classList.add("ativo");
+  mostrarEtapa("etapaEscolha");
+});
 
+abrirModal2.addEventListener("click", () => {
+  modal.classList.add("ativo");
+  mostrarEtapa("etapaEscolha");
+});
+
+abrirModal3.addEventListener("click", () => {
+  modal.classList.add("ativo");
   mostrarEtapa("etapaEscolha");
 });
 

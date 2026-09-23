@@ -17,9 +17,11 @@
 
 <body>
     <!-- ETAPA 3: FORMULÁRIO DE COMPRA -->
-    <div class="etapa" id="etapaFormCompra">
-        <div class="text-etapa">
-            <span class="btn-voltar" id="btnVoltarCompra"><a href="doar.html">← Voltar</a></span>
+    <div class="formulario">
+        <div class=" text-etapa">
+            <button type="button" class="btn-voltarAmarelo" id="btnVoltarFormulario">
+                ← VOLTAR
+            </button>
         </div>
 
         <h2 class="form-compra">FORMULÁRIO DE DOAÇÃO!</h2>
@@ -27,7 +29,7 @@
             Preencha as informações abaixo para registrar sua doação.
         </p>
 
-        <form id="formCompra">
+        <form id="formDoacao">
             <div class="campo">
                 <label for="nomeCompra">Nome completo*</label>
                 <input type="text" id="nomeDoacao" placeholder="Digite seu nome" required />
@@ -39,38 +41,36 @@
             </div>
 
             <div class="campo">
-                <label for="telefoneCompra">Telefone*</label>
-                <input type="tel" id="telefoneDoacao" placeholder="(00) 00000-0000" required />
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefoneDoacao" placeholder="(00) 00000-0000" maxlength="15"
+                    oninput="mascaraTelefone(this)" />
             </div>
+            
             <div class="campo">
                 <label for="tipoDoacao">O que você deseja doar para a AVANTE?*</label>
                 <select id="presenteCompra" required>
                     <option value="brinquedo">BRINQUEDO</option>
-                    <option value="">CUBO MÁGICO R$ 15,00</option>
-                    <option value="">URSINHO R$ 20,00</option>
-                    <option value="">CARRINHO R$ 25,00</option>
-                    <option value="">BOLA FUTEBOL R$ 30,00</option>
-                    <option value="">BOLA VÔLEI R$ 30,00</option>
-                    <option value="">BOLA BASQUETE R$ 30,00</option>
-                    <option value="">QUEBRA-CABEÇA R$ 40,00</option>
-                    <option value="">BONECA R$ 50,00</option>
-                    <option value="">BANCO IMOBILIÁRIO R$ 100,00</option>
-                    <option value="">LAPTOP R$ 150,00</option>
-                    <option value="">CARRINHO CONTROLE REMOTO R$ 180,00</option>
-                    <option value="">BICICLETA R$ 300,00</option>
+                    <option value="">🎲 CUBO MÁGICO R$ 15,00</option>
+                    <option value="">🧸 URSINHO R$ 20,00</option>
+                    <option value="">🚗 CARRINHO R$ 25,00</option>
+                    <option value="">⚽ BOLA FUTEBOL R$ 30,00</option>
+                    <option value="">🏐 BOLA VÔLEI R$ 30,00</option>
+                    <option value="">🏀 BOLA BASQUETE R$ 30,00</option>
+                    <option value="">🧩 QUEBRA-CABEÇA R$ 40,00</option>
+                    <option value="">🪆 BONECA R$ 50,00</option>
+                    <option value="">🎩 BANCO IMOBILIÁRIO R$ 100,00</option>
+                    <option value="">💻 LAPTOP R$ 150,00</option>
+                    <option value="">🚙 CARRINHO CONTROLE REMOTO R$ 180,00</option>
+                    <option value="">🚲 BICICLETA R$ 300,00</option>
                 </select>
             </div>
 
             <div class="campo">
                 <label>Quantidade*</label>
                 <div class="stepper">
-                    <button type="button" class="stepper-btn" id="qtdMenosCompra">
-                        −
-                    </button>
-                    <input type="text" id="qtdValorCompra" value="1" readonly />
-                    <button type="button" class="stepper-btn" id="qtdMaisCompra">
-                        +
-                    </button>
+                    <button type="button" class="stepper-btn" id="qtdMenos">−</button>
+                    <input type="text" id="qtdValor" value="1" readonly />
+                    <button type="button" class="stepper-btn" id="qtdMais">+</button>
                 </div>
             </div>
 
@@ -84,7 +84,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn-etapa" id="btnContinuarDoacao">
+            <button type="submit" class="btn-etapaAmarelo" id="btnContinuarDoacao">
                 CONTINUAR
             </button>
         </form>
@@ -94,10 +94,12 @@
     <div class="etapa" id="etapaConfirmacaoCompra">
         <div class="confirmacao-form" id="confirmacaoFormCompra">
             <div class="text-etapa">
-                <span class="btn-voltar" id="btnVoltarFormCompra">← Voltar</span>
+                <button type="button" class="btn-voltarAmarelo" id="btnVoltarFormulario">
+                    ← VOLTAR
+                </button>
             </div>
 
-            <h2 class="form-doacao">FORMULÁRIO DE DOAÇÃO!</h2>
+            <h2 class="form-compra">FORMULÁRIO DE DOAÇÃO!</h2>
             <p class="descricao-modal">Realize o pagamento:</p>
 
             <div class="qrcode">
@@ -105,18 +107,18 @@
                 <p>Qr Code para pagamento PIX</p>
             </div>
 
-            <button type="button" class="btn-etapa" id="btnConfirmarCompra">
+            <button type="button" class="btn-etapaAmarelo" id="btnConfirmarCompra">
                 CONFIRMAR PAGAMENTO
             </button>
         </div>
 
         <!-- MENSAGEM FINAL: exibida no lugar do formulário acima, dentro desta mesma última etapa -->
         <div class="confirmacao-obrigado" id="confirmacaoObrigadoCompra">
-            <h2 class="form-doacao texto-centralizado">
+            <h2 class="form-compra texto-centralizado">
                 OBRIGADO PELA DOAÇÃO!
             </h2>
 
-            <div class="icone-sucesso">
+            <div class="icone-sucessoAmarelo">
                 <svg viewBox="0 0 24 24" width="70" height="70">
                     <polyline points="4,13 10,19 20,6" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -124,6 +126,92 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // MAIS E MENOS
+        const btnQtdMenos = document.getElementById("qtdMenos");
+        const btnQtdMais = document.getElementById("qtdMais");
+        const inputQtd = document.getElementById("qtdValor");
+
+        const QTD_MINIMA = 1;
+        const QTD_MAXIMA = 100;
+
+        btnQtdMenos.addEventListener("click", () => {
+            let valor = parseInt(inputQtd.value, 10) || QTD_MINIMA;
+            valor = Math.max(valor - 1, QTD_MINIMA);
+            inputQtd.value = valor;
+        });
+
+        btnQtdMais.addEventListener("click", () => {
+            let valor = parseInt(inputQtd.value, 10) || QTD_MINIMA;
+            valor = Math.min(valor + 1, QTD_MAXIMA);
+            inputQtd.value = valor;
+        });
+
+        // TELEFONE
+
+        function mascaraTelefone(campo) {
+            let valor = campo.value.replace(/\D/g, "");
+
+            if (valor.length > 11) {
+                valor = valor.substring(0, 11);
+            }
+
+            if (valor.length <= 2) {
+                campo.value = "(" + valor;
+            } else if (valor.length <= 7) {
+                campo.value = "(" + valor.substring(0, 2) + ") " + valor.substring(2);
+            } else {
+                campo.value =
+                    "(" +
+                    valor.substring(0, 2) +
+                    ") " +
+                    valor.substring(2, 7) +
+                    "-" +
+                    valor.substring(7, 11);
+            }
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            // ETAPAS
+            const formulario = document.querySelector(".formulario");
+            const etapaConfirmacao = document.getElementById("etapaConfirmacaoCompra");
+
+            // SUB-TELAS DENTRO DA ETAPA DE CONFIRMAÇÃO
+            const confirmacaoForm = document.getElementById("confirmacaoFormCompra");
+            const confirmacaoObrigado = document.getElementById("confirmacaoObrigadoCompra");
+
+            // FORM E BOTÕES
+            const formDoacao = document.getElementById("formDoacao");
+            const btnConfirmarDoacao = document.getElementById("btnConfirmarCompra");
+
+            etapaConfirmacao.style.display = "none";
+
+            // ETAPA 1 -> ETAPA 2
+            formDoacao.addEventListener("submit", (event) => {
+                event.preventDefault();
+
+                formulario.style.display = "none";
+                etapaConfirmacao.style.display = "block";
+
+                confirmacaoForm.style.display = "block";
+                confirmacaoObrigado.classList.remove("ativa");
+
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+
+            // ETAPA 2 -> MENSAGEM DE OBRIGADO
+            btnConfirmarDoacao.addEventListener("click", () => {
+                confirmacaoForm.style.display = "none";
+                confirmacaoObrigado.classList.add("ativa");
+                window.setTimeout(() => {
+                    window.location.href = "doar.html";
+                }, 5000);
+            });
+        });
+        document.getElementById("btnVoltarInicio").addEventListener("click", () => {
+            window.location.href = "doar.html";
+        });
+    </script>
 </body>
 
 </html>

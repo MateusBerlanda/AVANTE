@@ -29,9 +29,9 @@
             <a href="contato.html">CONTATO</a>
             <a href="campanha.html">CAMPANHA</a>
 
-            <button class="btn-menu-doar" id="btnMenuDoar" type="button">DOAR AGORA</button>
+            <button class="btn-menu-doar" id="btnMenuDoarHamburger" type="button">DOAR AGORA</button>
         </nav>
-        <button>DOAR AGORA</button>
+        <button id="btnMenuDoar">DOAR AGORA</button>
         <button class="hamburger" id="btnHamburger" type="button" aria-label="Abrir menu" aria-expanded="false"
             aria-controls="menuNav">
             <span></span>
@@ -270,12 +270,16 @@
 
             <!-- ETAPA 1: ESCOLHA -->
             <div class="etapa ativa" id="etapaEscolha">
-                <h2>ESCOLHA SUA MISSÃO!</h2>
+                <div class="cabecalho-missao">
+                    <div class="textos-missao">
+                        <h2>ESCOLHA SUA MISSÃO!</h2>
 
-                <p class="descricao-modal">
-                    Existem duas formas de ajudar uma criança a sorrir. Escolha como
-                    você quer ser um herói!
-                </p>
+                        <p class="descricao-modal">
+                            Existem duas formas de ajudar uma criança a sorrir.
+                            Escolha como você quer ser um herói!
+                        </p>
+                    </div>
+                </div>
 
                 <div class="opcoes-doacao">
                     <!-- DOAR -->
@@ -290,8 +294,7 @@
                             nossos pontos de coleta.
                         </p>
 
-
-                        <a href="qrdoar.html"><button class="btn-missao btn-azul">QUERO DOAR</button></a>
+                        <a href="qrdoar.html" class="btn-missao btn-azul">QUERO DOAR</a>
 
                     </div>
 
@@ -308,7 +311,7 @@
                         </p>
 
 
-                        <a href="presente.html"><button class="btn-missao btn-amarelo">ESCOLHER PRESENTE</button></a>
+                        <a href="presente.html" class="btn-missao btn-amarelo">ESCOLHER PRESENTE</a>
                     </div>
                 </div>
 
@@ -325,7 +328,7 @@
     <footer>
         <div class="logo">
             <img src="img/logo.png" alt="logo" />
-            <p>Aqui, cada brinquedo doado começa uma nova história.</p>
+            <p>Aqui, doado começa uma nova história.</p>
         </div>
         <nav class="nav-footer">
             <h3>LINKS RÁPIDOS</h3>

@@ -21,7 +21,7 @@ a {
 /* HEADER */
 
 header {
-  position: relative;
+  position: sticky;
   background: #f2eddb;
   border-bottom: 3px solid #111;
   display: flex;
@@ -80,11 +80,9 @@ header::after {
   right: 0;
   bottom: 0;
   height: 8px;
-  background: repeating-linear-gradient(
-    to right,
-    #111 0 2px,
-    transparent 2px 12px
-  );
+  background: repeating-linear-gradient(to right,
+      #111 0 2px,
+      transparent 2px 12px);
 }
 
 /* MENU HAMBÚRGUER + PAINEL LATERAL */
@@ -97,7 +95,7 @@ header nav .btn-menu-doar {
 }
 
 @media (max-width: 900px) {
-  header > button {
+  header>button {
     display: none;
   }
 
@@ -290,6 +288,7 @@ header nav .btn-menu-doar {
 
   @media (max-width: 900px) {
     width: 100%;
+
     h1 {
       font-size: 50px;
     }
@@ -525,8 +524,11 @@ header nav .btn-menu-doar {
   text-align: center;
   background: linear-gradient(to bottom, #c80004 50%, white 50%);
 }
+
+/* VER MAIS */
+
 .btn-ver-mais {
-  display: none; /* escondido no desktop */
+  display: none;
 }
 
 /* Ajuste o breakpoint para o mesmo valor em que .brinquedos vira 1 coluna */
@@ -537,6 +539,7 @@ header nav .btn-menu-doar {
 
   .brinquedos.mostrar-todos .brinquedo:nth-child(n + 4) {
     display: flex;
+    animation: deslizarParaBaixo 0.4s ease-out forwards;
   }
 
   .btn-ver-mais {
@@ -552,9 +555,28 @@ header nav .btn-menu-doar {
     font-family: "Bangers", system-ui;
     font-size: 30px;
     color: #fff;
+    transition: transform 0.1s ease, box-shadow 0.1s;
+  }
+
+  .btn-ver-mais:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0 #14141a;
   }
 
 }
+
+@keyframes deslizarParaBaixo {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* QUERO DOAR */
 
 .qrdoar {
@@ -667,11 +689,13 @@ header nav .btn-menu-doar {
   background: #fbf9f0;
   border: 6px solid #000;
   box-shadow: 10px 10px 0 #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   opacity: 0;
   transform: translateY(100vh);
+  position: relative;
+  box-sizing: border-box;
+  padding: 42px 32px 24px;
+  overflow-x: hidden;
 
   p {
     font-size: 16px;
@@ -688,13 +712,19 @@ header nav .btn-menu-doar {
     -webkit-text-stroke-color: black;
     margin-top: 20px;
   }
-  @media (max-width: 950px) {
-    width: 95%;
-    height: 90%;
-    overflow-y: auto;
-    padding: 30px 0;
+}
+
+@media (max-width: 950px) {
+
+  p {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 30px;
   }
 }
+
 
 .modal-overlay.ativo .modal-doacao {
   animation: entrada 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -761,6 +791,46 @@ header nav .btn-menu-doar {
   font-size: 17px;
   color: #333;
   font-family: "Poppins", sans-serif;
+
+  @media (max-width: 950px) {
+    margin: auto;
+  }
+}
+
+/* CABEÇALHO DA ETAPA 1 */
+
+.cabecalho-missao {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+
+.cabecalho-missao h2 {
+  margin: 0;
+  color: #2b58c4;
+  font-family: "Bangers", system-ui;
+  font-size: 45px;
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: black;
+}
+
+.cabecalho-missao .descricao-modal {
+  margin: 15px 0 0;
+  font-size: 17px;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+}
+
+.cabecalho-missao>img {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .formulario {
@@ -773,11 +843,6 @@ header nav .btn-menu-doar {
   border: 4px solid #000;
   box-shadow: 10px 10px 0 #000;
   margin: 20px auto;
-
-  @media (max-width: 950px) {
-    width: 90%;
-    padding: 15px;
-  }
 }
 
 /* PRIMEIRA ETAPA */
@@ -787,12 +852,11 @@ header nav .btn-menu-doar {
   justify-content: center;
   align-items: center;
   gap: 30px;
+  width: 100%;
 
   @media (max-width: 950px) {
     flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    padding: 0 20px;
+    gap: 30px;
   }
 }
 
@@ -801,8 +865,9 @@ header nav .btn-menu-doar {
   justify-content: center;
   flex-direction: column;
   padding: 30px;
-  width: 600px;
+  width: 50%;
   height: 350px;
+
   background: white;
   border: 5px solid #000;
   box-shadow: 8px 8px 0 #000;
@@ -823,10 +888,8 @@ header nav .btn-menu-doar {
   }
 
   @media (max-width: 950px) {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    padding: 25px;
+    width: 500px;
+    height: 250px;
   }
 }
 
@@ -838,15 +901,19 @@ header nav .btn-menu-doar {
 }
 
 .btn-missao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   padding: 14px;
   border: 2px solid black;
-  font-family: "Poppins" sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.2s;
   color: #fff;
+  text-decoration: none;
 }
 
 .btn-azul {
@@ -861,7 +928,7 @@ header nav .btn-menu-doar {
   background-color: #ffbb00;
 
   &:hover {
-    background-color: #b68500;
+    background-color: #ffbb00;
   }
 }
 
@@ -904,6 +971,22 @@ header nav .btn-menu-doar {
   }
 }
 
+.btn-voltarAmarelo {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-right: 10px;
+  background: none;
+  border: none;
+  color: #ffbb00;
+
+  a {
+    color: #ffbb00;
+  }
+}
+
 .btn-voltar:hover {
   transform: translateX(-5px);
 }
@@ -916,52 +999,12 @@ header nav .btn-menu-doar {
   -webkit-text-stroke-color: black;
 }
 
-#etapaFormCompra .form-compra {
+.form-compra {
+  font-family: "Bangers", system-ui;
+  font-size: 40px;
   color: #ffbb00;
   -webkit-text-stroke-width: 0.2px;
   -webkit-text-stroke-color: black;
-}
-
-#etapaFormCompra .btn-etapa {
-  background: #ffbb00;
-}
-
-#etapaFormCompra .btn-etapa:hover {
-  background: #b68500;
-}
-
-#etapaFormCompra .btn-voltar {
-  a {
-    color: #ffbb00;
-  }
-}
-
-#etapaConfirmacaoCompra .form-doacao {
-  color: #ffbb00;
-}
-
-#etapaConfirmacaoCompra .localizacao-info h3 {
-  color: #ffbb00;
-}
-
-#etapaConfirmacaoCompra .btn-voltar {
-  color: #ffbb00;
-}
-
-#etapaConfirmacaoCompra .btn-etapa {
-  background: #ffbb00;
-}
-
-#etapaConfirmacaoCompra .btn-etapa:hover {
-  background: #b68500;
-}
-
-#etapaConfirmacaoCompra .icone-sucesso {
-  background-color: #ffbb00;
-}
-
-#etapaConfirmacaoCompra .confirmacao-obrigado h2 {
-  color: #ffbb00;
 }
 
 form {
@@ -1097,6 +1140,28 @@ select {
   }
 }
 
+.btn-etapaAmarelo {
+  width: 100%;
+  margin-top: 10px;
+  background: #ffbb00;
+  color: white;
+  border: 3px solid #14141a;
+  box-shadow: 4px 4px 0 #14141a;
+  padding: 15px 30px;
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 #14141a;
+  }
+}
+
 /* ETAPA CONFIRMAÇÃO */
 
 .confirmacao-form {
@@ -1128,6 +1193,7 @@ select {
   h3 {
     margin-bottom: 10px;
     color: #2b58c4;
+    font-size: 25px;
   }
 
   p {
@@ -1141,6 +1207,7 @@ select {
   height: 250px;
   border: 2px solid #000;
   overflow: hidden;
+
   @media (max-width: 950px) {
     width: 100%;
   }
@@ -1166,17 +1233,32 @@ select {
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 300px;
+  height: 100vh;
 }
 
 .confirmacao-obrigado.ativa {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .icone-sucesso {
   width: 140px;
   height: 140px;
   background-color: #1f3e8c;
+  border: 4px solid #000;
+  box-shadow: 6px 6px 0 #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.icone-sucessoAmarelo {
+  width: 140px;
+  height: 140px;
+  background-color: #ffbb00;
   border: 4px solid #000;
   box-shadow: 6px 6px 0 #000;
   display: flex;
@@ -1392,7 +1474,7 @@ footer {
   .logo img {
     width: 160px;
   }
-  
+
   .nav-footer,
   .cont,
   .infos {
@@ -1454,4 +1536,109 @@ footer {
   .grandes p {
     font-size: 13px;
   }
+}
+
+/* MODAL RESPONSIVO */
+
+@media (max-width: 950px) {
+
+  .modal-doacao {
+    width: 100%;
+    padding: 60px 20px;
+
+    h2 {
+      font-size: 30px;
+    }
+
+    .descricao-modal {
+      margin: 10px;
+    }
+
+    .opcoes-doacao {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card-doacao {
+      width: 80%;
+      padding: 30px;
+
+      h3 {
+        font-size: 25px;
+      }
+
+
+      .titulo-modal img {
+        width: 60px;
+        height: auto;
+      }
+    }
+
+    .frase-final {
+      margin: 20px;
+      text-align: center;
+    }
+
+    .fechar-modal {
+      top: 8px;
+      right: 8px;
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  .cabecalho-missao {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .cabecalho-missao h2 {
+    font-size: 30px;
+  }
+
+  .cabecalho-missao .descricao-modal {
+    font-size: 14px;
+    margin: 10px 0 15px;
+  }
+
+  .cabecalho-missao>img {
+    width: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .modal-overlay {
+    padding: 8px;
+  }
+
+  .modal-doacao {
+    width: 100%;
+    height: auto;
+    max-height: calc(100dvh - 16px);
+    padding: 58px 13px 14px;
+    border-width: 4px;
+    box-shadow: 5px 5px 0 #000;
+    overflow-y: auto;
+  }
+
+  .cabecalho-missao {
+    gap: 3px;
+    margin-bottom: 20px;
+  }
+
+  .cabecalho-missao h2 {
+    font-size: 26px;
+  }
+
+  .cabecalho-missao .descricao-modal {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .cabecalho-missao>img {
+    width: 60px;
+  }
+
+  .card-doacao {}
 }
