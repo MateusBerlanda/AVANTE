@@ -80,9 +80,11 @@ header::after {
   right: 0;
   bottom: 0;
   height: 8px;
-  background: repeating-linear-gradient(to right,
-      #111 0 2px,
-      transparent 2px 12px);
+  background: repeating-linear-gradient(
+    to right,
+    #111 0 2px,
+    transparent 2px 12px
+  );
 }
 
 /* MENU HAMBÚRGUER + PAINEL LATERAL */
@@ -95,11 +97,10 @@ header nav .btn-menu-doar {
 }
 
 @media (max-width: 900px) {
-  header>button {
+  header > button {
     display: none;
   }
 
-  /* hambúrguer à direita */
   header .hamburger {
     display: flex;
     flex-direction: column;
@@ -135,13 +136,12 @@ header nav .btn-menu-doar {
     visibility: visible;
   }
 
-  /* painel lateral na direita */
   header nav {
     position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
-    width: 40%;
+    width: 50%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -167,7 +167,6 @@ header nav .btn-menu-doar {
     visibility: visible;
   }
 
-  /* X no topo do painel */
   header nav .fechar-menu {
     display: flex;
     align-items: center;
@@ -179,22 +178,19 @@ header nav .btn-menu-doar {
     height: 40px;
     padding: 0;
     background: transparent;
-    color: #111;
+    color: black;
     border: none;
     box-shadow: none;
     font-family: "Poppins", sans-serif;
     font-size: 40px;
-    line-height: 1;
     cursor: pointer;
   }
 
   header nav .fechar-menu:hover {
     transform: none;
     box-shadow: none;
-    color: #e3272b;
   }
 
-  /* DOAR AGORA dentro do painel */
   header nav .btn-menu-doar {
     display: block;
     width: 100%;
@@ -300,8 +296,21 @@ header nav .btn-menu-doar {
 }
 
 .polaroid {
+  animation: roll-in-blurred-right 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
   img {
     width: 70%;
+  }
+}
+@keyframes roll-in-blurred-right {
+  0% {
+    transform: translateX(1000px) rotate(720deg);
+    filter: blur(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    filter: blur(0);
+    opacity: 1;
   }
 }
 
@@ -551,18 +560,19 @@ header nav .btn-menu-doar {
     border: 3px solid #14141a;
     box-shadow: 4px 4px 0 #14141a;
     font-weight: 100;
-    -webkit-text-stroke: 0.1px black;
+    -webkit-text-stroke: 1px black;
     font-family: "Bangers", system-ui;
     font-size: 30px;
     color: #fff;
-    transition: transform 0.1s ease, box-shadow 0.1s;
+    transition:
+      transform 0.1s ease,
+      box-shadow 0.1s;
   }
 
   .btn-ver-mais:active {
     transform: translate(4px, 4px);
     box-shadow: 0px 0px 0 #14141a;
   }
-
 }
 
 @keyframes deslizarParaBaixo {
@@ -714,18 +724,6 @@ header nav .btn-menu-doar {
   }
 }
 
-@media (max-width: 950px) {
-
-  p {
-    font-size: 14px;
-  }
-
-  h2 {
-    font-size: 30px;
-  }
-}
-
-
 .modal-overlay.ativo .modal-doacao {
   animation: entrada 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -786,6 +784,15 @@ header nav .btn-menu-doar {
   }
 }
 
+.escolha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
 .descricao-modal {
   margin: 20px 0px 30px 0px;
   font-size: 17px;
@@ -808,7 +815,6 @@ header nav .btn-menu-doar {
   margin-bottom: 30px;
 }
 
-
 .cabecalho-missao h2 {
   margin: 0;
   color: #2b58c4;
@@ -826,7 +832,7 @@ header nav .btn-menu-doar {
   line-height: 1.5;
 }
 
-.cabecalho-missao>img {
+.cabecalho-missao > img {
   width: 100px;
   height: auto;
   object-fit: contain;
@@ -1096,23 +1102,21 @@ select {
   cursor: pointer;
 }
 
-/* DROPZONE FOTO */
+/* FOTO */
 
-.dropzone {
-  margin-top: 5px;
-  width: 60%;
-  padding: 25px;
-  border: 2px dashed #999;
-  background-color: #f8f8f8;
-  text-align: center;
+.upload-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  border: 2px dashed #666666;
+  background-color: white;
   cursor: pointer;
-  font-weight: 600;
-  color: #333;
-  transition: 0.2s;
-
-  &:hover {
-    background-color: #f0f0f0;
-    border-color: #2b58c4;
+  margin-top: 15px;
+  span {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
   }
 }
 
@@ -1541,7 +1545,6 @@ footer {
 /* MODAL RESPONSIVO */
 
 @media (max-width: 950px) {
-
   .modal-doacao {
     width: 100%;
     padding: 60px 20px;
@@ -1566,7 +1569,6 @@ footer {
       h3 {
         font-size: 25px;
       }
-
 
       .titulo-modal img {
         width: 60px;
@@ -1601,13 +1603,12 @@ footer {
     margin: 10px 0 15px;
   }
 
-  .cabecalho-missao>img {
+  .cabecalho-missao > img {
     width: 70px;
   }
 }
 
 @media (max-width: 480px) {
-
   .modal-overlay {
     padding: 8px;
   }
@@ -1636,9 +1637,10 @@ footer {
     line-height: 1.4;
   }
 
-  .cabecalho-missao>img {
+  .cabecalho-missao > img {
     width: 60px;
   }
 
-  .card-doacao {}
+  .card-doacao {
+  }
 }

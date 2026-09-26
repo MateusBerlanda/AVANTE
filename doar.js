@@ -11,7 +11,6 @@ function abrirMenu() {
   menuNav.classList.add("aberto");
   menuOverlay.classList.add("aberto");
   document.body.classList.add("menu-aberto");
-  btnHamburger.setAttribute("aria-expanded", "true");
 }
 
 // Fechar menu
@@ -19,7 +18,6 @@ function fecharMenu() {
   menuNav.classList.remove("aberto");
   menuOverlay.classList.remove("aberto");
   document.body.classList.remove("menu-aberto");
-  btnHamburger.setAttribute("aria-expanded", "false");
 }
 
 // Clique no hambúrguer
@@ -36,12 +34,6 @@ linksMenu.forEach((link) => {
   link.addEventListener("click", fecharMenu);
 });
 
-// Fecha o menu ao apertar ESC
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    fecharMenu();
-  }
-});
 
 // MODAL
 
