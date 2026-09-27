@@ -17,7 +17,7 @@
 
   <body>
     <!-- ETAPA 2: FORMULÁRIO DE DOAÇÃO -->
-    <div class="formulario">
+    <div class="formulario etapa">
       <div class="text-etapa">
         <button type="button" class="btn-voltar" id="btnVoltarInicio">
           ← VOLTAR
@@ -63,20 +63,20 @@
         <div class="campo">
           <label for="tipoDoacao">O que você deseja doar para a AVANTE?*</label>
           <select id="tipoDoacao" required>
-            <option value="brinquedo">BRINQUEDO</option>
-            <option value="">🎲 CUBO MÁGICO</option>
-            <option value="">🧸 URSINHO</option>
-            <option value="">🚗 CARRINHO</option>
-            <option value="">⚽ BOLA FUTEBOL</option>
-            <option value="">🏐 BOLA VÔLEI</option>
-            <option value="">🏀 BOLA BASQUETE</option>
-            <option value="">🧩 QUEBRA-CABEÇA</option>
-            <option value="">🪆 BONECA</option>
-            <option value="">🎩 BANCO IMOBILIÁRIO</option>
-            <option value="">💻 LAPTOP</option>
-            <option value="">🚙 CARRINHO CONTROLE REMOTO</option>
-            <option value="">🚲 BICICLETA</option>
-            <option value="">OUTRO</option>
+            <option value="" disabled selected>Selecione um item</option>
+            <option value="cubo-magico">🎲 CUBO MÁGICO</option>
+            <option value="ursinho">🧸 URSINHO</option>
+            <option value="carrinho">🚗 CARRINHO</option>
+            <option value="bola-futebol">⚽ BOLA FUTEBOL</option>
+            <option value="bola-volei">🏐 BOLA VÔLEI</option>
+            <option value="bola-basquete">🏀 BOLA BASQUETE</option>
+            <option value="quebra-cabeca">🧩 QUEBRA-CABEÇA</option>
+            <option value="boneca">🪆 BONECA</option>
+            <option value="banco-imobiliario">🎩 BANCO IMOBILIÁRIO</option>
+            <option value="laptop">💻 LAPTOP</option>
+            <option value="carrinho-controle-remoto">🚙 CARRINHO CONTROLE REMOTO</option>
+            <option value="bicicleta">🚲 BICICLETA</option>
+            <option value="outro">OUTRO</option>
           </select>
         </div>
 
@@ -106,32 +106,52 @@
           <div class="estado-opcoes">
             <label class="estado-opcao">
               <input type="radio" name="estadoProduto" value="novo" required />
-              Novo
+              <span>Novo</span>
             </label>
             <label class="estado-opcao">
               <input type="radio" name="estadoProduto" value="pouco-usado" />
-              Pouco usado
+              <span>Pouco usado</span>
             </label>
             <label class="estado-opcao">
               <input type="radio" name="estadoProduto" value="bom-estado" />
-              Usado em bom estado
+              <span>Usado em bom estado</span>
             </label>
           </div>
         </div>
 
         <div class="campo">
-          <label>Possui alguma foto do produto? Se sim anexe-a aqui(opcional):</label>
-          <input type="file" id="foto" accept="image/*" style="display: none" />
-          <label for="foto" class="upload-box">
-            <span>+ Adicionar foto</span>
-          </label>
+          <label>Qual o melhor dia para você realizar a sua doação?*</label>
+          <input type="date" id="data" required />
         </div>
 
+        <div class="campo">
+          <label
+            >Possui alguma foto do produto? Se sim anexe-a
+            aqui(Opcional):</label
+          >
+          <input type="file" id="foto" accept="image/*" style="display: none" />
+
+          <label for="foto" class="upload-box">
+            <span id="addfoto">+ Adicionar foto</span>
+          </label>
+          <img
+            id="preview"
+            class="preview-foto"
+            src=""
+            alt="Prévia da foto"
+            style="display: none"
+          />
+        </div>
         <div class="campo"></div>
 
-        <button type="submit" class="btn-etapa" id="btnContinuarDoacao">
-          CONTINUAR
-        </button>
+        <div class="campo">
+          <label
+            >Deseja deixar uma mensagem sobre a sua doação?(Opcional)</label
+          >
+          <input type="text" id="msg" placeholder="Digite sua mensagem" />
+        </div>
+
+        <button class="btn-etapa" id="btnContinuarDoacao">CONTINUAR</button>
       </form>
     </div>
 
@@ -159,8 +179,6 @@
           <div class="mapa-embed">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.3476411031425!2d-48.3040667239795!3d-21.25770238102457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b96b83d82448fd%3A0x46e60858373c9de9!2sSesi!5e0!3m2!1spt-BR!2sbr!4v1789928713079!5m2!1spt-BR!2sbr"
-              width="600"
-              height="450"
               style="border: 0"
               allowfullscreen=""
               loading="lazy"
@@ -289,11 +307,30 @@
           }, 5000);
         });
       });
-      document.getElementById("btnVoltarInicio").addEventListener("click", () => {
+      document
+        .getElementById("btnVoltarInicio")
+        .addEventListener("click", () => {
           window.location.href = "doar.html";
         });
 
+      // FOTO
+      const foto = document.getElementById("foto");
+      const addfoto = document.getElementById("addfoto");
+      const preview = document.getElementById("preview");
 
+      foto.addEventListener("change", () => {
+        if (foto.files && foto.files[0]) {
+          const nomeDoArquivo = foto.files[0].name;
+          addfoto.textContent = "Arquivo: " + nomeDoArquivo;
+
+          const urlImagem = URL.createObjectURL(foto.files[0]);
+          preview.src = urlImagem;
+          preview.style.display = "block";
+        } else {
+          addfoto.textContent = "+ Adicionar foto";
+          preview.style.display = "none";
+        }
+      });
     </script>
   </body>
 </html>
