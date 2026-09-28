@@ -80,11 +80,9 @@ header::after {
   right: 0;
   bottom: 0;
   height: 8px;
-  background: repeating-linear-gradient(
-    to right,
-    #111 0 2px,
-    transparent 2px 12px
-  );
+  background: repeating-linear-gradient(to right,
+      #111 0 2px,
+      transparent 2px 12px);
 }
 
 /* MENU HAMBÚRGUER + PAINEL LATERAL */
@@ -97,7 +95,7 @@ header nav .btn-menu-doar {
 }
 
 @media (max-width: 900px) {
-  header > button {
+  header>button {
     display: none;
   }
 
@@ -296,22 +294,45 @@ header nav .btn-menu-doar {
 }
 
 .polaroid {
-  animation: roll-in-blurred-right 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+  -webkit-animation: roll-in-blurred-right 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  animation: roll-in-blurred-right 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 
   img {
     width: 70%;
   }
 }
 
-@keyframes roll-in-blurred-right {
+@-webkit-keyframes roll-in-blurred-right {
   0% {
+    -webkit-transform: translateX(1000px) rotate(720deg);
     transform: translateX(1000px) rotate(720deg);
+    -webkit-filter: blur(50px);
     filter: blur(50px);
     opacity: 0;
   }
 
   100% {
+    -webkit-transform: translateX(0) rotate(0deg);
     transform: translateX(0) rotate(0deg);
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+@keyframes roll-in-blurred-right {
+  0% {
+    -webkit-transform: translateX(1000px) rotate(720deg);
+    transform: translateX(1000px) rotate(720deg);
+    -webkit-filter: blur(50px);
+    filter: blur(50px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0) rotate(0deg);
+    transform: translateX(0) rotate(0deg);
+    -webkit-filter: blur(0);
     filter: blur(0);
     opacity: 1;
   }
@@ -1042,6 +1063,7 @@ select {
   border: 1px solid;
   background-color: #f8f8f8;
   margin-bottom: 5px;
+  font-family: "Poppins", sans-serif;
 }
 
 .texto-centralizado {
@@ -1099,7 +1121,7 @@ select {
   font-weight: 300;
   cursor: pointer;
 
-  span{
+  span {
     font-weight: 400;
   }
 }
@@ -1140,6 +1162,7 @@ select {
     opacity: 0;
     transform: translateY(-5px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1264,7 +1287,7 @@ select {
     margin-top: 20px;
   }
 
-  P{
+  P {
     font-family: "Poppins", sans-serif;
   }
 }
@@ -1671,6 +1694,7 @@ footer {
 /* FORMULÁRIO RESPONSIVO */
 
 @media (max-width: 600px) {
+
   .formulario,
   .confirmacao-form {
     padding: 15px;
