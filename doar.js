@@ -1,3 +1,4 @@
+(function () {
 // MENU HAMBÚRGUER
 
 const btnHamburger = document.getElementById("btnHamburger");
@@ -38,8 +39,7 @@ linksMenu.forEach((link) => {
 // MODAL
 
 const abrirModal = document.getElementById("abrirModal");
-const abrirModal2 = document.getElementById("btnMenuDoar");
-const abrirModal3 = document.getElementById("btnMenuDoarHamburger");
+const botoesAbrirModal = document.querySelectorAll('[id^="btnMenuDoar"]');
 const fecharModal = document.getElementById("fecharModal");
 const modal = document.getElementById("modal");
 
@@ -47,19 +47,16 @@ const modal = document.getElementById("modal");
 // ABRIR MODAL
 // =====================================
 
-abrirModal.addEventListener("click", () => {
-  modal.classList.add("ativo");
-  mostrarEtapa("etapaEscolha");
-});
+if (abrirModal) {
+  abrirModal.addEventListener("click", () => {
+    modal.classList.add("ativo");
+  });
+}
 
-abrirModal2.addEventListener("click", () => {
-  modal.classList.add("ativo");
-  mostrarEtapa("etapaEscolha");
-});
-
-abrirModal3.addEventListener("click", () => {
-  modal.classList.add("ativo");
-  mostrarEtapa("etapaEscolha");
+botoesAbrirModal.forEach((botao) => {
+  botao.addEventListener("click", () => {
+    modal.classList.add("ativo");
+  });
 });
 
 // =====================================
@@ -75,8 +72,6 @@ function fecharModalCompleto() {
   setTimeout(() => {
     modal.classList.remove("ativo");
     modal.classList.remove("fechando");
-    mostrarEtapa("etapaEscolha");
-    resetarEtapaConfirmacao();
   }, 500);
 }
 
@@ -94,3 +89,4 @@ if (btnVerMaisBrinquedos) {
         : "VER MAIS ";
   });
 }
+})();

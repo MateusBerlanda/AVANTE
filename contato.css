@@ -124,6 +124,10 @@ header::after {
     background: repeating-linear-gradient(to right, #111 0 2px, transparent 2px 12px);
 }
 
+.selected {
+    color: #e3272b;
+}
+
 /* MENU HAMBÚRGUER + PAINEL LATERAL */
 
 header .hamburger,
@@ -256,7 +260,7 @@ header nav .btn-menu-doar {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 565px;
+    height: 550px;
     background-image: url('img/Fundo-Homem-Ferro.png');
 
     @media (max-width: 900px) {
@@ -600,7 +604,7 @@ span {
     font-family: "Poppins", sans-serif;
     gap: 10px;
 
-    h2{
+    h2 {
         color: #C49000;
     }
 }
@@ -638,11 +642,12 @@ span {
         text-align: center;
         font-size: 28px;
         padding: 45px;
-          @media(max-width:450px){
-        font-size: 23px;
-        padding: 45px;
-       
-    }
+
+        @media(max-width:450px) {
+            font-size: 23px;
+            padding: 45px;
+
+        }
 
     }
 
@@ -960,5 +965,254 @@ footer {
 
     .grandes p {
         font-size: 13px;
+    }
+}
+
+/* MODAL DOAÇÃO */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.modal-overlay.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-doacao {
+    width: min(1100px, 92vw);
+    max-height: 90vh;
+    background: #fbf9f0;
+    border: 6px solid #000;
+    position: relative;
+    padding: 40px;
+    opacity: 0;
+    transform: translateY(100vh);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+    p {
+        font-size: 16px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+    }
+
+    h2 {
+        color: #2b58c4;
+        font-family: "Bangers", system-ui;
+        font-size: 45px;
+        -webkit-text-stroke-width: 0.1px;
+        -webkit-text-stroke-color: black;
+        margin: 0;
+    }
+}
+
+.modal-overlay.ativo .modal-doacao {
+    animation: entrada 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes entrada {
+    from {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-overlay.fechando .modal-doacao {
+    animation: saidaModal 0.7s ease-in forwards;
+}
+
+@keyframes saidaModal {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #b71c20;
+    color: #fff;
+    border: 4px solid #000;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #000;
+    z-index: 10;
+
+    span {
+        transition: 0.3s;
+        padding: 10px;
+
+        &:hover {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.escolha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.cabecalho-missao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.descricao-modal {
+    max-width: 800px;
+    margin: 0;
+    font-size: 17px;
+    color: #333;
+    font-family: "Poppins", sans-serif;
+}
+
+/* FORMULÁRIO */
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 700px;
+    max-width: 92vw;
+    padding: 20px;
+    background-color: #fbf9f0;
+    border: 4px solid #000;
+    box-shadow: 10px 10px 0 #000;
+    margin: 20px auto;
+}
+
+/* PRIMEIRA ETAPA */
+
+.opcoes-doacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.card-doacao {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    width: 50%;
+    height: 300px;
+    background: white;
+    border: 5px solid #000;
+    box-shadow: 8px 8px 0 #000;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+    h3 {
+        font-family: "Bangers", system-ui;
+        font-size: 35px;
+        color: white;
+        -webkit-text-stroke-width: 0.2px;
+        -webkit-text-stroke-color: black;
+    }
+
+    p {
+        margin: 0 0 20px;
+        font-size: 16px;
+        color: black;
+        font-family: "Poppins", sans-serif;
+    }
+
+    @media (max-width: 950px) {
+        width: 500px;
+        height: 250px;
+    }
+}
+
+.titulo-modal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.btn-missao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 14px;
+    border: 2px solid black;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-azul {
+    background-color: #1f3e8c;
+
+    &:hover {
+        background-color: #151c2f;
+    }
+}
+
+.btn-amarelo {
+    background-color: #ffbb00;
+
+    &:hover {
+        background-color: #ffbb00;
+    }
+}
+
+.frase-final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+
+    img {
+        width: 80px;
     }
 }

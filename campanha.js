@@ -46,7 +46,7 @@ document.addEventListener("keydown", (event) => {
 const numero = document.querySelector(".numero");
 const secao = document.querySelector(".doar-numero");
 
-const valorFinal = 5525;
+const valorFinal = 2500;
 let iniciou = false;
 
 function contador() {

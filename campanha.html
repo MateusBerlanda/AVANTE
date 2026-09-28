@@ -12,7 +12,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap"
         rel="stylesheet" />
-    <link rel="icon" type="image/png" href="img/favicon.png" />
     <link rel="icon" type="image/png" href="img/AVANTE-Icon.jpeg" />
 </head>
 
@@ -24,16 +23,20 @@
 
         <div class="menu-overlay" id="menuOverlay"></div>
         <nav id="menuNav">
-            <button class="fechar-menu" id="btnFecharMenu" type="button" aria-label="Fechar menu">×</button>
+            <button class="fechar-menu" id="btnFecharMenu" type="button" aria-label="Fechar menu">
+                ×
+            </button>
 
             <a href="index.html">INÍCIO</a>
             <a href="doar.html">DOAR</a>
             <a href="contato.html">CONTATO</a>
-            <a href="#">CAMPANHA</a>
+            <a href="campanha.html" class="selected">CAMPANHA</a>
 
-            <button class="btn-menu-doar" id="btnMenuDoar" type="button">DOAR AGORA</button>
+            <button class="btn-menu-doar" id="btnMenuDoarHamburger" type="button">
+                DOAR AGORA
+            </button>
         </nav>
-        <button>DOAR AGORA</button>
+        <button id="btnMenuDoar">DOAR AGORA</button>
         <button class="hamburger" id="btnHamburger" type="button" aria-label="Abrir menu" aria-expanded="false"
             aria-controls="menuNav">
             <span></span>
@@ -77,7 +80,7 @@
                 gestos em grandes histórias.
             </p>
 
-            <button class="butao-doar">ENTRAR EM AÇÃO!</button>
+            <button class="butao-doar" id="abrirModal">ENTRAR EM AÇÃO!</button>
 
         </div>
 
@@ -214,7 +217,14 @@
     <hr class="linha">
     <div class="quebrar">
 
-        <img class="explosao-imagem" src="img/juntos.png" alt="">
+        <div class="explosao">
+            <div class="explos">
+                <h3>JUNTOS SOMOS</h3>
+                <h1>MAIS FORTES</h1>
+            </div>
+            <img class="explosao-imagem" src="img/Destaque-Amarelo.png" alt="">
+        </div>
+
 
         <section class="doar-numero">
             <h1 class="numero">0</h1>
@@ -224,6 +234,63 @@
                 <img src="img/doações.png" class="doar-img" alt="Doar">
             </div>
         </section>
+    </div>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-doacao">
+            <button class="fechar-modal" id="fecharModal" type="button">
+                <span>×</span>
+            </button>
+
+            <!-- ETAPA 1: ESCOLHA -->
+            <div class="escolha" id="etapaEscolha">
+                <div class="cabecalho-missao">
+                    <h2>ESCOLHA SUA MISSÃO!</h2>
+
+                    <p class="descricao-modal">
+                        Existem duas formas de ajudar uma criança a sorrir. Escolha como
+                        você quer ser um herói!
+                    </p>
+                </div>
+
+                <div class="opcoes-doacao">
+                    <!-- DOAR -->
+                    <div class="card-doacao">
+                        <div class="titulo-modal">
+                            <h3>DOAR UM PRODUTO!</h3>
+                            <img src="img/gift.png" alt="gift" />
+                        </div>
+
+                        <p>
+                            Você já tem um brinquedo em bom estado? Leve ele até um dos
+                            nossos pontos de coleta.
+                        </p>
+
+                        <a href="qrdoar.html" class="btn-missao btn-azul">QUERO DOAR</a>
+                    </div>
+
+                    <!-- COMPRAR -->
+                    <div class="card-doacao">
+                        <div class="titulo-modal">
+                            <h3>COMPRAR PARA DOAR!</h3>
+                            <img src="img/money.png" alt="money" />
+                        </div>
+
+                        <p>
+                            Escolha um brinquedo do nosso catálogo e nós cuidaremos para que
+                            ele chegue até uma criança.
+                        </p>
+
+                        <a href="presente.html" class="btn-missao btn-amarelo">ESCOLHER PRESENTE</a>
+                    </div>
+                </div>
+
+                <p class="frase-final">
+                    UMA MISSÃO. UM GESTO. UM SORRISO.
+                    <img src="img/logo.png" alt="" />
+                </p>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -260,7 +327,7 @@
         <p>© 2026 AVANTE</p>
     </div>
     <script src="campanha.js"></script>
+    <script src="doar.js"></script>
 </body>
-
 
 </html>

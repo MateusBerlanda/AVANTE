@@ -22,16 +22,20 @@
 
         <div class="menu-overlay" id="menuOverlay"></div>
         <nav id="menuNav">
-            <button class="fechar-menu" id="btnFecharMenu" type="button" aria-label="Fechar menu">×</button>
+            <button class="fechar-menu" id="btnFecharMenu" type="button" aria-label="Fechar menu">
+                ×
+            </button>
 
-            <a href="#INICIO">INÍCIO</a>
-            <a href="#DOAR">DOAR</a>
-            <a href="#CONTATO">CONTATO</a>
-            <a href="#CAMPANHA">CAMPANHA</a>
+            <a href="index.html">INÍCIO</a>
+            <a href="doar.html">DOAR</a>
+            <a href="contato.html" class="selected">CONTATO</a>
+            <a href="campanha.html">CAMPANHA</a>
 
-            <button class="btn-menu-doar" id="btnMenuDoar" type="button">DOAR AGORA</button>
+            <button class="btn-menu-doar" id="btnMenuDoarHamburger" type="button">
+                DOAR AGORA
+            </button>
         </nav>
-        <button>DOAR AGORA</button>
+        <button id="btnMenuDoar3">DOAR AGORA</button>
         <button class="hamburger" id="btnHamburger" type="button" aria-label="Abrir menu" aria-expanded="false"
             aria-controls="menuNav">
             <span></span>
@@ -39,6 +43,8 @@
             <span></span>
         </button>
     </header>
+
+
     <!-- ALERT -->
 
 
@@ -164,6 +170,64 @@
         <img class="destque" src="img/Destaque.png" alt="">
         <img class="destque-direito" src="img/Destaque.png" alt="">
     </div>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-doacao">
+            <button class="fechar-modal" id="fecharModal" type="button">
+                <span>×</span>
+            </button>
+
+            <!-- ETAPA 1: ESCOLHA -->
+            <div class="escolha" id="etapaEscolha">
+                <div class="cabecalho-missao">
+                    <h2>ESCOLHA SUA MISSÃO!</h2>
+
+                    <p class="descricao-modal">
+                        Existem duas formas de ajudar uma criança a sorrir. Escolha como
+                        você quer ser um herói!
+                    </p>
+                </div>
+
+                <div class="opcoes-doacao">
+                    <!-- DOAR -->
+                    <div class="card-doacao">
+                        <div class="titulo-modal">
+                            <h3>DOAR UM PRODUTO!</h3>
+                            <img src="img/gift.png" alt="gift" />
+                        </div>
+
+                        <p>
+                            Você já tem um brinquedo em bom estado? Leve ele até um dos
+                            nossos pontos de coleta.
+                        </p>
+
+                        <a href="qrdoar.html" class="btn-missao btn-azul">QUERO DOAR</a>
+                    </div>
+
+                    <!-- COMPRAR -->
+                    <div class="card-doacao">
+                        <div class="titulo-modal">
+                            <h3>COMPRAR PARA DOAR!</h3>
+                            <img src="img/money.png" alt="money" />
+                        </div>
+
+                        <p>
+                            Escolha um brinquedo do nosso catálogo e nós cuidaremos para que
+                            ele chegue até uma criança.
+                        </p>
+
+                        <a href="presente.html" class="btn-missao btn-amarelo">ESCOLHER PRESENTE</a>
+                    </div>
+                </div>
+
+                <p class="frase-final">
+                    UMA MISSÃO. UM GESTO. UM SORRISO.
+                    <img src="img/logo.png" alt="" />
+                </p>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="logo">
             <img src="img/logo.png" alt="logo" />
@@ -197,7 +261,7 @@
         <h2>“Grandes histórias começam com Pequenos gestos”</h2>
         <p>© 2026 AVANTE</p>
     </div>
-    <script src="contato.js"></script>
+    <script src="doar.js"></script>
 </body>
 
 </html>
