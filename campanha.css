@@ -259,8 +259,17 @@ header nav .btn-menu-doar {
     gap: 50px;
     background: #FFBB00;
 
+    @media (max-width: 900px) {
+        flex-direction: column;
+        text-align: center;
+    }
+
     img {
         margin-right: 45px;
+
+        @media (max-width: 600px) {
+            display: none;
+        }
     }
 
     button {
@@ -285,12 +294,55 @@ header nav .btn-menu-doar {
     }
 }
 
+.imagem-inicio {
+    -webkit-animation: roll-in-blurred-bottom 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    animation: roll-in-blurred-bottom 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+@-webkit-keyframes roll-in-blurred-bottom {
+    0% {
+        -webkit-transform: translateY(800px) rotate(720deg);
+        transform: translateY(800px) rotate(720deg);
+        -webkit-filter: blur(50px);
+        filter: blur(50px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0) rotate(0deg);
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes roll-in-blurred-bottom {
+    0% {
+        -webkit-transform: translateY(800px) rotate(720deg);
+        transform: translateY(800px) rotate(720deg);
+        -webkit-filter: blur(50px);
+        filter: blur(50px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0) rotate(0deg);
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+}
+
 .texto {
     width: 48%;
 
     h1 {
         font-family: "Bangers", system-ui;
         font-size: 60px;
+
+        @media (max-width: 450px) {
+            display: flex;
+
+
+        }
     }
 
     p {
@@ -317,6 +369,13 @@ header nav .btn-menu-doar {
     display: flex;
     justify-content: center;
     gap: 45px;
+
+    @media (max-width: 850px) {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+
 }
 
 .card {
@@ -325,6 +384,11 @@ header nav .btn-menu-doar {
     background-color: white;
     border: 2px solid black;
     box-shadow: 10px 9px 0 black;
+
+    @media (max-width: 850px) {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .edicao {
@@ -510,6 +574,15 @@ header nav .btn-menu-doar {
     gap: 25px;
     margin-top: 70px;
     padding-bottom: 40px;
+
+    @media (max-width: 800px) {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 80px;
+
+    }
 }
 
 .ranking-card {
@@ -892,20 +965,10 @@ footer {
     background-size: 550px;
 }
 
-.explosao h2 {
-    font-family: "Bangers", system-ui;
-    font-size: 45px;
-    color: #071d68;
-    margin-left: 60px;
-    
-}
 
-.explosao h1 {
-    font-family: "Bangers", system-ui;
-    font-size: 75px;
-    color: #ed252d;
-    -webkit-text-stroke: 0.2px black;
-    margin-left: 60px;
+
+.explosao-imagem {
+    width: 450px;
 }
 
 .doar-numero {
@@ -948,6 +1011,12 @@ footer {
         font-family: "Poppins", sans-serif;
         right: 30%;
     }
+
+    @media (max-width: 650px) {
+        width: 100%;
+        left: 0;
+        justify-content: center;
+    }
 }
 
 .doar-img {
@@ -958,7 +1027,22 @@ footer {
     left: 30%;
 }
 
-.quebrar{
+.quebrar {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+
+
+    @media (max-width: 1250px) {
+        display: flex;
+        flex-direction: column;
+
+        .doar-numero {
+            height: auto;
+            background-size: contain;
+            width: 100%;
+
+        }
+
+    }
 }

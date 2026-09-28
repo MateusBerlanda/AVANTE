@@ -53,7 +53,7 @@ function contador() {
     let valor = 0;
 
     const intervalo = setInterval(() => {
-        valor += 25;
+        valor += 1;
 
         if (valor >= valorFinal) {
             valor = valorFinal;
@@ -61,7 +61,7 @@ function contador() {
         }
 
         numero.textContent = valor;
-    }, 10);
+    }, 20);
 }
 
 const observador = new IntersectionObserver((entradas) => {
