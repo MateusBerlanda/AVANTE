@@ -636,8 +636,14 @@ span {
         -webkit-text-stroke-width: 0.5px;
         -webkit-text-stroke-color: rgb(5, 5, 5);
         text-align: center;
-        font-size: 35px;
-        padding: 100px;
+        font-size: 28px;
+        padding: 45px;
+          @media(max-width:450px){
+        font-size: 23px;
+        padding: 45px;
+       
+    }
+
     }
 
     >img {
@@ -654,24 +660,24 @@ span {
 }
 
 .destque {
-    top: 29%;
-    left: 6%;
+    top: 27%;
+    left: 15%;
 
     @media(max-width:900px) {
-        left: 15%;
-        top: 26%;
+        left: 9%;
+        top: 17%;
     }
 
 }
 
 .destque-direito {
-    top: 29%;
-    right: 6%;
+    top: 27%;
+    right: 15%;
     transform: scaleX(-1);
 
     @media(max-width:900px) {
-        left: 80%;
-        top: 26%;
+        left: 78%;
+        top: 17%;
     }
 }
 
