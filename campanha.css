@@ -1294,3 +1294,89 @@ footer {
     width: 80px;
   }
 }
+
+/* MODAL RESPONSIVO */
+
+@media (max-width: 950px) {
+  .modal-doacao {
+    width: 100%;
+    overflow-y: auto;
+
+    .descricao-modal {
+      margin: 10px;
+    }
+
+    .opcoes-doacao {
+      gap: 20px;
+    }
+
+    .card-doacao {
+      width: 80%;
+      padding: 30px;
+
+      h3 {
+        font-size: 25px;
+      }
+
+      .titulo-modal img {
+        width: 60px;
+        height: auto;
+      }
+    }
+
+    .frase-final {
+      margin: 20px;
+      text-align: center;
+    }
+
+    .fechar-modal {
+      top: 8px;
+      right: 8px;
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  .opcoes-doacao {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .cabecalho-missao h2 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 550px) {
+  .modal-doacao {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    overflow-y: auto;
+  }
+
+  .cabecalho-missao {
+    gap: 3px;
+    margin-top: 20px;
+
+    h2 {
+      font-size: 35px;
+    }
+
+    img {
+      width: 60px;
+    }
+  }
+
+  .cabecalho-missao .descricao-modal {
+    font-size: 15px;
+  }
+
+  .titulo-modal {
+    align-items: center;
+  }
+
+  .card-doacao {
+    height: 300px;
+  }
+}

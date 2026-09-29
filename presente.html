@@ -11,7 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="img/favicon.png" />
     <link rel="icon" type="image/png" href="img/AVANTE-Icon.png" />
   </head>
 
@@ -19,11 +18,7 @@
     <!-- ETAPA 3: FORMULÁRIO DE COMPRA -->
     <div class="formulario">
       <div class="text-etapa">
-        <button
-          type="button"
-          class="btn-voltarAmarelo"
-          id="btnVoltarFormulario"
-        >
+        <button type="button" class="btn-voltarAmarelo" id="btnVoltarInicio">
           ← VOLTAR
         </button>
       </div>
@@ -78,7 +73,9 @@
             <option value="bola-basquete">🏀 BOLA BASQUETE R$30,00</option>
             <option value="quebra-cabeca">🧩 QUEBRA-CABEÇA R$40,00</option>
             <option value="boneca">🪆 BONECA R$50,00</option>
-            <option value="banco-imobiliario">🎩 BANCO IMOBILIÁRIO R$100,00</option>
+            <option value="banco-imobiliario">
+              🎩 BANCO IMOBILIÁRIO R$100,00
+            </option>
             <option value="laptop">💻 LAPTOP R$150,00</option>
             <option value="carrinho-controle-remoto">
               🚙 CARRINHO CONTROLE REMOTO R$180,00
@@ -124,11 +121,7 @@
     <div class="etapa" id="etapaConfirmacaoCompra">
       <div class="confirmacao-form" id="confirmacaoFormCompra">
         <div class="text-etapa">
-          <button
-            type="button"
-            class="btn-voltarAmarelo"
-            id="btnVoltarFormulario"
-          >
+          <button type="button" class="btn-voltarAmarelo" id="btnVoltarForm">
             ← VOLTAR
           </button>
         </div>
@@ -216,7 +209,7 @@
           "etapaConfirmacaoCompra",
         );
 
-        // SUB-TELAS DENTRO DA ETAPA DE CONFIRMAÇÃO
+        // SUB-TELAS
         const confirmacaoForm = document.getElementById(
           "confirmacaoFormCompra",
         );
@@ -228,6 +221,8 @@
         const formDoacao = document.getElementById("formDoacao");
         const btnConfirmarDoacao =
           document.getElementById("btnConfirmarCompra");
+        const btnVoltarInicio = document.getElementById("btnVoltarInicio");
+        const btnVoltarForm = document.getElementById("btnVoltarForm");
 
         etapaConfirmacao.style.display = "none";
 
@@ -238,13 +233,13 @@
           formulario.style.display = "none";
           etapaConfirmacao.style.display = "block";
 
-          confirmacaoForm.style.display = "block";
+          confirmacaoForm.style.display = "flex";
           confirmacaoObrigado.classList.remove("ativa");
 
           window.scrollTo({ top: 0, behavior: "smooth" });
         });
 
-        // ETAPA 2 -> MENSAGEM DE OBRIGADO
+        // ETAPA 2 -> OBRIGADO
         btnConfirmarDoacao.addEventListener("click", () => {
           confirmacaoForm.style.display = "none";
           confirmacaoObrigado.classList.add("ativa");
@@ -252,12 +247,19 @@
             window.location.href = "doar.html";
           }, 5000);
         });
-      });
-      document
-        .getElementById("btnVoltarInicio")
-        .addEventListener("click", () => {
+
+        // VOLTAR PARA O INÍCIO
+        btnVoltarInicio.addEventListener("click", () => {
           window.location.href = "doar.html";
         });
+
+        // VOLTAR DA CONFIRMAÇÃO PARA O FORMULÁRIO
+        btnVoltarForm.addEventListener("click", () => {
+          etapaConfirmacao.style.display = "none";
+          formulario.style.display = "flex";
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
     </script>
   </body>
 </html>
