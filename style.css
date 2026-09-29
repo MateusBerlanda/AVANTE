@@ -8,7 +8,6 @@ body {
   background-image: url("img/Fundo.jpeg");
 }
 
-/* Header */
 header {
   position: sticky;
   background: #f2eddb;
@@ -50,6 +49,7 @@ header {
     padding: 15px 30px;
     font-family: "Bangers", system-ui;
     font-size: 20px;
+    cursor: pointer;
     transition:
       transform 0.2s ease,
       box-shadow 0.2s ease;
@@ -93,7 +93,6 @@ header nav .btn-menu-doar {
     display: none;
   }
 
-  /* hambúrguer à direita */
   header .hamburger {
     display: flex;
     flex-direction: column;
@@ -105,6 +104,7 @@ header nav .btn-menu-doar {
     padding: 0;
     border: 3px solid #14141a;
     box-shadow: 4px 4px 0 #14141a;
+    cursor: pointer;
 
     span {
       display: block;
@@ -128,7 +128,6 @@ header nav .btn-menu-doar {
     visibility: visible;
   }
 
-  /* painel lateral na direita */
   header nav {
     position: fixed;
     top: 0;
@@ -160,7 +159,6 @@ header nav .btn-menu-doar {
     visibility: visible;
   }
 
-  /* X no topo do painel */
   header nav .fechar-menu {
     display: flex;
     align-items: center;
@@ -172,21 +170,19 @@ header nav .btn-menu-doar {
     height: 40px;
     padding: 0;
     background: transparent;
-    color: #111;
+    color: black;
     border: none;
     box-shadow: none;
     font-family: "Poppins", sans-serif;
     font-size: 40px;
-    line-height: 1;
+    cursor: pointer;
   }
 
   header nav .fechar-menu:hover {
     transform: none;
     box-shadow: none;
-    color: #e3272b;
   }
 
-  /* DOAR AGORA dentro do painel */
   header nav .btn-menu-doar {
     display: block;
     width: 100%;
@@ -445,7 +441,7 @@ header nav .btn-menu-doar {
   border: 3px solid black;
   box-shadow: 7px 7px 0 black;
   padding: 10px;
-  
+
   @media (max-width: 900px) {
     height: auto;
   }
@@ -1026,12 +1022,6 @@ footer {
 /* Responsividade de 600px */
 
 @media (max-width: 600px) {
-  html,
-  body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
 
   .hero {
     height: 400px;
@@ -1447,7 +1437,6 @@ footer {
     width: 80px;
   }
 }
-
 
 /* MODAL RESPONSIVO */
 
