@@ -313,9 +313,9 @@ header nav .btn-menu-doar {
 }
 
 .polaroid {
-  -webkit-animation: roll-in-blurred-left 1.5s cubic-bezier(0.23, 1, 0.32, 1)
+  -webkit-animation: roll-in-blurred-left 1s cubic-bezier(0.23, 1, 0.32, 1)
     both;
-  animation: roll-in-blurred-left 1.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation: roll-in-blurred-left 1s cubic-bezier(0.23, 1, 0.32, 1) both;
 
   > img {
     width: 90%;

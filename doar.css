@@ -311,9 +311,9 @@ header nav .btn-menu-doar {
 }
 
 .polaroid {
-  -webkit-animation: roll-in-blurred-right 0.65s cubic-bezier(0.23, 1, 0.32, 1)
+  -webkit-animation: roll-in-blurred-right 1s cubic-bezier(0.23, 1, 0.32, 1)
     both;
-  animation: roll-in-blurred-right 0.65s cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation: roll-in-blurred-right 1s cubic-bezier(0.23, 1, 0.32, 1) both;
 
   img {
     width: 70%;
@@ -661,11 +661,12 @@ header nav .btn-menu-doar {
   border: 3px solid #14141a;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   width: 80%;
-  margin: 0 auto;
+  margin: 0 auto 50px;
+  padding: 30px 40px; /* NOVO: respiro interno */
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 50px;
+  gap: 30px; /* NOVO */
   position: relative;
 
   img {
@@ -677,7 +678,7 @@ header nav .btn-menu-doar {
 
   @media (max-width: 950px) {
     flex-direction: column;
-    padding: 12px;
+    padding: 20px 12px;
 
     img {
       top: -10px;
@@ -687,6 +688,7 @@ header nav .btn-menu-doar {
 }
 
 .qr-texts {
+  flex: 1; /* NOVO: ocupa o espaço restante */
   font-family: "Bangers", system-ui;
   font-size: 25px;
   -webkit-text-stroke: 0.5px black;
@@ -699,12 +701,14 @@ header nav .btn-menu-doar {
   @media (max-width: 950px) {
     font-size: 20px;
     padding: 10px;
+    text-align: center;
   }
 }
 
 .qr-btn {
-  padding: 20px;
-  width: 100%;
+  flex: 0 0 auto; /* NOVO: não estica */
+  width: auto; /* ERA 100% */
+  padding: 0;
   display: flex;
   justify-content: center;
 
@@ -716,10 +720,10 @@ header nav .btn-menu-doar {
     padding: 15px 30px;
     font-family: "Bangers", system-ui;
     font-size: 30px;
-    width: 100%;
-    max-width: 300px; /* não passa de 300px no desktop */
     -webkit-text-stroke: 1px black;
     cursor: pointer;
+    width: 100%;
+    max-width: 300px;
     transition:
       transform 0.2s ease,
       box-shadow 0.2s ease;
@@ -732,6 +736,11 @@ header nav .btn-menu-doar {
     &:active {
       background-color: #bc8a00;
     }
+  }
+
+  @media (max-width: 950px) {
+    width: 100%; /* no mobile ele volta a ocupar tudo */
+    padding: 10px 0 20px;
   }
 }
 
@@ -967,7 +976,7 @@ header nav .btn-menu-doar {
   background-color: #ffbb00;
 
   &:hover {
-    background-color: #ffbb00;
+    background-color: #9f7500;
   }
 }
 

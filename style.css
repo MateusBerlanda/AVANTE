@@ -310,7 +310,7 @@ header nav .btn-menu-doar {
 .polaroid {
   -webkit-animation: roll-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1)
     both;
-  animation: roll-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation: roll-in-blurred-top 1.2s cubic-bezier(0.23, 1, 0.32, 1) both;
 
   img {
     width: 65%;
@@ -492,7 +492,7 @@ header nav .btn-menu-doar {
 
 .card-back {
   background-image: url("img/teia_branca_transparente.png");
-  background-size: 220px;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #1f3e8c;
@@ -591,10 +591,10 @@ header nav .btn-menu-doar {
 
 .vermelho-back {
   background-image: url("img/teia_branca_transparente.png");
-  background-size: 220px;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #d33737;
+  background-color: #a10003;
 }
 
 .nossa {
