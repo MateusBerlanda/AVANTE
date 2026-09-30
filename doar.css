@@ -391,6 +391,10 @@ header nav .btn-menu-doar {
   .h2span {
     color: white;
   }
+
+  @media (max-width: 900px) {
+    text-align: center;
+  }
 }
 
 .Funciona {
@@ -532,6 +536,10 @@ header nav .btn-menu-doar {
 
   .h2span {
     color: white;
+  }
+
+  @media (max-width: 900px) {
+    text-align: center;
   }
 }
 

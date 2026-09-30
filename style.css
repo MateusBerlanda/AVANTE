@@ -381,12 +381,16 @@ header nav .btn-menu-doar {
   justify-content: center;
   align-items: center;
 
-  h1 {
+  h2 {
     font-family: "Bangers", system-ui;
     font-size: 45px;
     color: #c80004;
-    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-width: 0.1px;
     -webkit-text-stroke-color: black;
+  }
+
+   @media (max-width: 900px) {
+    text-align: center;
   }
 }
 
