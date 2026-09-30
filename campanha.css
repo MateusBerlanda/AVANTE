@@ -76,11 +76,9 @@ header::after {
   right: 0;
   bottom: 0;
   height: 8px;
-  background: repeating-linear-gradient(
-    to right,
-    #111 0 2px,
-    transparent 2px 12px
-  );
+  background: repeating-linear-gradient(to right,
+      #111 0 2px,
+      transparent 2px 12px);
 }
 
 .selected {
@@ -97,7 +95,7 @@ header nav .btn-menu-doar {
 }
 
 @media (max-width: 1000px) {
-  header > button {
+  header>button {
     display: none;
   }
 
@@ -194,11 +192,13 @@ header nav .btn-menu-doar {
     box-shadow: none;
   }
 
-  /* DOAR AGORA dentro do painel */
   header nav .btn-menu-doar {
     display: block;
-    width: 100%;
+    position: static;
+    width: auto;
     margin-top: 15px;
+    padding: 12px 24px;
+    font-size: 20px;
   }
 }
 
@@ -250,8 +250,7 @@ header nav .btn-menu-doar {
 }
 
 .imagem-inicio {
-  -webkit-animation: roll-in-blurred-bottom 1s cubic-bezier(0.23, 1, 0.32, 1)
-    both;
+  -webkit-animation: roll-in-blurred-bottom 1s cubic-bezier(0.23, 1, 0.32, 1) both;
   animation: roll-in-blurred-bottom 1s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
@@ -984,7 +983,7 @@ footer {
   flex-direction: column;
   align-items: center;
 
-  > h1 {
+  >h1 {
     color: white;
     margin-top: 12px;
     font-size: 85px;
@@ -999,7 +998,8 @@ footer {
   align-items: center;
   justify-content: center;
   width: 600px;
-  height: 0;               /* NOVO: não empurra o número */
+  height: 0;
+  /* NOVO: não empurra o número */
   margin-top: 14px;
   left: 60px;
 
@@ -1024,7 +1024,7 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 340px; 
+  width: 340px;
   max-width: 100%;
   z-index: 1;
 }
@@ -1042,7 +1042,7 @@ footer {
       height: auto;
       background-size: contain;
       width: 100%;
-    
+
     }
   }
 }

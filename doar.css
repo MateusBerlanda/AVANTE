@@ -80,11 +80,9 @@ header::after {
   right: 0;
   bottom: 0;
   height: 8px;
-  background: repeating-linear-gradient(
-    to right,
-    #111 0 2px,
-    transparent 2px 12px
-  );
+  background: repeating-linear-gradient(to right,
+      #111 0 2px,
+      transparent 2px 12px);
 }
 
 .selected {
@@ -101,7 +99,7 @@ header nav .btn-menu-doar {
 }
 
 @media (max-width: 1000px) {
-  header > button {
+  header>button {
     display: none;
   }
 
@@ -150,7 +148,7 @@ header nav .btn-menu-doar {
     justify-content: center;
     align-items: center;
     gap: 25px;
-    padding: 80px 20px 40px;
+    padding: 20px;
     background: #f2eddb;
     border-left: 3px solid #111;
     transform: translateX(100%);
@@ -197,8 +195,11 @@ header nav .btn-menu-doar {
 
   header nav .btn-menu-doar {
     display: block;
-    width: 100%;
+    position: static;
+    width: auto;
     margin-top: 15px;
+    padding: 12px 24px;
+    font-size: 20px;
   }
 }
 
@@ -311,8 +312,7 @@ header nav .btn-menu-doar {
 }
 
 .polaroid {
-  -webkit-animation: roll-in-blurred-right 1s cubic-bezier(0.23, 1, 0.32, 1)
-    both;
+  -webkit-animation: roll-in-blurred-right 1s cubic-bezier(0.23, 1, 0.32, 1) both;
   animation: roll-in-blurred-right 1s cubic-bezier(0.23, 1, 0.32, 1) both;
 
   img {
@@ -670,11 +670,13 @@ header nav .btn-menu-doar {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   width: 80%;
   margin: 0 auto 50px;
-  padding: 30px 40px; /* NOVO: respiro interno */
+  padding: 30px 40px;
+  /* NOVO: respiro interno */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 30px; /* NOVO */
+  gap: 30px;
+  /* NOVO */
   position: relative;
 
   img {
@@ -696,7 +698,8 @@ header nav .btn-menu-doar {
 }
 
 .qr-texts {
-  flex: 1; /* NOVO: ocupa o espaço restante */
+  flex: 1;
+  /* NOVO: ocupa o espaço restante */
   font-family: "Bangers", system-ui;
   font-size: 25px;
   -webkit-text-stroke: 0.5px black;
@@ -714,8 +717,10 @@ header nav .btn-menu-doar {
 }
 
 .qr-btn {
-  flex: 0 0 auto; /* NOVO: não estica */
-  width: auto; /* ERA 100% */
+  flex: 0 0 auto;
+  /* NOVO: não estica */
+  width: auto;
+  /* ERA 100% */
   padding: 0;
   display: flex;
   justify-content: center;
@@ -747,7 +752,8 @@ header nav .btn-menu-doar {
   }
 
   @media (max-width: 950px) {
-    width: 100%; /* no mobile ele volta a ocupar tudo */
+    width: 100%;
+    /* no mobile ele volta a ocupar tudo */
     padding: 10px 0 20px;
   }
 }
@@ -1022,6 +1028,7 @@ header nav .btn-menu-doar {
   border: none;
   color: #2b58c4;
 }
+
 .btn-voltarAmarelo {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
@@ -1723,6 +1730,7 @@ footer {
 /* FORMULÁRIO RESPONSIVO */
 
 @media (max-width: 600px) {
+
   .formulario,
   .confirmacao-form {
     padding: 15px;

@@ -136,7 +136,7 @@ header nav .btn-menu-doar {
     justify-content: center;
     align-items: center;
     gap: 25px;
-    padding: 80px 20px 40px;
+    padding: 20px;
     background: #f2eddb;
     border-left: 3px solid #111;
     transform: translateX(100%);
@@ -183,8 +183,11 @@ header nav .btn-menu-doar {
 
   header nav .btn-menu-doar {
     display: block;
-    width: 100%;
+    position: static;
+    width: auto;
     margin-top: 15px;
+    padding: 12px 24px;
+    font-size: 20px;
   }
 }
 

@@ -230,11 +230,13 @@ header nav .btn-menu-doar {
     color: #e3272b;
   }
 
-  /* DOAR AGORA dentro do painel */
   header nav .btn-menu-doar {
     display: block;
-    width: 100%;
+    position: static;
+    width: auto;
     margin-top: 15px;
+    padding: 12px 24px;
+    font-size: 20px;
   }
 }
 
